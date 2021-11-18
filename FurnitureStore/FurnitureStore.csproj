@@ -71,7 +71,7 @@
     <Content Include="FurnitureStoreWeb\Login.aspx" />
     <Content Include="FurnitureStoreWeb\Register.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="SOAP\ProductAPI.asmx" />
+    <Content Include="FurnitureSOAP\ProductAPI.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -95,9 +95,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Library\Account.cs" />
+    <Compile Include="FurnitureLibrary\Account.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="REST\SearchController.cs" />
+    <Compile Include="FurnitureREST\SearchController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
