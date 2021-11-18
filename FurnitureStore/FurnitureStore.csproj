@@ -69,8 +69,6 @@
   <ItemGroup>
     <Content Include="FurnitureStoreWeb\Login.aspx" />
     <Content Include="FurnitureStoreWeb\Register.aspx" />
-    <Content Include="Global.asax" />
-    <Content Include="FurnitureSOAP\ProductAPI.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -88,12 +86,8 @@
     <Compile Include="FurnitureStoreWeb\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
     <Compile Include="FurnitureLibrary\Account.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FurnitureREST\SearchController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -104,7 +98,10 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="FurnitureAPI\" />
+    <Folder Include="FurnitureSOAP\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
