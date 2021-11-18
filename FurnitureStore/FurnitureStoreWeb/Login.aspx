@@ -42,7 +42,7 @@
           <div class="d-flex justify-content-between align-items-center">
             <!-- Checkbox -->
             <div class="form-check mb-0">
-                <asp:CheckBox ID="chkRemember" runat="server" Text="Remember Me?" class="form-check-label" />
+                <asp:CheckBox ID="chkRemember" runat="server" Text=" Remember Me?" class="form-check-label" />
              
             </div>
           </div>
@@ -67,23 +67,7 @@
     </div>
     <!-- Copyright -->
 
-    <!-- Right -->
-    <div>
-      <a href="#!" class="text-white me-4">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="#!" class="text-white me-4">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="#!" class="text-white me-4">
-        <i class="fab fa-google"></i>
-      </a>
-      <a href="#!" class="text-white">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-    </div>
-    <!-- Right -->
-  </div>
+   
 </section>
     
 </body>
