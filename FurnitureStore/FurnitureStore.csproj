@@ -69,11 +69,23 @@
   <ItemGroup>
     <Content Include="FurnitureAPI\placeholder.txt" />
     <Content Include="FurnitureSOAP\placeholder.txt" />
+    <Content Include="FurnitureStoreWeb\CSS\login_styling.css" />
+    <Content Include="FurnitureStoreWeb\Homepage.aspx" />
+    <Content Include="FurnitureStoreWeb\Images\logo\logo.jpg" />
+    <Content Include="FurnitureStoreWeb\Images\logo\logo.png" />
+    <Content Include="FurnitureStoreWeb\Images\logo\Read me before using your logo.txt" />
     <Content Include="FurnitureStoreWeb\Login.aspx" />
     <Content Include="FurnitureStoreWeb\Register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FurnitureStoreWeb\Homepage.aspx.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FurnitureStoreWeb\Homepage.aspx.designer.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FurnitureStoreWeb\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
