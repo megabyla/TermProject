@@ -57,22 +57,34 @@
 
                 <br />
            
-                      <asp:HyperLink ID="hplForgotPassword" runat="server" type="submit" Text="Forgot Password" ></asp:HyperLink>
+                      <asp:HyperLink ID="hplForgotPassword" runat="server" type="submit" CssClass="alert-primary" Text="Forgot Password" ></asp:HyperLink>
                     
                  </p>
+
+
+               <div id="cookies">
+                  
+                        <input class="form-check-input" type="checkbox" value="" id="checkCookies" runat="server">
+                        <label class="form-check-label" for="checkCookies">
+                            <small><b>Faster login:</b> Check to store account creditentials</small>
+                        </label>
+                  
+                  </div>
+                    
+                  </p>
+                </div>
+        </form>
           </div>
 
-        </form>
       </div>
     </div>
-  </div>
   <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
     <!-- Copyright -->
     <div class="text-white mb-3 mb-md-0">
       Copyright © 2021. All rights reserved.
     </div>
     <!-- Copyright -->
-
+      </div>
    
 </section>
     

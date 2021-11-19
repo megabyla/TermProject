@@ -13,20 +13,9 @@ namespace FurnitureStore.FurnitureStoreWeb
         {
 
         }
-
-        protected void btnLogin_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        protected void btnLogin_Click1(object sender, EventArgs e)
-        {
-
-        }
-
         protected void btnLogin_Click2(object sender, EventArgs e)
         {
- Response.Redirect("Homepage.aspx");
+            Response.Redirect("Homepage.aspx");
         }
     }
 }
