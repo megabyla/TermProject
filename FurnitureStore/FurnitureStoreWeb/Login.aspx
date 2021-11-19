@@ -53,7 +53,13 @@
            
              
             <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="Register.aspx"
-                class="link-danger">Register</a></p>
+                class="link-danger">Register</a>
+
+                <br />
+           
+                      <asp:HyperLink ID="hplForgotPassword" runat="server" type="submit" Text="Forgot Password" ></asp:HyperLink>
+                    
+                 </p>
           </div>
 
         </form>
