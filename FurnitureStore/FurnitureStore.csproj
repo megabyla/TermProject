@@ -70,6 +70,7 @@
     <Content Include="FurnitureAPI\placeholder.txt" />
     <Content Include="FurnitureSOAP\placeholder.txt" />
     <Content Include="FurnitureStoreWeb\CSS\login_styling.css" />
+    <Content Include="FurnitureStoreWeb\ForgotPass.aspx" />
     <Content Include="FurnitureStoreWeb\Homepage.aspx" />
     <Content Include="FurnitureStoreWeb\Images\logo\logo.jpg" />
     <Content Include="FurnitureStoreWeb\Images\logo\logo.png" />
@@ -79,6 +80,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FurnitureStoreWeb\ForgotPass.aspx.cs">
+      <DependentUpon>ForgotPass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FurnitureStoreWeb\ForgotPass.aspx.designer.cs">
+      <DependentUpon>ForgotPass.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FurnitureStoreWeb\Homepage.aspx.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
