@@ -46,11 +46,9 @@ namespace FurnitureStore.FurnitureStoreWeb
             Response.Redirect("Homepage.aspx");
         }
 
-        protected void btnForgotPassword(object sender, EventArgs e)
+        protected void btnForgot_Click(object sender, EventArgs e)
         {
             Response.Redirect("ForgotPass.aspx");
         }
-
-      
     }
 }
