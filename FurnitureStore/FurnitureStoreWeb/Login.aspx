@@ -78,8 +78,7 @@
 
                                 <br />
 
-                                <asp:TextBox ID="btnForgotPassword" runat="server" type="submit" CssClass="alert-primary" Text="Forgot Password" OnTextChanged="btnForgotPassword_TextChanged"></asp:TextBox>
-
+                                <asp:Button ID="btnForgot" runat="server" Text="Forgot Password" CssClass="btn btn-primary btn-sm" />
                             </p>
 
 
@@ -91,21 +90,16 @@
                                 </label>
 
                             </div>
+                            <br />
 
 
-                        </div>
-                    </form>
+                        </div></form>
+                    
                 </div>
 
             </div>
         </div>
-        <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
-            <!-- Copyright -->
-            <div class="text-white mb-3 mb-md-0">
-                Copyright © 2021. All rights reserved.
-            </div>
-            <!-- Copyright -->
-        </div>
+       
 
     </section>
 

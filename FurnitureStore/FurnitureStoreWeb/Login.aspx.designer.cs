@@ -96,13 +96,13 @@ namespace FurnitureStore.FurnitureStoreWeb
         protected global::System.Web.UI.WebControls.Button btnLogin;
 
         /// <summary>
-        /// btnForgotPassword control.
+        /// btnForgot control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox btnForgotPassword;
+        protected global::System.Web.UI.WebControls.Button btnForgot;
 
         /// <summary>
         /// checkCookies control.

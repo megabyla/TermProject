@@ -20,6 +20,9 @@ namespace FurnitureStore.FurnitureStoreWeb
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
+<<<<<<< HEAD
        
+=======
+>>>>>>> 71094c263fb3a6e15429c05206944ca2343f8f76
     }
 }
