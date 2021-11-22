@@ -11,22 +11,44 @@ namespace FurnitureStore.FurnitureStoreWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                HttpCookie reqCookies = Request.Cookies["userInfo"];
 
-        }
+                if (reqCookies != null)
+                {
+                    txtUsername.Text = reqCookies["Username"].ToString();
+                    txtPassword.Text = reqCookies["Password"].ToString();
+                    string userType = reqCookies["UserType"].ToString();
+                    checkCookies.Checked = true;
 
-        protected void btnLogin_Click(object sender, EventArgs e)
-        {
-           
-        }
+                    if (userType == "User")
+                    {
+                        user.Checked = true;
+                    }
+                    else
+                    {
+                        user.Checked = false;
+                        admin.Checked = true;
+                    }
+                }
+                else
+                {
+                    Session.Add("UserType", null);
+                    Session.Add("Username", null);
+                }
 
-        protected void btnLogin_Click1(object sender, EventArgs e)
-        {
-
+            }
         }
 
         protected void btnLogin_Click2(object sender, EventArgs e)
         {
- Response.Redirect("Homepage.aspx");
+            Response.Redirect("Homepage.aspx");
+        }
+
+        protected void btnForgot_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForgotPass.aspx");
         }
     }
 }
