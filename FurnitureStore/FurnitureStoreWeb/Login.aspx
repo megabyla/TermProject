@@ -30,7 +30,7 @@
 
                         <fieldset class="form-group" runat="server">
 
-                            <asp:Label ID="lblUsertype" runat="server" Text="User Type: " class="col-form-label-lg"></asp:Label>
+                            <asp:Label ID="lblUsertype" runat="server" Text="Account Type: " class="col-form-label-lg"></asp:Label>
 
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="userType" id="user" runat="server" checked />
