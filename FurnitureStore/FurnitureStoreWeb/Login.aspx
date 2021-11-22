@@ -17,7 +17,7 @@
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-md-9 col-lg-6 col-xl-5">
                     <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid"
-                        alt="Sample image">
+                        alt="Sample image" />
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                     <form runat="server">
@@ -30,7 +30,7 @@
 
                         <fieldset class="form-group" runat="server">
 
-                            <asp:Label ID="lblUsertype" runat="server" Text="User Type: " class="col-form-label-lg"></asp:Label>
+                            <asp:Label ID="lblUsertype" runat="server" Text="Account Type: " class="col-form-label-lg"></asp:Label>
 
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="userType" id="user" runat="server" checked />
