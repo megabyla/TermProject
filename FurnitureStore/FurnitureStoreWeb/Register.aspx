@@ -74,7 +74,7 @@
                         <div class="text-center text-lg-start mt-4 pt-2">
                             <br />
                             <asp:Button ID="btnRegister" runat="server" Text="Register" class="btn btn-primary btn-lg"
-                                Style="padding-left: 2.5rem; padding-right: 2.5rem;"/>
+                                Style="padding-left: 2.5rem; padding-right: 2.5rem;" OnClick="btnRegister_Click"/>
 
                             <br />
                             <br />
