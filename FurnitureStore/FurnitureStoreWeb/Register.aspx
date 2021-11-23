@@ -46,7 +46,7 @@
 
                         </fieldset>
 
-                        <!-- Username input -->
+                        <!-- Registration input -->
                         <br />
                         <div class="form-outline mb-4">
                             <asp:Label ID="lblFirstName" runat="server" Text="First Name: " class="col-form-label-lg"></asp:Label>
@@ -66,8 +66,6 @@
                             <asp:Label ID="lblUsername" runat="server" Text="Username: " class="col-form-label-lg"></asp:Label>
                             <asp:TextBox ID="txtUsername" runat="server" class="form-control form-control-lg"></asp:TextBox>
                         </div>
-
-                        <!-- Password input -->
                         <div class="form-outline mb-4">
                             <asp:Label ID="lblPassword" runat="server" Text="Password: " class="col-form-label-lg"></asp:Label>
                             <asp:TextBox ID="txtPassword" runat="server" class="form-control form-control-lg"></asp:TextBox>
@@ -78,11 +76,8 @@
                             <asp:Button ID="btnRegister" runat="server" Text="Register" class="btn btn-primary btn-lg"
                                 Style="padding-left: 2.5rem; padding-right: 2.5rem;"/>
 
-
                             <br />
                             <br />
-
-
                             <br />
 
 
