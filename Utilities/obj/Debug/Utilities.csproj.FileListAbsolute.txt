@@ -1,0 +1,6 @@
+C:\Users\16106\Documents\CIS3342\TermProject\Utilities\bin\Debug\Utilities.dll
+C:\Users\16106\Documents\CIS3342\TermProject\Utilities\bin\Debug\Utilities.pdb
+C:\Users\16106\Documents\CIS3342\TermProject\Utilities\obj\Debug\Utilities.csproj.AssemblyReference.cache
+C:\Users\16106\Documents\CIS3342\TermProject\Utilities\obj\Debug\Utilities.csproj.CoreCompileInputs.cache
+C:\Users\16106\Documents\CIS3342\TermProject\Utilities\obj\Debug\Utilities.dll
+C:\Users\16106\Documents\CIS3342\TermProject\Utilities\obj\Debug\Utilities.pdb

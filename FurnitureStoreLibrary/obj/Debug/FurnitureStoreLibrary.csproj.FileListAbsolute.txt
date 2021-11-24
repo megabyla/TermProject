@@ -1,0 +1,6 @@
+C:\Users\16106\Documents\CIS3342\TermProject\FurnitureStoreLibrary\bin\Debug\FurnitureStoreLibrary.dll
+C:\Users\16106\Documents\CIS3342\TermProject\FurnitureStoreLibrary\bin\Debug\FurnitureStoreLibrary.pdb
+C:\Users\16106\Documents\CIS3342\TermProject\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.csproj.AssemblyReference.cache
+C:\Users\16106\Documents\CIS3342\TermProject\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.csproj.CoreCompileInputs.cache
+C:\Users\16106\Documents\CIS3342\TermProject\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.dll
+C:\Users\16106\Documents\CIS3342\TermProject\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.pdb

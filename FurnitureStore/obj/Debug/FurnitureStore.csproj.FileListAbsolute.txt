@@ -175,3 +175,7 @@ C:\Users\salee\Source\Repos\TermProject\FurnitureStore\obj\Debug\FurnitureStore.
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\obj\Debug\FurnitureStore.csproj.CopyComplete
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\obj\Debug\FurnitureStore.dll
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\obj\Debug\FurnitureStore.pdb
+C:\Users\16106\Documents\CIS3342\TermProject\FurnitureStore\bin\FurnitureStoreLibrary.dll
+C:\Users\16106\Documents\CIS3342\TermProject\FurnitureStore\bin\Utilities.dll
+C:\Users\16106\Documents\CIS3342\TermProject\FurnitureStore\bin\FurnitureStoreLibrary.pdb
+C:\Users\16106\Documents\CIS3342\TermProject\FurnitureStore\bin\Utilities.pdb
