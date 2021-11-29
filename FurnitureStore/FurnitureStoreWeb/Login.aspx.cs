@@ -23,12 +23,12 @@ namespace FurnitureStore.FurnitureStoreWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack && Request.Cookies["login_cookie"] != null)
-            {
-                HttpCookie cookie = Request.Cookies["login_cookie"];
-                txtUseremail.Text = cookie["email"].ToString();
-                txtPassword.Text = cookie["password"].ToString();
-            }
+            //if (!IsPostBack && Request.Cookies["login_cookie"] != null)
+            //{
+            //    HttpCookie cookie = Request.Cookies["login_cookie"];
+            //    txtUseremail.Text = cookie["username"].ToString();
+            //    txtPassword.Text = cookie["password"].ToString();
+            //}
         }
 
         protected void btnLogin_Click2(object sender, EventArgs e)
@@ -76,7 +76,7 @@ namespace FurnitureStore.FurnitureStoreWeb
             }
             else
             {
-               
+
                 DataSet myData = getLoginData(email, encryptedPassword);
                 int size = myData.Tables[0].Rows.Count;
                 if (size > 0)
@@ -92,7 +92,7 @@ namespace FurnitureStore.FurnitureStoreWeb
                         string userType = objDB.GetField("accountType", 0).ToString();
 
                         //checks to see if the user wants their login information recorded and stores it in a cookie
-                        if (chkRemember.Checked == true)
+                        if (ckRem.Checked == true)
                         {
                             HttpCookie userCookie = new HttpCookie("login_cookie");
                             userCookie.Values["email"] = txtUseremail.Text;
@@ -107,6 +107,7 @@ namespace FurnitureStore.FurnitureStoreWeb
                         {
                             Session["userID"] = objDB.GetField("userID", 0);
                             Session["username"] = objDB.GetField("username", 0);
+                            Session["phonenumber"] = objDB.GetField("phonenumber", 0);
                             Session["email"] = txtUseremail.Text;
                             Response.Redirect("Homepage.aspx");
                         }
@@ -114,8 +115,9 @@ namespace FurnitureStore.FurnitureStoreWeb
                         {
                             Session["userID"] = objDB.GetField("userID", 0);
                             Session["username"] = objDB.GetField("username", 0);
+                            Session["phonenumber"] = objDB.GetField("phonenumber", 0);
                             Session["email"] = txtUseremail.Text;
-                            Response.Redirect("AdminHome.aspx");
+                            Response.Redirect("AdminHomepage.aspx");
                         }
                     }
                 }
@@ -150,7 +152,7 @@ namespace FurnitureStore.FurnitureStoreWeb
 
         protected void btnForgot_Click1(object sender, EventArgs e)
         {
-Response.Redirect("ForgotPass.aspx");
+            Response.Redirect("ForgotPass.aspx");
         }
     }
 }

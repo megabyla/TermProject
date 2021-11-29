@@ -10,7 +10,7 @@ namespace FurnitureStore.Library
         public int furnitureID { get; set; }
         public string name { get; set; }
         public string furnitureType { get; set; }
-      
+
         public Furniture()
         {
 
@@ -22,7 +22,7 @@ namespace FurnitureStore.Library
             this.furnitureID = furnitureID;
             this.name = name;
             this.furnitureType = furnitureType;
-            
+
         }
     }
 }

@@ -11,6 +11,8 @@ namespace FurnitureStore.Library
         private string userName;
         private string userPassword;
         private string userType;
+        private string email;
+        private int phonenumber;
         private string securityQ1;
         private string securityQ2;
         private string securityQ3;
@@ -37,6 +39,20 @@ namespace FurnitureStore.Library
         {
             get { return userType; }
             set { userType = value; }
+
+        }
+
+        public int PhoneNumber
+        {
+            get { return phonenumber; }
+            set { phonenumber = value; }
+
+        }
+
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
 
         }
         public string SecurityQ1

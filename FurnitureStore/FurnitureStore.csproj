@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="FurnitureAPI\placeholder.txt" />
     <Content Include="FurnitureSOAP\placeholder.txt" />
+    <Content Include="FurnitureStoreWeb\AdminHomepage.aspx" />
     <Content Include="FurnitureStoreWeb\CSS\login_styling.css" />
     <Content Include="FurnitureStoreWeb\ForgotPass.aspx" />
     <Content Include="FurnitureStoreWeb\Homepage.aspx" />
@@ -80,7 +81,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FurnitureLibrary\Furniture.cs" />
+    <Compile Include="FurnitureStoreWeb\AdminHomepage.aspx.cs">
+      <DependentUpon>AdminHomepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FurnitureStoreWeb\AdminHomepage.aspx.designer.cs">
+      <DependentUpon>AdminHomepage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FurnitureStoreWeb\ForgotPass.aspx.cs">
       <DependentUpon>ForgotPass.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -109,7 +116,6 @@
     <Compile Include="FurnitureStoreWeb\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FurnitureLibrary\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -131,6 +137,7 @@
       <Name>Utilities</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

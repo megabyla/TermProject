@@ -45,24 +45,22 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <!-- Checkbox -->
                             <div class="form-check mb-0">
-                                <asp:CheckBox ID="chkRemember" runat="server" Text=" Remember Me?" class="form-check-label" />
+                                <asp:CheckBox ID="ckRem" runat="server" Text=" Remember Me?" />
 
                             </div>
                         </div>
 
                         <div class="text-center text-lg-start mt-4 pt-2">
-                            <asp:Button ID="btnLogin" runat="server" Text="Login" class="btn btn-primary btn-lg"
-                                Style="padding-left: 2.5rem; padding-right: 2.5rem;" OnClick="btnLogin_Click2" />
+                            <asp:Button ID="btnLogin" runat="server" Text="Login" class="btn btn-primary btn-md" OnClick="btnLogin_Click2" />
+                            &nbsp;&nbsp;&nbsp;&nbsp;
 
+ <asp:Button ID="btnForgot" runat="server" Text="Forgot Password" CssClass="btn btn-primary btn-md" OnClick="btnForgot_Click1" />
 
                             <p class="small fw-bold mt-2 pt-1 mb-0">
                                 Don't have an account? <a href="Register.aspx"
                                     class="link-danger">Register</a>
-
                                 <br />
 
-                                <asp:Button ID="btnForgot" runat="server" Text="Forgot Password" CssClass="btn btn-primary btn-sm" OnClick="btnForgot_Click1" />
-                                <br />
                                 <asp:Label ID="lblMessage" runat="server" class="col-form-label-lg"></asp:Label>
 
                             </p>
