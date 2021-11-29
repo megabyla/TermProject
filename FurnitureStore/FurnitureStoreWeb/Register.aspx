@@ -27,19 +27,19 @@
                                 <img src="Images/logo/logo.png" />
                             </p>
                         </div>
-  <%--error message lables--%>
-                            <asp:Label ID="lblDisplay" runat="server" Text=""></asp:Label>
-                            <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
-                            <asp:Label ID="lblSuccess" runat="server" Text=""></asp:Label>
+                        <%--error message lables--%>
+                        <asp:Label ID="lblDisplay" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lblSuccess" runat="server" Text=""></asp:Label>
 
-<div class="form-outline mb-4">                          
+                        <div class="form-outline mb-4">
                             <asp:Label ID="lblUsertype" runat="server" Text="Account Type: " class="col-form-label-lg"></asp:Label>
 
-                                <asp:RadioButtonList ID="RadioBtnUserType" runat="server" required="required">
-                                    <asp:ListItem Value="User" ID="rdlUser" Selected="True">User</asp:ListItem>
-                                    <asp:ListItem Value="Admin" ID="rdlAdmin">Administrator</asp:ListItem>
-                                </asp:RadioButtonList>
-                            </div>
+                            <asp:RadioButtonList ID="RadioBtnUserType" runat="server" required="required">
+                                <asp:ListItem Value="User" ID="rdlUser" Selected="True">User</asp:ListItem>
+                                <asp:ListItem Value="Admin" ID="rdlAdmin">Administrator</asp:ListItem>
+                            </asp:RadioButtonList>
+                        </div>
 
                         <!-- Registration input -->
                         <div class="form-outline mb-4">
