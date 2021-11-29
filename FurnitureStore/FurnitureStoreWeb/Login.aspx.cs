@@ -92,7 +92,7 @@ namespace FurnitureStore.FurnitureStoreWeb
                         string userType = objDB.GetField("accountType", 0).ToString();
 
                         //checks to see if the user wants their login information recorded and stores it in a cookie
-                        if (chkRemember.Checked == true)
+                        if (ckRem.Checked == true)
                         {
                             HttpCookie userCookie = new HttpCookie("login_cookie");
                             userCookie.Values["email"] = txtUseremail.Text;
@@ -117,7 +117,7 @@ namespace FurnitureStore.FurnitureStoreWeb
                             Session["username"] = objDB.GetField("username", 0);
                             Session["phonenumber"] = objDB.GetField("phonenumber", 0);
                             Session["email"] = txtUseremail.Text;
-                            Response.Redirect("AdminHome.aspx");
+                            Response.Redirect("AdminHomepage.aspx");
                         }
                     }
                 }
