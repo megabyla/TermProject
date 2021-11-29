@@ -33,8 +33,8 @@
 
                             <div class="form-check">
                                 <asp:RadioButtonList ID="RadioBtnUserType" runat="server" required="required" >
-                                    <asp:ListItem Value="User" Selected="True">User</asp:ListItem>
-                                    <asp:ListItem Value="Admin">Administrator</asp:ListItem>
+                                    <asp:ListItem Value="User" ID="rdlUser" Selected="True">User</asp:ListItem>
+                                    <asp:ListItem Value="Admin" ID="rdlAdmin">Administrator</asp:ListItem>
                                 </asp:RadioButtonList>
                             </div>
 
@@ -103,6 +103,9 @@
                         </div>
                         <br />
                         <br />
+                <br />
+                <br />
+                <br />
                  
                      
                 </div>

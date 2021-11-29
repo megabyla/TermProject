@@ -38,16 +38,15 @@ namespace FurnitureStore.FurnitureStoreWeb
         protected void btnSubmit_Click1(object sender, EventArgs e)
         {
             objCommand.CommandType = CommandType.StoredProcedure;
-            objCommand.CommandText = "TP_Accounts";
+            objCommand.CommandText = "TP_GetUser";
             objCommand.Parameters.AddWithValue("@username", txtUsername.Text);
             objCommand.Parameters.AddWithValue("@email", txtEmail.Text);
-            objCommand.Parameters.AddWithValue("@password", txtPassword.Text);
-            objCommand.Parameters.AddWithValue("@PhoneNumber", txtPhoneNumber.Text);
-            objCommand.Parameters.AddWithValue("@accountType", RadioBtnUserType);
+
             DataSet ds = objDB.GetDataSetUsingCmdObj(objCommand);
 
-            //password stuff
-            if (ds.Tables[0].Rows.Count == 0)
+            int size = ds.Tables[0].Rows.Count;
+            //password encryption
+            if (size == 0)
             {
                 String plainTextPassword = txtPassword.Text;
                 String encryptedPassword;
@@ -79,50 +78,39 @@ namespace FurnitureStore.FurnitureStoreWeb
                 // Convert the bytes to a string and display it.
                 encryptedPassword = Convert.ToBase64String(encryptedBytes);
 
-                if (txtUsername.Text != "" && txtPassword.Text != "" && txtEmailAddress.Text != "" && txtPhoneNumber.Text != "")
-                {
-                    newUser.UserName = txtUsername.Text;
-                    newUser.UserPassword = txtPassword.Text;
-                    newUser.EmailAddress = txtEmailAddress.Text;
-                    newUser.PhoneNumber = int.Parse(txtPhoneNumber.Text);
-                    newUser.SecurityQ1 = txtSq1.Text;
-                    newUser.SecurityQ2 = txtSq2.Text;
-                    newUser.SecurityQ3 = txtSq3.Text;
-                    lblDisplay.Text = "";
-                }
-
-                else
+                if (txtUsername.Text == "" || txtPassword.Text == "" || txtEmail.Text == "" || txtPhoneNumber.Text == "" || txtSq1.Text == ""
+                    || txtSq2.Text == "" || txtSq3.Text == "")
                 {
                     lblDisplay.Text = "Must complete all fields!";
                 }
-
-                if (User != null)
+                else
                 {
                     try
                     {
                         objCommand.Parameters.Clear();
                         objCommand.CommandType = CommandType.StoredProcedure;
-                        objCommand.CommandText = "TP_AdoptionUser";
+                        objCommand.CommandText = "TP_AddUser";
 
 
-                        objCommand.Parameters.AddWithValue("@UserName", newUser.UserName);
-                        objCommand.Parameters.AddWithValue("@UserPassword", newUser.UserPassword);
-                        objCommand.Parameters.AddWithValue("@EmailAddress", newUser.EmailAddress);
-                        objCommand.Parameters.AddWithValue("@PhoneNumber", newUser.PhoneNumber);
-                        objCommand.Parameters.AddWithValue("@SecurityQ1", newUser.SecurityQ1);
-                        objCommand.Parameters.AddWithValue("@SecurityQ2", newUser.SecurityQ2);
-                        objCommand.Parameters.AddWithValue("@SecurityQ3", newUser.SecurityQ3);
+                        objCommand.Parameters.AddWithValue("@username", txtUsername.Text);
+                        objCommand.Parameters.AddWithValue("@email", txtEmail.Text);
+                        objCommand.Parameters.AddWithValue("@password", encryptedPassword);
+                        objCommand.Parameters.AddWithValue("@phonenumber", txtPhoneNumber.Text);
+                        objCommand.Parameters.AddWithValue("@accountType", RadioBtnUserType.SelectedItem.Value);
+                        objCommand.Parameters.AddWithValue("@securityQ1", txtSq1.Text);
+                        objCommand.Parameters.AddWithValue("@securityQ2", txtSq2.Text);
+                        objCommand.Parameters.AddWithValue("@securityQ3", txtSq3.Text);
 
                         int result = objDB.DoUpdateUsingCmdObj(objCommand);
 
                         if (result == -1)
                         {
-                            lblError.Text = "Please try again!";
+                            lblError.Text = "An error occured. Please try again!";
                             lblError.Visible = false;
                         }
                         else
                         {
-                            lblSuccess.Text = "User created!";
+                            lblSuccess.Text = "User created successfully!";
                             if (lblError.Visible == true)
                             {
                                 lblError.Visible = false;
@@ -130,20 +118,23 @@ namespace FurnitureStore.FurnitureStoreWeb
                             lblSuccess.Visible = true;
                             btnSubmit.Visible = false;
                         }
+
                     }
                     catch (Exception ex)
                     {
                         throw ex;
                     }
-                }
+                    //Response.Redirect("Home.aspx");
 
-                else
-                {
-                    lblError.Text = "The username or email is already in use.";
-                    lblError.Visible = true;
                 }
             }
+            else
+            {
+                lblError.Text = "The username or email is already taken";
+                lblError.Visible = true;
+            }
         }
+
     }
 }
 

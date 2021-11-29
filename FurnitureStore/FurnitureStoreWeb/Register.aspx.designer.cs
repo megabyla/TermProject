@@ -33,6 +33,24 @@ namespace FurnitureStore.FurnitureStoreWeb
         protected global::System.Web.UI.WebControls.RadioButtonList RadioBtnUserType;
 
         /// <summary>
+        /// rdlUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListItem rdlUser;
+
+        /// <summary>
+        /// rdlAdmin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListItem rdlAdmin;
+
+        /// <summary>
         /// lblUsername control.
         /// </summary>
         /// <remarks>
