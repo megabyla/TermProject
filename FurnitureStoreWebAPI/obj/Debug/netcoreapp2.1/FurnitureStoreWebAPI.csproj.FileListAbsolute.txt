@@ -1,0 +1,17 @@
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\bin\Debug\netcoreapp2.1\FurnitureStoreWebAPI.deps.json
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\bin\Debug\netcoreapp2.1\FurnitureStoreWebAPI.runtimeconfig.json
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\bin\Debug\netcoreapp2.1\FurnitureStoreWebAPI.runtimeconfig.dev.json
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\bin\Debug\netcoreapp2.1\FurnitureStoreWebAPI.dll
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\bin\Debug\netcoreapp2.1\FurnitureStoreWebAPI.pdb
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\obj\Debug\netcoreapp2.1\FurnitureStoreWebAPI.csprojAssemblyReference.cache
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\obj\Debug\netcoreapp2.1\FurnitureStoreWebAPI.AssemblyInfoInputs.cache
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\obj\Debug\netcoreapp2.1\FurnitureStoreWebAPI.AssemblyInfo.cs
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\obj\Debug\netcoreapp2.1\FurnitureStoreWebAPI.csproj.CoreCompileInputs.cache
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\obj\Debug\netcoreapp2.1\FurnitureStoreWebAPI.RazorAssemblyInfo.cache
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\obj\Debug\netcoreapp2.1\FurnitureStoreWebAPI.RazorAssemblyInfo.cs
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\obj\Debug\netcoreapp2.1\FurnitureStoreWebAPI.RazorTargetAssemblyInfo.cache
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\obj\Debug\netcoreapp2.1\FurnitureStoreWebAPI.dll
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\obj\Debug\netcoreapp2.1\FurnitureStoreWebAPI.pdb
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\obj\Debug\netcoreapp2.1\FurnitureStoreWebAPI.genruntimeconfig.cache
