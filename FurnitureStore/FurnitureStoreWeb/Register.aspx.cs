@@ -21,6 +21,11 @@ namespace FurnitureStore.FurnitureStoreWeb
 
             Response.Redirect("Login.aspx");
         }
+
+        protected void btnSubmit_Click1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -32,16 +32,10 @@
                             <asp:Label ID="lblUsertype" runat="server" Text="Account Type: " class="col-form-label-lg"></asp:Label>
 
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="userType" id="user" runat="server"/>
-                                <label class="form-check-label" for="user" runat="server">
-                                    User
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="userType" id="admin" runat="server" />
-                                <label class="form-check-label" for="admin" runat="server">
-                                    Admin
-                                </label>
+                                <asp:RadioButtonList ID="RadioBtnUserType" runat="server" required="required" >
+                                    <asp:ListItem Value="user" Selected="True">User</asp:ListItem>
+                                    <asp:ListItem Value="admin">Administrator</asp:ListItem>
+                                </asp:RadioButtonList>
                             </div>
 
                         </fieldset>
@@ -49,46 +43,69 @@
                         <!-- Registration input -->
                         <br />
                         <div class="form-outline mb-4">
-                            <asp:Label ID="lblFirstName" runat="server" Text="First Name: " class="col-form-label-lg"></asp:Label>
-                            <asp:TextBox ID="txtFirstName" runat="server" class="form-control form-control-lg"></asp:TextBox>
-                        </div>
-                        <div class="form-outline mb-4">
-                            <asp:Label ID="lblLastName" runat="server" Text="Last Name: " class="col-form-label-lg"></asp:Label>
-                            <asp:TextBox ID="txtLastName" runat="server" class="form-control form-control-lg"></asp:TextBox>
-                        </div>
-
-                        <div class="form-outline mb-4">
-                            <asp:Label ID="lblPhoneNumber" runat="server" Text="Phone Number:" class="col-form-label-lg"></asp:Label>
-                            <asp:TextBox ID="txtPhoneNumber" runat="server" class="form-control form-control-lg"></asp:TextBox>
-                        </div>
-
-                        <div class="form-outline mb-4">
                             <asp:Label ID="lblUsername" runat="server" Text="Username: " class="col-form-label-lg"></asp:Label>
                             <asp:TextBox ID="txtUsername" runat="server" class="form-control form-control-lg"></asp:TextBox>
                         </div>
+
+                       
+                        
                         <div class="form-outline mb-4">
                             <asp:Label ID="lblPassword" runat="server" Text="Password: " class="col-form-label-lg"></asp:Label>
                             <asp:TextBox ID="txtPassword" runat="server" class="form-control form-control-lg"></asp:TextBox>
                         </div>
+ <div class="form-outline mb-4">
+                            <asp:Label ID="lblPhoneNumber" runat="server" Text="Phone Number:" class="col-form-label-lg"></asp:Label>
+                            <asp:TextBox ID="txtPhoneNumber" runat="server" class="form-control form-control-lg"></asp:TextBox>
+                        </div>
 
-                        <div class="text-center text-lg-start mt-4 pt-2">
+                       
+                            <br />
+                            
+
+                        
+
+
+                             <div class="form-group">
+                    <label><b>Security Question</b></label>
+                    <br />
+                    Security question 1:<br />
+                    <label>What city were you born in?</label>
+                    <asp:TextBox ID="txtSq1" class="form-control" runat="server" ></asp:TextBox><br />
+                    Security Question 2:<br />
+                    <label>What is your favorite TV show?</label>
+                    <asp:TextBox ID="txtSq2" class="form-control" runat="server" ></asp:TextBox><br />
+                    Security Question 3:<br />
+                    <label>What is your middle name?</label>
+                    <asp:TextBox ID="txtSq3" class="form-control" runat="server" ></asp:TextBox>
+                    <asp:Label ID="lblSq" runat="server" Text="" ForeColor="#CC3300"></asp:Label>
+                    <br />
+
+                     <div id="buttons">
+                        <br />
+                         <asp:Button ID="btnSubmit" runat="server" Text="Submit"  class="btn btn-primary btn-lg" OnClick="btnSubmit_Click1"/>
+                         <br />
+                    </div>
+                </div> 
+ <%--error message lables--%>
+                     <asp:Label ID="lblDisplay" runat="server" Text=""></asp:Label>   
+                     <asp:Label ID="lblError" runat="server" Text=""></asp:Label>        
+                     <asp:Label ID="lblSuccess" runat="server" Text=""></asp:Label>   
                             <br />
                             <asp:Button ID="btnRegister" runat="server" Text="Register" class="btn btn-primary btn-lg"
                                 Style="padding-left: 2.5rem; padding-right: 2.5rem;" OnClick="btnRegister_Click"/>
 
-                            <br />
-                            <br />
-                            <br />
-
-
-                        </div></form>
-                    
+                    </form>
+                        </div>
+                        <br />
+                        <br />
+                 
+                     
                 </div>
 
             </div>
-        </div>
+    
        
-
+ 
     </section>
 
 </body>

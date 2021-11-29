@@ -76,7 +76,7 @@ namespace FurnitureStore.FurnitureStoreWeb
             }
             else
             {
-               
+
                 DataSet myData = getLoginData(email, encryptedPassword);
                 int size = myData.Tables[0].Rows.Count;
                 if (size > 0)
@@ -150,7 +150,7 @@ namespace FurnitureStore.FurnitureStoreWeb
 
         protected void btnForgot_Click1(object sender, EventArgs e)
         {
-Response.Redirect("ForgotPass.aspx");
+            Response.Redirect("ForgotPass.aspx");
         }
     }
 }
