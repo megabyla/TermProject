@@ -1,0 +1,6 @@
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreAPI\obj\Debug\netcoreapp2.1\FurnitureStoreAPI.csprojAssemblyReference.cache
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreAPI\obj\Debug\netcoreapp2.1\FurnitureStoreAPI.AssemblyInfoInputs.cache
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreAPI\obj\Debug\netcoreapp2.1\FurnitureStoreAPI.AssemblyInfo.cs
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreAPI\obj\Debug\netcoreapp2.1\FurnitureStoreAPI.csproj.CoreCompileInputs.cache
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreAPI\obj\Debug\netcoreapp2.1\FurnitureStoreAPI.RazorAssemblyInfo.cache
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreAPI\obj\Debug\netcoreapp2.1\FurnitureStoreAPI.RazorAssemblyInfo.cs
