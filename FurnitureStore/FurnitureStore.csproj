@@ -80,6 +80,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FurnitureLibrary\Furniture.cs" />
     <Compile Include="FurnitureStoreWeb\ForgotPass.aspx.cs">
       <DependentUpon>ForgotPass.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -108,7 +109,7 @@
     <Compile Include="FurnitureStoreWeb\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FurnitureLibrary\Account.cs" />
+    <Compile Include="FurnitureLibrary\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

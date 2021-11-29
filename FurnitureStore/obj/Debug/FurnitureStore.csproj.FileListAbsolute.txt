@@ -179,3 +179,7 @@ C:\Users\16106\Documents\CIS3342\TermProject\FurnitureStore\bin\FurnitureStoreLi
 C:\Users\16106\Documents\CIS3342\TermProject\FurnitureStore\bin\Utilities.dll
 C:\Users\16106\Documents\CIS3342\TermProject\FurnitureStore\bin\FurnitureStoreLibrary.pdb
 C:\Users\16106\Documents\CIS3342\TermProject\FurnitureStore\bin\Utilities.pdb
+C:\Users\nylar\Desktop\Fall21'\3342\Projects\Term_Project\FurnitureStore\bin\FurnitureStoreLibrary.dll
+C:\Users\nylar\Desktop\Fall21'\3342\Projects\Term_Project\FurnitureStore\bin\Utilities.dll
+C:\Users\nylar\Desktop\Fall21'\3342\Projects\Term_Project\FurnitureStore\bin\FurnitureStoreLibrary.pdb
+C:\Users\nylar\Desktop\Fall21'\3342\Projects\Term_Project\FurnitureStore\bin\Utilities.pdb

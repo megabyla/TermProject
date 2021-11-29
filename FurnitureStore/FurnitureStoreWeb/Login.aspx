@@ -25,32 +25,15 @@
 
                         <div class="divider d-flex align-items-center my-4">
                             <p class="text-center fw-bold mx-3 mb-0">
-                                <img src="Images/logo/logo.png" /></p>
+                                <img src="Images/logo/logo.png" />
+                            </p>
                         </div>
 
-                        <fieldset class="form-group" runat="server">
-
-                            <asp:Label ID="lblUsertype" runat="server" Text="Account Type: " class="col-form-label-lg"></asp:Label>
-
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="userType" id="user" runat="server" checked />
-                                <label class="form-check-label" for="user" runat="server">
-                                    User
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="userType" id="admin" runat="server" />
-                                <label class="form-check-label" for="admin" runat="server">
-                                    Admin
-                                </label>
-                            </div>
-
-                        </fieldset>
 
                         <!-- Username input -->
                         <div class="form-outline mb-4">
-                            <asp:Label ID="lblUsername" runat="server" Text="Username: " class="col-form-label-lg"></asp:Label>
-                            <asp:TextBox ID="txtUsername" runat="server" class="form-control form-control-lg"></asp:TextBox>
+                            <asp:Label ID="lblUseremail" runat="server" Text="Email: " class="col-form-label-lg"></asp:Label>
+                            <asp:TextBox ID="txtUseremail" runat="server" class="form-control form-control-lg"></asp:TextBox>
                         </div>
 
                         <!-- Password input -->
@@ -78,8 +61,12 @@
 
                                 <br />
 
-                                <asp:Button ID="btnForgot" runat="server" Text="Forgot Password" CssClass="btn btn-primary btn-sm" />
+                                <asp:Button ID="btnForgot" runat="server" Text="Forgot Password" CssClass="btn btn-primary btn-sm" OnClick="btnForgot_Click1" />
+                                <br />
+                                <asp:Label ID="lblMessage" runat="server" class="col-form-label-lg"></asp:Label>
+
                             </p>
+
 
 
                             <div id="cookies">
@@ -93,13 +80,14 @@
                             <br />
 
 
-                        </div></form>
-                    
+                        </div>
+                    </form>
+
                 </div>
 
             </div>
         </div>
-       
+
 
     </section>
 
