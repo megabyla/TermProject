@@ -33,8 +33,8 @@
 
                             <div class="form-check">
                                 <asp:RadioButtonList ID="RadioBtnUserType" runat="server" required="required" >
-                                    <asp:ListItem Value="user" Selected="True">User</asp:ListItem>
-                                    <asp:ListItem Value="admin">Administrator</asp:ListItem>
+                                    <asp:ListItem Value="User" Selected="True">User</asp:ListItem>
+                                    <asp:ListItem Value="Admin">Administrator</asp:ListItem>
                                 </asp:RadioButtonList>
                             </div>
 
@@ -45,6 +45,11 @@
                         <div class="form-outline mb-4">
                             <asp:Label ID="lblUsername" runat="server" Text="Username: " class="col-form-label-lg"></asp:Label>
                             <asp:TextBox ID="txtUsername" runat="server" class="form-control form-control-lg"></asp:TextBox>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <asp:Label ID="lblEmail" runat="server" Text="Email: " class="col-form-label-lg"></asp:Label>
+                            <asp:TextBox ID="txtEmail" runat="server" class="form-control form-control-lg"></asp:TextBox>
                         </div>
 
                        

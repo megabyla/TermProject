@@ -10,3 +10,6 @@ C:\Users\nylar\Desktop\Fall21'\3342\Projects\Term_Project\FurnitureStoreLibrary\
 C:\Users\nylar\Desktop\Fall21'\3342\Projects\Term_Project\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.csproj.CoreCompileInputs.cache
 C:\Users\nylar\Desktop\Fall21'\3342\Projects\Term_Project\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.dll
 C:\Users\nylar\Desktop\Fall21'\3342\Projects\Term_Project\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.pdb
+C:\Users\16106\Documents\CIS3342\TermProject\FurnitureStoreLibrary\bin\Debug\Utilities.dll
+C:\Users\16106\Documents\CIS3342\TermProject\FurnitureStoreLibrary\bin\Debug\Utilities.pdb
+C:\Users\16106\Documents\CIS3342\TermProject\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.csproj.CopyComplete
