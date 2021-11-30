@@ -14,18 +14,27 @@ namespace FurnitureStoreWebAPI.Controllers
     public class ReservationController : Controller
     {
         [HttpGet]
+        [HttpGet("GetReservations")]
         public List<Reservation> Get()
         {
             DBConnect objDB = new DBConnect();
             DataSet ds = objDB.GetDataSet("SELECT * FROM Reservations");
             List<Reservation> reservationList = new List<Reservation>();
-            Reservation reservation;
 
-            foreach(DataRow record in ds.Tables[0].Rows)
+            int count = ds.Tables[0].Rows.Count;
+
+            for(int i = 0; i< count; i++)
             {
-                reservation = new Reservation();
-
+                Reservation reservation = new Reservation();
+                reservation.FurnitureId = Int32.Parse(objDB.GetField("FurnitureId", i).ToString());
+                reservation.ReservationName = objDB.GetField("ReservationName", i).ToString();
+                reservation.ReservationTime = objDB.GetField("ReservationTime", i).ToString();
+                reservation.ReservationDate = DateTime.Parse(objDB.GetField("ReservationDate", i).ToString());
+                reservation.ReservationCount = Int32.Parse(objDB.GetField("ReservationCount", i).ToString());
+                reservation.FurnitureId = Int32.Parse(objDB.GetField("FurnitureId", i).ToString());
+                reservationList.Add(reservation);
             }
+            return reservationList;
         }
     }
 }
