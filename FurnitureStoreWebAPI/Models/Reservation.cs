@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace FurnitureStoreWebAPI.Models
 {
-    public class Reservations
+    public class Reservation
     {
 
     }
