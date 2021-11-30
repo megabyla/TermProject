@@ -35,6 +35,7 @@ namespace FurnitureStoreWebAPI
                     .AllowCredentials();
                 });
             });
+
             services.AddMvc()
                 .AddXmlSerializerFormatters()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -51,6 +52,8 @@ namespace FurnitureStoreWebAPI
             {
                 app.UseHsts();
             }
+
+            app.UseCors("Access-Control-Allow-Origin");
 
             app.UseHttpsRedirection();
             app.UseMvc();
