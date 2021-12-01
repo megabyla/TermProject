@@ -76,6 +76,7 @@
     <Content Include="FurnitureStoreWeb\Images\logo\Read me before using your logo.txt" />
     <Content Include="FurnitureStoreWeb\Login.aspx" />
     <Content Include="FurnitureStoreWeb\Register.aspx" />
+    <Content Include="FurnitureStoreWeb\Reservations.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -113,6 +114,13 @@
     </Compile>
     <Compile Include="FurnitureStoreWeb\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FurnitureStoreWeb\Reservations.aspx.cs">
+      <DependentUpon>Reservations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FurnitureStoreWeb\Reservations.aspx.designer.cs">
+      <DependentUpon>Reservations.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
