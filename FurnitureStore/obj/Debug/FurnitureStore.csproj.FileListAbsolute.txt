@@ -170,7 +170,6 @@ C:\Users\salee\Source\Repos\TermProject\FurnitureStore\bin\roslyn\VBCSCompiler.e
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\salee\Source\Repos\TermProject\FurnitureStore\obj\Debug\FurnitureStore.csprojAssemblyReference.cache
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\obj\Debug\FurnitureStore.csproj.CoreCompileInputs.cache
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\obj\Debug\FurnitureStore.csproj.CopyComplete
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\obj\Debug\FurnitureStore.dll
@@ -187,3 +186,4 @@ C:\Users\salee\Source\Repos\TermProject\FurnitureStore\bin\FurnitureStoreLibrary
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\bin\Utilities.dll
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\bin\FurnitureStoreLibrary.pdb
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\bin\Utilities.pdb
+C:\Users\salee\Source\Repos\TermProject\FurnitureStore\obj\Debug\FurnitureStore.csproj.AssemblyReference.cache

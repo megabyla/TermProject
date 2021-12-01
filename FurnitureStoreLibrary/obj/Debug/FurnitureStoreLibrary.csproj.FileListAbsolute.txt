@@ -17,8 +17,8 @@ C:\Users\salee\Source\Repos\TermProject\FurnitureStoreLibrary\bin\Debug\Furnitur
 C:\Users\salee\Source\Repos\TermProject\FurnitureStoreLibrary\bin\Debug\FurnitureStoreLibrary.pdb
 C:\Users\salee\Source\Repos\TermProject\FurnitureStoreLibrary\bin\Debug\Utilities.dll
 C:\Users\salee\Source\Repos\TermProject\FurnitureStoreLibrary\bin\Debug\Utilities.pdb
-C:\Users\salee\Source\Repos\TermProject\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.csprojAssemblyReference.cache
 C:\Users\salee\Source\Repos\TermProject\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.csproj.CoreCompileInputs.cache
 C:\Users\salee\Source\Repos\TermProject\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.csproj.CopyComplete
 C:\Users\salee\Source\Repos\TermProject\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.dll
 C:\Users\salee\Source\Repos\TermProject\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.pdb
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.csproj.AssemblyReference.cache
