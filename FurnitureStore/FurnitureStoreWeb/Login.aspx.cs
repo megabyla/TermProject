@@ -21,6 +21,8 @@ namespace FurnitureStore.FurnitureStoreWeb
         private Byte[] key = { 250, 101, 18, 76, 45, 135, 207, 118, 4, 171, 3, 168, 202, 241, 37, 199 };
         private Byte[] vector = { 146, 64, 191, 111, 23, 3, 113, 119, 231, 121, 252, 112, 79, 32, 114, 156 };
 
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //if (!IsPostBack && Request.Cookies["login_cookie"] != null)
@@ -29,6 +31,7 @@ namespace FurnitureStore.FurnitureStoreWeb
             //    txtUseremail.Text = cookie["username"].ToString();
             //    txtPassword.Text = cookie["password"].ToString();
             //}
+
         }
 
         protected void btnLogin_Click2(object sender, EventArgs e)
@@ -154,5 +157,8 @@ namespace FurnitureStore.FurnitureStoreWeb
         {
             Response.Redirect("ForgotPass.aspx");
         }
+
+
+
     }
 }
