@@ -22,7 +22,10 @@ namespace FurnitureStore.FurnitureStoreWeb
         private Byte[] vector = { 146, 64, 191, 111, 23, 3, 113, 119, 231, 121, 252, 112, 79, 32, 114, 156 };
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                bt
+            }
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
