@@ -26,7 +26,7 @@
                     <a href="#" class="nav-item nav-link disabled" tabindex="-1">Reports</a>
                 </div>
                 <div class="navbar-nav ms-auto">
-                    <a href="#" class="nav-item nav-link">Login</a>
+                    <a href="Login.aspx" class="nav-item nav-link">Login</a>
                 </div>
             </div>
         </div>
