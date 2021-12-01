@@ -1,0 +1,2 @@
+C:\Users\salee\Source\Repos\TermProject\SOAPWebServices\obj\Debug\SOAPWebServices.csproj.AssemblyReference.cache
+C:\Users\salee\Source\Repos\TermProject\SOAPWebServices\obj\Debug\SOAPWebServices.csproj.CoreCompileInputs.cache

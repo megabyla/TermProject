@@ -21,4 +21,3 @@ C:\Users\salee\Source\Repos\TermProject\FurnitureStoreLibrary\obj\Debug\Furnitur
 C:\Users\salee\Source\Repos\TermProject\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.csproj.CopyComplete
 C:\Users\salee\Source\Repos\TermProject\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.dll
 C:\Users\salee\Source\Repos\TermProject\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.pdb
-C:\Users\salee\Source\Repos\TermProject\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.csproj.AssemblyReference.cache
