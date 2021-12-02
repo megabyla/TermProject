@@ -9,7 +9,7 @@ using Utilities;
 
 namespace FurnitureStoreLibrary
 {
-    class DBFunctions
+    public class DBFunctions
     {
         public DataSet GetFurniture(DBConnect newDB)
         {
@@ -20,5 +20,25 @@ namespace FurnitureStoreLibrary
             dsFurniture = newDB.GetDataSetUsingCmdObj(objCommand);
             return dsFurniture;
         }
+
+        public DataSet GetFurnitureById(int fId, DBConnect newDB)
+        {
+            SqlCommand objCommand = new SqlCommand();
+            DataSet dsFurniture;
+
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GetFurnitureById";
+
+            SqlParameter inputParameter = new SqlParameter("@theId", fId);
+            inputParameter.Direction = ParameterDirection.Input;
+            inputParameter.SqlDbType = SqlDbType.Int;
+            inputParameter.Size = 4;
+            objCommand.Parameters.Add(inputParameter);
+
+            dsFurniture = newDB.GetDataSetUsingCmdObj(objCommand);
+            return dsFurniture;
+        }
+
     }
 }

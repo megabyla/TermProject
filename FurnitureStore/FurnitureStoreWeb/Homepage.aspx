@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Homepage.aspx.cs" Inherits="FurnitureStore.FurnitureStoreWeb.Homepage" %>
 
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -34,8 +35,9 @@
 </div>
 
     <form id="form1" runat="server">
+        <center><h1 class="display-4" style="font-size:calc(1.475rem + 1.2vw);">Furniture</h1></center>
         <div>
-            hey?
+            
         </div>
     </form>
 </body>
