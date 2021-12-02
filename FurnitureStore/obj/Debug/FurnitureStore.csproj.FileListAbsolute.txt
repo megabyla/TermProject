@@ -186,4 +186,4 @@ C:\Users\salee\Source\Repos\TermProject\FurnitureStore\bin\FurnitureStoreLibrary
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\bin\Utilities.dll
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\bin\FurnitureStoreLibrary.pdb
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\bin\Utilities.pdb
-C:\Users\salee\Source\Repos\TermProject\FurnitureStore\obj\Debug\FurnitureStore.csproj.AssemblyReference.cache
+C:\Users\salee\Source\Repos\TermProject\FurnitureStore\obj\Debug\FurnitureStore.csprojAssemblyReference.cache

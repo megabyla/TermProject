@@ -17,5 +17,4 @@ C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\obj\Debug\netcoreap
 C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\bin\Debug\netcoreapp2.1\Utilities.dll
 C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\bin\Debug\netcoreapp2.1\Utilities.pdb
 C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\obj\Debug\netcoreapp2.1\FurnitureStoreWebAPI.csproj.CopyComplete
-C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\obj\Debug\netcoreapp2.1\FurnitureStoreWebAPI.csproj.AssemblyReference.cache
-C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\obj\Debug\netcoreapp2.1\FurnitureStoreWebAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\obj\Debug\netcoreapp2.1\FurnitureStoreWebAPI.csprojAssemblyReference.cache

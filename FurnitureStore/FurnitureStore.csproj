@@ -67,7 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FurnitureDisplay.ascx" />
+    <Content Include="FurnitureStoreWeb\FurnitureDisplay.ascx" />
     <Content Include="FurnitureStoreWeb\AdminHomepage.aspx" />
     <Content Include="FurnitureStoreWeb\CSS\login_styling.css" />
     <Content Include="FurnitureStoreWeb\ForgotPass.aspx" />
@@ -83,11 +83,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FurnitureDisplay.ascx.cs">
+    <Compile Include="FurnitureStoreWeb\FurnitureDisplay.ascx.cs">
       <DependentUpon>FurnitureDisplay.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FurnitureDisplay.ascx.designer.cs">
+    <Compile Include="FurnitureStoreWeb\FurnitureDisplay.ascx.designer.cs">
       <DependentUpon>FurnitureDisplay.ascx</DependentUpon>
     </Compile>
     <Compile Include="FurnitureStoreWeb\AdminHomepage.aspx.cs">
