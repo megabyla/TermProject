@@ -28,7 +28,7 @@
                     <a href="Reservations.aspx" class="nav-item nav-link active">Reservations</a>
                 </div>
                 <div class="navbar-nav ms-auto">
-                    <a href="Login.aspx" class="nav-item nav-link">Login</a>
+                    <a href="Login.aspx" class="nav-item nav-link">Logout</a>
                 </div>
             </div>
         </div>

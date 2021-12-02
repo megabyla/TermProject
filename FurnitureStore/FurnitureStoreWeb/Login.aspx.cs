@@ -158,7 +158,9 @@ namespace FurnitureStore.FurnitureStoreWeb
             Response.Redirect("ForgotPass.aspx");
         }
 
+        protected void txtPassword_TextChanged(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }
