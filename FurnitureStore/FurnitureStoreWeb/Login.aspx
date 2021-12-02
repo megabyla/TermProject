@@ -54,7 +54,7 @@
                             <asp:Button ID="btnLogin" runat="server" Text="Login" class="btn btn-primary btn-md" OnClick="btnLogin_Click2" />
                             &nbsp;&nbsp;&nbsp;&nbsp;
 
- <asp:Button ID="btnForgot" runat="server" Text="Forgot Password" CssClass="btn btn-primary btn-md" OnClick="btnForgot_Click1" />
+                        <asp:Button ID="btnForgot" runat="server" Text="Forgot Password" CssClass="btn btn-primary btn-md" OnClick="btnForgot_Click1" />
 
                             <p class="small fw-bold mt-2 pt-1 mb-0">
                                 Don't have an account? <a href="Register.aspx"
