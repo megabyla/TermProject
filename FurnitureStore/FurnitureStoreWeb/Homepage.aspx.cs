@@ -21,10 +21,12 @@ namespace FurnitureStore.FurnitureStoreWeb
             DataSet furnitureDS = dBFunctions.GetFurniture(newDB);
             count = furnitureDS.Tables[0].Rows.Count;
 
-            for (int i = 0; i < count; i++)
+            foreach(DataRow record in furnitureDS.Tables[0].Rows)
             {
                 FurnitureDisplay displayCtrl = (FurnitureDisplay)LoadControl("FurnitureDisplay.ascx");
-
+                displayCtrl.FurnitureId = int.Parse(record["furnitureID"].ToString());
+                displayCtrl.DataBind();
+                Form.Controls.Add(displayCtrl);
             }
         }
     }

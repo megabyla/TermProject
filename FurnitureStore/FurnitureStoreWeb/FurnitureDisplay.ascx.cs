@@ -29,11 +29,12 @@ namespace FurnitureStore
         public override void DataBind()
         {
             DBConnect objDB = new DBConnect();
-            //DBFunctions dbFunctions = new DBFunctions();
-            lblFurnitureName.Text = (String)objDB.GetField("furnitureName", 0);
-            lblFurnitureDesc.Text = (String)objDB.GetField("furnitureDescription", 0);
-            lblFurnitureType.Text = (String)objDB.GetField("furnitureType", 0);
-            Decimal price = (Decimal)objDB.GetField("furniturePrice", 0);
+            DBFunctions dbFunctions = new DBFunctions();
+            DataSet dsFurniture = dbFunctions.GetFurnitureById(furnitureId, objDB);
+            lblFurnitureName.Text = dsFurniture.Tables[0].Rows[0]["furnitureName"].ToString();
+            lblFurnitureDesc.Text = dsFurniture.Tables[0].Rows[0]["furnitureDescription"].ToString();
+            lblFurnitureType.Text = dsFurniture.Tables[0].Rows[0]["furnitureType"].ToString();
+            Decimal price = Convert.ToDecimal(dsFurniture.Tables[0].Rows[0]["furniturePrice"].ToString());
             lblFurniturePrice.Text = price.ToString("C2");
 
 
