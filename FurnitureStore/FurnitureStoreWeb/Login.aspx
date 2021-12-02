@@ -39,7 +39,7 @@
                         <!-- Password input -->
                         <div class="form-outline mb-4">
                             <asp:Label ID="lblPassword" runat="server" Text="Password: " class="col-form-label-lg"></asp:Label>
-                            <asp:TextBox ID="txtPassword" runat="server" class="form-control form-control-lg"></asp:TextBox>
+                            <asp:TextBox ID="txtPassword" runat="server" class="form-control form-control-lg" OnTextChanged="txtPassword_TextChanged"></asp:TextBox>
                         </div>
 
                         <div class="d-flex justify-content-between align-items-center">

@@ -67,8 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FurnitureAPI\placeholder.txt" />
-    <Content Include="FurnitureSOAP\placeholder.txt" />
+    <Content Include="FurnitureDisplay.ascx" />
     <Content Include="FurnitureStoreWeb\AdminHomepage.aspx" />
     <Content Include="FurnitureStoreWeb\CSS\login_styling.css" />
     <Content Include="FurnitureStoreWeb\ForgotPass.aspx" />
@@ -78,9 +77,18 @@
     <Content Include="FurnitureStoreWeb\Images\logo\Read me before using your logo.txt" />
     <Content Include="FurnitureStoreWeb\Login.aspx" />
     <Content Include="FurnitureStoreWeb\Register.aspx" />
+    <Content Include="FurnitureStoreWeb\Reservations.aspx" />
+    <Content Include="SearchFilter.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FurnitureDisplay.ascx.cs">
+      <DependentUpon>FurnitureDisplay.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FurnitureDisplay.ascx.designer.cs">
+      <DependentUpon>FurnitureDisplay.ascx</DependentUpon>
+    </Compile>
     <Compile Include="FurnitureStoreWeb\AdminHomepage.aspx.cs">
       <DependentUpon>AdminHomepage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -116,7 +124,21 @@
     <Compile Include="FurnitureStoreWeb\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FurnitureStoreWeb\Reservations.aspx.cs">
+      <DependentUpon>Reservations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FurnitureStoreWeb\Reservations.aspx.designer.cs">
+      <DependentUpon>Reservations.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchFilter.ascx.cs">
+      <DependentUpon>SearchFilter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchFilter.ascx.designer.cs">
+      <DependentUpon>SearchFilter.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31829.152
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureStore", "FurnitureStore.csproj", "{4AA7C4F6-1E58-43D5-B367-4C8B2F3F43F6}"
 EndProject
@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "..\Utilities\U
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureStoreLibrary", "..\FurnitureStoreLibrary\FurnitureStoreLibrary.csproj", "{E436B7D2-2B25-41CD-8B43-8744AA90D212}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureStoreWebAPI", "..\FurnitureStoreWebAPI\FurnitureStoreWebAPI.csproj", "{B3609950-D92A-4713-BA69-95F555F71627}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FurnitureStoreWebAPI", "..\FurnitureStoreWebAPI\FurnitureStoreWebAPI.csproj", "{B3609950-D92A-4713-BA69-95F555F71627}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOAPWebServices", "..\SOAPWebServices\SOAPWebServices.csproj", "{3C128AC9-E4D5-4C6B-ABC9-30C68DFD5E9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{B3609950-D92A-4713-BA69-95F555F71627}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3609950-D92A-4713-BA69-95F555F71627}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3609950-D92A-4713-BA69-95F555F71627}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C128AC9-E4D5-4C6B-ABC9-30C68DFD5E9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C128AC9-E4D5-4C6B-ABC9-30C68DFD5E9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C128AC9-E4D5-4C6B-ABC9-30C68DFD5E9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C128AC9-E4D5-4C6B-ABC9-30C68DFD5E9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

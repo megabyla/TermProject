@@ -22,7 +22,7 @@ namespace FurnitureStore.FurnitureStoreWeb
         private Byte[] vector = { 146, 64, 191, 111, 23, 3, 113, 119, 231, 121, 252, 112, 79, 32, 114, 156 };
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace FurnitureStore.FurnitureStoreWeb
             if (email == "")
             {
                 txtEmail.Focus();
-                lblDisplay.Text = "Please enter your email address";
+                lblDisplay.Text = "Please enter your email address.";
             }
             else
             {
@@ -59,7 +59,7 @@ namespace FurnitureStore.FurnitureStoreWeb
                 else
                 {
                     txtEmail.Focus();
-                    lblDisplay.Text = "Email address NOT FOUND";
+                    lblDisplay.Text = "Email address not found!";
                 }
             }
         }
@@ -81,7 +81,7 @@ namespace FurnitureStore.FurnitureStoreWeb
             }
             else
             {
-                lblAnswer.Text = "Please provide correct answers to all questions";
+                lblAnswer.Text = "Please provide correct answers to all questions.";
             }
         }
 
@@ -119,7 +119,7 @@ namespace FurnitureStore.FurnitureStoreWeb
 
             if (txtNewPassword.Text == "")
             {
-                lblPassword.Text = "Please enter your new password";
+                lblPassword.Text = "Please enter your new password.";
                 txtNewPassword.Focus();
             }
             else if (txtNewPassword.Text == txtConfirmPassword.Text)
@@ -140,7 +140,7 @@ namespace FurnitureStore.FurnitureStoreWeb
             {
                 txtConfirmPassword.Focus();
                 txtConfirmPassword.Text = "";
-                lblPassword.Text = "Passwords do not match. Please enter again";
+                lblPassword.Text = "Passwords do not match. Please enter again!";
             }
         }
     }
