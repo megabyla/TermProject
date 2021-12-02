@@ -15,7 +15,12 @@
       "ProjectGuid": "e436b7d2-2b25-41cd-8b43-8744aa90d212",
       "DisplayName": "FurnitureStoreLibrary",
       "ColorIndex": 1
+    },
+    "b3609950-d92a-4713-ba69-95f555f71627": {
+      "ProjectGuid": "b3609950-d92a-4713-ba69-95f555f71627",
+      "DisplayName": "FurnitureStoreWebAPI",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }
