@@ -40,6 +40,22 @@ namespace SOAPWebServices
                 furnitureType.Direction = ParameterDirection.Input;
                 cmdAddFurniture.Parameters.Add(furnitureType);
 
+                SqlParameter furniturePrice = new SqlParameter("@furniturePrice", newFurniture.furniturePrice);
+                furniturePrice.Direction = ParameterDirection.Input;
+                cmdAddFurniture.Parameters.Add(furniturePrice);
+
+                SqlParameter furniturePieces = new SqlParameter("@furniturePieces", newFurniture.furniturePieces);
+                furniturePieces.Direction = ParameterDirection.Input;
+                cmdAddFurniture.Parameters.Add(furniturePieces);
+
+                SqlParameter furniturePicture = new SqlParameter("@furniturePicture", newFurniture.furniturePicture);
+                furniturePicture.Direction = ParameterDirection.Input;
+                cmdAddFurniture.Parameters.Add(furniturePicture);
+
+                SqlParameter furnitureDescription = new SqlParameter("@furnitureDescription", newFurniture.furnitureDescription);
+                furnitureDescription.Direction = ParameterDirection.Input;
+                cmdAddFurniture.Parameters.Add(furnitureDescription);
+
                 DataSet ds = objDB.GetDataSetUsingCmdObj(cmdAddFurniture);
 
                 int furnitureID = Int32.Parse(ds.Tables[0].Rows[0][0].ToString());
@@ -83,50 +99,6 @@ namespace SOAPWebServices
             int result = objDB.DoUpdateUsingCmdObj(cmdDeleteFurnitureImage);
         }
 
-        [WebMethod]
-        public void updatePetAge(int furnitureID, string petAge)
-        {
-            DBConnect objDB = new DBConnect();
-            SqlCommand cmdUpdatePet = new SqlCommand();
-            cmdUpdatePet.Parameters.Clear();
-
-            cmdUpdatePet.CommandType = CommandType.StoredProcedure;
-            cmdUpdatePet.CommandText = "TP_ChangePetAge";
-
-            SqlParameter furnitureID = new SqlParameter("@furnitureID", furnitureID);
-            furnitureID.Direction = ParameterDirection.Input;
-            cmdUpdatePet.Parameters.Add(furnitureID);
-
-            SqlParameter petAgeRange = new SqlParameter("@petAge", petAge);
-            petAgeRange.Direction = ParameterDirection.Input;
-            cmdUpdatePet.Parameters.Add(petAgeRange);
-
-            objDB.DoUpdateUsingCmdObj(cmdUpdatePet);
-        }
-
-        [WebMethod]
-        public void sendRequest(int furnitureID, string petName, int userId)
-        {
-            DBConnect objDB = new DBConnect();
-            SqlCommand cmdRequestPet = new SqlCommand();
-            cmdRequestPet.Parameters.Clear();
-
-            cmdRequestPet.CommandType = CommandType.StoredProcedure;
-            cmdRequestPet.CommandText = "TP_RequestAdoption";
-
-            SqlParameter furnitureID = new SqlParameter("@furnitureID", furnitureID);
-            furnitureID.Direction = ParameterDirection.Input;
-            cmdRequestPet.Parameters.Add(furnitureID);
-
-            SqlParameter rPetName = new SqlParameter("@petName", petName);
-            rPetName.Direction = ParameterDirection.Input;
-            cmdRequestPet.Parameters.Add(rPetName);
-
-            SqlParameter userID = new SqlParameter("@userId", userId);
-            userID.Direction = ParameterDirection.Input;
-            cmdRequestPet.Parameters.Add(userID);
-
-            objDB.DoUpdateUsingCmdObj(cmdRequestPet);
-        }
+       
     }
 }

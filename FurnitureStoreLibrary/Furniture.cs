@@ -8,21 +8,24 @@ namespace FurnitureStore.Library
     public class Furniture
     {
         public int furnitureID { get; set; }
-        public string name { get; set; }
+        public string furnitureName { get; set; }
         public string furnitureType { get; set; }
+        public int furniturePrice { get; set; }
+        public string furniturePieces { get; set; }
+        public string furniturePicture { get; set; }
+        public string furnitureDescription { get; set; }
 
-        public Furniture()
+
+        public Furniture(int furnitureID, string furnitureName, string furnitureType, int furniturePrice, string furniturePieces, string furniturePicture, string furnitureDescription)
         {
-
-        }
-
-        public Furniture(int furnitureID, string Name, string furnitureType)
-        {
-
             this.furnitureID = furnitureID;
-            this.name = name;
+            this.furnitureName = furnitureName;
             this.furnitureType = furnitureType;
-
+            this.furniturePrice = furniturePrice;
+            this.furniturePieces = furniturePieces;
+            this.furniturePicture = furniturePicture;
+            this.furnitureDescription = furnitureDescription;
         }
+
     }
 }
