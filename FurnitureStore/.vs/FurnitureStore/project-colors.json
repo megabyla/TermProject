@@ -20,7 +20,12 @@
       "ProjectGuid": "b3609950-d92a-4713-ba69-95f555f71627",
       "DisplayName": "FurnitureStoreWebAPI",
       "ColorIndex": 2
+    },
+    "3c128ac9-e4d5-4c6b-abc9-30c68dfd5e9c": {
+      "ProjectGuid": "3c128ac9-e4d5-4c6b-abc9-30c68dfd5e9c",
+      "DisplayName": "SOAPWebServices",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 4
 }
