@@ -78,6 +78,7 @@
     <Content Include="FurnitureStoreWeb\Login.aspx" />
     <Content Include="FurnitureStoreWeb\Register.aspx" />
     <Content Include="FurnitureStoreWeb\Reservations.aspx" />
+    <Content Include="FurnitureStoreWeb\furniture.xml" />
     <Content Include="SearchFilter.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
