@@ -10,6 +10,6 @@
 <p>
     <asp:Label ID="lblFurniturePrice" runat="server"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Button ID="btnReserve" runat="server" Text="Reserve" Width="56px" />
+    <asp:Button ID="btnReserve" runat="server" Text="Reserve" Width="70px" />
 </p>
 
