@@ -256,3 +256,6 @@ C:\Users\nylar\Source\Repos\TermProjectF\FurnitureStore\bin\SOAPWebServices.dll.
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\bin\SOAPWebServices.dll
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\bin\SOAPWebServices.pdb
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\bin\SOAPWebServices.dll.config
+C:\Users\16106\Documents\CIS3342\TermProject\FurnitureStore\bin\SOAPWebServices.dll
+C:\Users\16106\Documents\CIS3342\TermProject\FurnitureStore\bin\SOAPWebServices.pdb
+C:\Users\16106\Documents\CIS3342\TermProject\FurnitureStore\bin\SOAPWebServices.dll.config

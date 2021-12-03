@@ -1,29 +1,39 @@
-﻿using System;
+﻿using FurnitureStore.Library;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Utilities;
 
 namespace FurnitureStore.FurnitureStoreWeb
 {
+    
+
+
     public partial class AdminHomepage : System.Web.UI.Page
-    { 
-            string userName;
-            ArrayList furnitureList = new ArrayList();
-            ArrayList furnitureidList = new ArrayList();
+    {
+SOAPWebServices.FurnitureSOAP proxy = new  SOAPWebServices.FurnitureSOAP();
+        string userName;
+        ArrayList furnitureList = new ArrayList();
+        ArrayList furnitureidList = new ArrayList();
         protected void Page_Load(object sender, EventArgs e)
         {
             //getting user info from session cookie to populate 
-          //  userName = Session["username"].ToString();
-            //lblName.Text = userName;
-           // showPets();
+              userName = Session["username"].ToString();
+             showFurniture();
         }
 
-        protected void btnAdd_Click1(object sender, EventArgs e)
+
+
+        protected void btnAdd_Click2(object sender, EventArgs e)
         {
-           
+            Response.Redirect("AddFurniture.aspx");
         }
 
         protected void btnRemove_Click(object sender, EventArgs e)
@@ -37,22 +47,224 @@ namespace FurnitureStore.FurnitureStoreWeb
 
         protected void btnResvRequest_Click(object sender, EventArgs e)
         {
+            displayDiv.Visible = false;
+            deleteDiv.Visible = false;
+            requestDiv.Visible = true;
+
+            int userId = Convert.ToInt32(Session["userID"].ToString());
+            DBConnect objDB = new DBConnect();
+            SqlCommand cmdShowRequests = new SqlCommand();
+            cmdShowRequests.CommandType = CommandType.StoredProcedure;
+            cmdShowRequests.CommandText = "TP_GetAllRequests";
+
+            SqlParameter adminID = new SqlParameter("@userID", userId);
+            adminID.Direction = ParameterDirection.Input;
+            cmdShowRequests.Parameters.Add(adminID);
+
+            DataSet ds = objDB.GetDataSetUsingCmdObj(cmdShowRequests);
+            int size = ds.Tables[0].Rows.Count;
+            if (size > 0)
+            {
+
+                gvResvRequests.DataSource = ds;
+                gvResvRequests.DataBind();
+                gvResvRequests.Visible = true;
+                lblMessageDisplay.Visible = false;
+                //viewDiv.Visible = false;
+                displayDiv.Visible = false;
+            }
+            else
+            {
+                lblrequestMessage.Visible = true;
+                lblrequestMessage.Text = "You do not have any furniture.";
+            }
 
         }
 
+        public void showFurniture()
+        {
+            int userId = Convert.ToInt32(Session["userID"].ToString());
+            DBConnect objDB = new DBConnect();
+            SqlCommand cmdShowFurniture = new SqlCommand();
+            cmdShowFurniture.CommandType = CommandType.StoredProcedure;
+            cmdShowFurniture.CommandText = "TP_GetMyFurniture";
+
+            SqlParameter inputId = new SqlParameter("@userID", userId);
+            inputId.Direction = ParameterDirection.Input;
+            cmdShowFurniture.Parameters.Add(inputId);
+
+            DataSet ds = objDB.GetDataSetUsingCmdObj(cmdShowFurniture);
+            int size = ds.Tables[0].Rows.Count;
+            if (size > 0)
+            {
+                for (int i = 0; i < size; i++)
+                {
+
+                    Furniture newFurniture = new Furniture();
+                    newFurniture.furnitureID = Int32.Parse(ds.Tables[0].Rows[i]["furnitureID"].ToString());
+                    newFurniture.furnitureName = ds.Tables[0].Rows[i]["furnitureName"].ToString();
+                    newFurniture.furnitureType = ds.Tables[0].Rows[i]["furnitureType"].ToString();
+                    newFurniture.furniturePrice = Int32.Parse(ds.Tables[0].Rows[i]["furniturePrice"].ToString());
+                    newFurniture.furniturePieces = ds.Tables[0].Rows[i]["furniturePieces"].ToString();
+                    newFurniture.furnitureDescription = (ds.Tables[0].Rows[i]["furnitureDescription"].ToString());
+
+                    string furnitureName = newFurniture.furnitureName;
+                    string furnitureType = newFurniture.furnitureType;
+                    int furniturePrice = newFurniture.furniturePrice;
+                    string furniturePieces = newFurniture.furniturePieces;
+                    string furnitureDescription = newFurniture.furnitureDescription;
+                    int furnitureID = newFurniture.furnitureID;
+                    furnitureList.Add(newFurniture);
+                    furnitureidList.Add(furnitureID);
+
+                }
+
+                gvAllFurniture.DataSource = furnitureList;
+                gvAllFurniture.DataBind();
+                gvAllFurniture.Visible = true;
+                lblMessageDisplay.Visible = false;
+            }
+            else
+            {
+                lblMessageDisplay.Visible = true;
+                lblMessageDisplay.Text = "You do not have any furniture.";
+            }
+        }
         protected void gvAllFurniture_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int furnitureID = Int32.Parse(gvAllFurniture.SelectedRow.Cells[0].Text);
+            string furnitureName = gvAllFurniture.SelectedRow.Cells[1].Text;
+            string furnitureType = gvAllFurniture.SelectedRow.Cells[2].Text;
+            int furniturePrice = Int32.Parse(gvAllFurniture.SelectedRow.Cells[3].Text);
+            string furniturePieces = gvAllFurniture.SelectedRow.Cells[4].Text;
+            string furnitureDescription = gvAllFurniture.SelectedRow.Cells[5].Text;
+
+
+            displayDiv.Visible = false;
+            modifiyDiv.Visible = true;
+            txtName.Text = furnitureName;
+            txtType.Text = furnitureType;
+            txtPrice.Text = furniturePrice.ToString();
+            txtPieces.Text = furniturePieces;
+            txtDesc.Text = furnitureDescription;
+            txtfurnitureidDisplay.Text = "" + furnitureID;
+
+            DBConnect objDB = new DBConnect();
+            SqlCommand cmdGetImage = new SqlCommand();
+            cmdGetImage.CommandType = CommandType.StoredProcedure;
+            cmdGetImage.CommandText = "TP_GetImageById";
+
+            SqlParameter inputId = new SqlParameter("@furnitureID", furnitureID);
+            inputId.Direction = ParameterDirection.Input;
+            cmdGetImage.Parameters.Add(inputId);
+
+            DataSet ds = objDB.GetDataSetUsingCmdObj(cmdGetImage);
+            int size = ds.Tables[0].Rows.Count;
+
+            byte[] bytes = (byte[])ds.Tables[0].Rows[0]["ImageData"];
+
+            string strBase64 = Convert.ToBase64String(bytes);
+
+            furnitureImage.ImageUrl = "data:Image/png;base64," + strBase64;
 
         }
 
         protected void btnDeleteFurniture_Click(object sender, EventArgs e)
         {
+            int delFurnitureId = Int32.Parse(txtFurnitureID.Text);
+            string foundId = "";
+            for (int i = 0; i < furnitureidList.Count; i++)
+            {
+                if (delFurnitureId == Int32.Parse(furnitureidList[i].ToString()))
+                {
+                    foundId += "Found furniture with furnitureId " + delFurnitureId;
 
+                    SOAPWebServices.Furniture proxy = new SOAPWebServices.Furniture();
+                    deleteFurniture(delFurnitureId);
+                    deleteFurnitureImage(delFurnitureId);
+                    lblDeleteMessage.Visible = true;
+                    lblDeleteMessage.Text = "Furniture Deleted.";
+                }
+            }
+            if (foundId == "")
+            {
+                lblDeleteMessage.Visible = true;
+                lblDeleteMessage.Text = "The furniture ID you entered in not part of your furniture. Enter a valid ID";
+            }
         }
 
+        public void uploadFurnitureImg(int furnitureID)
+        {
+            //https://docs.microsoft.com/en-us/dotnet/api/system.web.httppostedfile.inputstream?view=netframework-4.8
+            DBConnect objDB = new DBConnect();
+
+            SqlCommand objCommand = new SqlCommand();
+
+            int result = 0, fileSize;
+            string fileExtention, fileName;
+
+            try
+            {
+                if (imgUpload.HasFile)
+                {
+                    //get posted file, file name, exention, and size
+                    HttpPostedFile postedFile = imgUpload.PostedFile;
+                    fileName = Path.GetFileName(postedFile.FileName);
+                    fileExtention = Path.GetExtension(fileName);
+                    fileSize = postedFile.ContentLength;
+                    //create a byte array
+                    byte[] bytes = new byte[fileSize];
+                    //read contents of the uploaded file into a byte array
+                    postedFile.InputStream.Read(bytes, 0, fileSize);
+
+                    //check file extention 
+                    if (fileExtention.ToLower() == ".jpg" || fileExtention.ToLower() == ".bmp" ||
+                        fileExtention.ToLower() == ".jpeg" || fileExtention.ToLower() == ".gif")
+                    {
+                        objCommand.CommandType = CommandType.StoredProcedure;
+                        objCommand.CommandText = "TP_ReplaceImage";
+
+                        SqlParameter imgData = new SqlParameter("@imageData", bytes);
+                        imgData.Direction = ParameterDirection.Input;
+                        objCommand.Parameters.Add(imgData);
+
+                        SqlParameter paramPetId = new SqlParameter("@furnitureID", furnitureID);
+                        paramPetId.Direction = ParameterDirection.Input;
+                        objCommand.Parameters.Add(paramPetId);
+
+                        result = objDB.DoUpdateUsingCmdObj(objCommand);
+
+                        lblModifyMessage.Visible = true;
+                        lblModifyMessage.Text = "upload successful";
+
+                    }
+                    else
+                    {
+                        lblModifyMessage.Visible = true;
+                        lblModifyMessage.Text = "Only images (.jpg, .jpeg, .gif and .bmp) can be uploaded";
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                lblModifyMessage.Text = "Error: " + ex.Message + result;
+            }
+        }
         protected void btnModify_Click(object sender, EventArgs e)
         {
+            int furnitureID = Int32.Parse(txtfurnitureidDisplay.Text);
+            string furnitureType = txtType.Text;
 
+            //uploads new image
+            uploadFurnitureImg(furnitureID);
+
+            //updates pet age
+            SOAPWebServices.Furniture proxy = new SOAPWebServices.Furniture();
+            GetFurnitureByType(furnitureType);
+
+            modifiyDiv.Visible = false;
+            displayDiv.Visible = true;
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
@@ -62,22 +274,107 @@ namespace FurnitureStore.FurnitureStoreWeb
 
         protected void gvResvRequests_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int RequestId = Int32.Parse(gvResvRequests.SelectedRow.Cells[0].Text);
+            int furnitureID = Int32.Parse(gvResvRequests.SelectedRow.Cells[1].Text);
+            string furnitureName = gvResvRequests.SelectedRow.Cells[2].Text;
+            int requesterId = Int32.Parse(gvResvRequests.SelectedRow.Cells[3].Text);
 
+
+            displayDiv.Visible = false;
+            modifiyDiv.Visible = false;
+            requestDiv.Visible = false;
+            acceptDiv.Visible = true;
+
+            txtRequestId.Text = RequestId.ToString();
+            txtReqfurnitureId.Text = furnitureID.ToString();
+            txtReqfurnitureName.Text = furnitureName;
+            txtRequesterId.Text = requesterId.ToString();
         }
 
         protected void btnAccept_Click(object sender, EventArgs e)
         {
+            int requestId = Int32.Parse(txtRequestId.Text);
+            DBConnect objDB = new DBConnect();
+            SqlCommand cmdApprove = new SqlCommand();
+            cmdApprove.Parameters.Clear();
 
+            cmdApprove.CommandType = CommandType.StoredProcedure;
+            cmdApprove.CommandText = "TP_AcceptRequest";
+
+            SqlParameter reqID = new SqlParameter("@requestId", requestId);
+            reqID.Direction = ParameterDirection.Input;
+            cmdApprove.Parameters.Add(reqID);
+
+            objDB.DoUpdateUsingCmdObj(cmdApprove);
+
+            acceptDiv.Visible = false;
+            requestDiv.Visible = true;
         }
 
         protected void btnReject_Click(object sender, EventArgs e)
         {
+            int requestId = Int32.Parse(txtRequestId.Text);
+            DBConnect objDB = new DBConnect();
+            SqlCommand cmdDelete = new SqlCommand();
+            cmdDelete.Parameters.Clear();
 
+            cmdDelete.CommandType = CommandType.StoredProcedure;
+            cmdDelete.CommandText = "TP_DeleteRequest";
+
+            SqlParameter reqID = new SqlParameter("@requestId", requestId);
+            reqID.Direction = ParameterDirection.Input;
+            cmdDelete.Parameters.Add(reqID);
+
+            objDB.DoUpdateUsingCmdObj(cmdDelete);
+
+            acceptDiv.Visible = false;
+            requestDiv.Visible = true;
         }
 
-        protected void btnAdd_Click(object sender, EventArgs e)
+        public void deleteFurniture(int furnitureID)
         {
- Response.Redirect("AddFurniture.aspx");
+            DBConnect objDB = new DBConnect();
+            SqlCommand cmdDeleteFurniture = new SqlCommand();
+            cmdDeleteFurniture.Parameters.Clear();
+
+            cmdDeleteFurniture.CommandType = CommandType.StoredProcedure;
+            cmdDeleteFurniture.CommandText = "TP_DeleteFurniture";
+
+            cmdDeleteFurniture.Parameters.AddWithValue("@furnitureID", furnitureID);
+
+            int result = objDB.DoUpdateUsingCmdObj(cmdDeleteFurniture);
+        }
+
+        public void deleteFurnitureImage(int furnitureID)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand cmdDeleteFurnitureImage = new SqlCommand();
+            cmdDeleteFurnitureImage.Parameters.Clear();
+
+            cmdDeleteFurnitureImage.CommandType = CommandType.StoredProcedure;
+            cmdDeleteFurnitureImage.CommandText = "TP_DeleteFurnitureImage";
+
+            cmdDeleteFurnitureImage.Parameters.AddWithValue("@furnitureID", furnitureID);
+
+            int result = objDB.DoUpdateUsingCmdObj(cmdDeleteFurnitureImage);
+        }
+        public DataSet GetFurnitureByType(string type)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            DataSet dsFurniture;
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GetFurnitureByType";
+
+            SqlParameter inputParameter = new SqlParameter("@theType", type);
+            inputParameter.Direction = ParameterDirection.Input;
+            inputParameter.SqlDbType = SqlDbType.VarChar;
+            inputParameter.Size = 50;
+            objCommand.Parameters.Add(inputParameter);
+
+            dsFurniture = objDB.GetDataSetUsingCmdObj(objCommand);
+            return dsFurniture;
         }
     }
 }

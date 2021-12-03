@@ -28,6 +28,7 @@
                         </div>
                         <div class="navbar-nav ms-auto">
                             <a href="Login.aspx" class="nav-item nav-link">Logout</a>
+                            <a href="AdminHomepage.aspx" class="nav-item nav-link"></a>
                         </div>
                     </div>
                 </div>
@@ -71,7 +72,6 @@
                             <asp:Label ID="lblImage" runat="server" Text="Furniture Image: " class="col-form-label-lg"></asp:Label>
                             <asp:FileUpload ID="fileFurnitureImg" runat="server" class="form-control form-control-lg" ></asp:FileUpload>
                         </div>
-                        <br />
                         <div class="form-outline mb-4">
                             <asp:Label ID="lblMessage" runat="server"></asp:Label>
                             <br />
