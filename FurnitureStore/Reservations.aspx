@@ -37,13 +37,18 @@
     <form id="form1" runat="server">
         <center><h1 class="display-4" style="font-size:calc(1.475rem + 1.2vw);">Reservations</h1></center>
         <div>
+            <table class="table">
+                <tr>
+                    <th scope="col">Furniture ID</th>
+                    <th scope="col">Reservation Date</th>
+                    <th scope="col">Reservation Time</th>
+                    <th scope="col">Furniture Count</th>
+                    </tr>
             <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand">
                 <ItemTemplate>
 
                     <tr>
-
                         <td>
-
                             <asp:Label ID="lblFurnitureID" runat="server"
                                     Text='<%# DataBinder.Eval(Container.DataItem, "FurnitureId") %>'></asp:Label>
                         </td>
@@ -65,6 +70,7 @@
 
                 </ItemTemplate>
             </asp:Repeater>
+                </table>
         </div>
     </form>
 </body>

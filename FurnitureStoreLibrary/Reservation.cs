@@ -9,10 +9,12 @@ namespace FurnitureStoreLibrary
     public class Reservation
     {
         //public int ReservationId;
-        public String ReservationTime { get; set; }
-        public DateTime ReservationDate { get; set; }
-        public int ReservationCount { get; set; }
         public int FurnitureId { get; set; }
+        public DateTime ReservationDate { get; set; }
+        public String ReservationTime { get; set; }
+
+        public int ReservationCount { get; set; }
+
 
 
 
@@ -28,5 +30,7 @@ namespace FurnitureStoreLibrary
             this.ReservationTime = time;
             this.ReservationCount = count;
         }
+
+        
     }
 }

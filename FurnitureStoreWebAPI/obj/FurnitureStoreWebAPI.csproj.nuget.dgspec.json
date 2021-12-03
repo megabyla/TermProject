@@ -107,7 +107,12 @@
       "restore": {
         "projectUniqueName": "C:\\Users\\salee\\Source\\Repos\\TermProject\\Utilities\\Utilities.csproj",
         "projectName": "Utilities",
-        "projectPath": "C:\\Users\\salee\\Source\\Repos\\TermProject\\Utilities\\Utilities.csproj"
+        "projectPath": "C:\\Users\\salee\\Source\\Repos\\TermProject\\Utilities\\Utilities.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
       },
       "frameworks": {
         "net472": {}

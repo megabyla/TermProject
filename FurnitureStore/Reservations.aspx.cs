@@ -41,7 +41,7 @@ namespace FurnitureStore.FurnitureStoreWeb
 
 
             // Bind the list to the GridView to display all customers.
-
+            reservations[0].ToString();
             Repeater1.DataSource = reservations;
             Repeater1.DataBind();
         }

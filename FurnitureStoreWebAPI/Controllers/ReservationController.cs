@@ -22,13 +22,19 @@ namespace FurnitureStoreWebAPI.Controllers
             List<Reservation> reservationList = new List<Reservation>();
 
             int count = ds.Tables[0].Rows.Count;
-            foreach (DataRow record in ds.Tables[0].Rows)
+            for(int i = 0; i < count; i++)
             {
+                /*Reservation reservation = new Reservation();
+                reservation.FurnitureId = int.Parse(objDB.GetField("furnitureID", i).ToString());
+                reservation.ReservationDate = DateTime.Parse(objDB.GetField("reservationDate", i).ToString());
+                reservation.ReservationTime = objDB.GetField("reservationTime", i).ToString();
+                reservation.ReservationCount = int.Parse(objDB.GetField("reservationCount", i).ToString());
+                reservationList.Add(reservation);*/
                 Reservation reservation = new Reservation();
-                reservation.FurnitureId = int.Parse(ds.Tables[0].Rows[0]["furnitureId"].ToString());
-                reservation.ReservationDate = DateTime.Parse(ds.Tables[0].Rows[0]["reservationDate"].ToString());
-                reservation.ReservationTime = ds.Tables[0].Rows[0]["reservationTime"].ToString();
-                reservation.ReservationCount = int.Parse(ds.Tables[0].Rows[0]["reservationCount"].ToString());
+                reservation.FurnitureId = int.Parse(ds.Tables[0].Rows[i]["furnitureID"].ToString());
+                reservation.ReservationDate = DateTime.Parse(ds.Tables[0].Rows[i]["reservationDate"].ToString());
+                reservation.ReservationTime = ds.Tables[0].Rows[i]["reservationTime"].ToString();
+                reservation.ReservationCount = int.Parse(ds.Tables[0].Rows[i]["reservationCount"].ToString());
                 reservationList.Add(reservation);
             }
             return reservationList;
