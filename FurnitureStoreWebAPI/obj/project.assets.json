@@ -11837,30 +11837,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\16106\\.nuget\\packages\\": {},
+    "C:\\Users\\nylar\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\16106\\Documents\\CIS3342\\TermProject\\FurnitureStoreWebAPI\\FurnitureStoreWebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\nylar\\Desktop\\Fall21'\\3342\\Projects\\Term_Project\\FurnitureStoreWebAPI\\FurnitureStoreWebAPI.csproj",
       "projectName": "FurnitureStoreWebAPI",
-      "projectPath": "C:\\Users\\16106\\Documents\\CIS3342\\TermProject\\FurnitureStoreWebAPI\\FurnitureStoreWebAPI.csproj",
-      "packagesPath": "C:\\Users\\16106\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\16106\\Documents\\CIS3342\\TermProject\\FurnitureStoreWebAPI\\obj\\",
+      "projectPath": "C:\\Users\\nylar\\Desktop\\Fall21'\\3342\\Projects\\Term_Project\\FurnitureStoreWebAPI\\FurnitureStoreWebAPI.csproj",
+      "packagesPath": "C:\\Users\\nylar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nylar\\Desktop\\Fall21'\\3342\\Projects\\Term_Project\\FurnitureStoreWebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\16106\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nylar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
@@ -11873,8 +11870,8 @@
         "netcoreapp2.1": {
           "targetAlias": "netcoreapp2.1",
           "projectReferences": {
-            "C:\\Users\\16106\\Documents\\CIS3342\\TermProject\\Utilities\\Utilities.csproj": {
-              "projectPath": "C:\\Users\\16106\\Documents\\CIS3342\\TermProject\\Utilities\\Utilities.csproj"
+            "C:\\Users\\nylar\\Desktop\\Fall21'\\3342\\Projects\\Term_Project\\Utilities\\Utilities.csproj": {
+              "projectPath": "C:\\Users\\nylar\\Desktop\\Fall21'\\3342\\Projects\\Term_Project\\Utilities\\Utilities.csproj"
             }
           }
         }
