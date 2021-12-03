@@ -48,10 +48,6 @@ namespace SOAPWebServices
                 furniturePieces.Direction = ParameterDirection.Input;
                 cmdAddFurniture.Parameters.Add(furniturePieces);
 
-                SqlParameter furniturePicture = new SqlParameter("@furniturePicture", newFurniture.furniturePicture);
-                furniturePicture.Direction = ParameterDirection.Input;
-                cmdAddFurniture.Parameters.Add(furniturePicture);
-
                 SqlParameter furnitureDescription = new SqlParameter("@furnitureDescription", newFurniture.furnitureDescription);
                 furnitureDescription.Direction = ParameterDirection.Input;
                 cmdAddFurniture.Parameters.Add(furnitureDescription);

@@ -250,3 +250,6 @@ C:\Users\nylar\Source\Repos\TermProjectF\FurnitureStore\obj\Debug\FurnitureStore
 C:\Users\nylar\Source\Repos\TermProjectF\FurnitureStore\obj\Debug\FurnitureStore.csproj.CopyComplete
 C:\Users\nylar\Source\Repos\TermProjectF\FurnitureStore\obj\Debug\FurnitureStore.dll
 C:\Users\nylar\Source\Repos\TermProjectF\FurnitureStore\obj\Debug\FurnitureStore.pdb
+C:\Users\nylar\Source\Repos\TermProjectF\FurnitureStore\bin\SOAPWebServices.dll
+C:\Users\nylar\Source\Repos\TermProjectF\FurnitureStore\bin\SOAPWebServices.pdb
+C:\Users\nylar\Source\Repos\TermProjectF\FurnitureStore\bin\SOAPWebServices.dll.config
