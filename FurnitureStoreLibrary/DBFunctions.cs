@@ -39,6 +39,15 @@ namespace FurnitureStoreLibrary
             dsFurniture = newDB.GetDataSetUsingCmdObj(objCommand);
             return dsFurniture;
         }
+        public DataSet GetReservations(DBConnect newDB)
+        {
+            SqlCommand objCommand = new SqlCommand();
+            DataSet dsReservations;
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GetReservations";
+            dsReservations = newDB.GetDataSetUsingCmdObj(objCommand);
+            return dsReservations;
+        }
 
     }
 }

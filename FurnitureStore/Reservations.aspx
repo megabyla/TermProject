@@ -36,7 +36,10 @@
 </div>
     <form id="form1" runat="server">
         <center><h1 class="display-4" style="font-size:calc(1.475rem + 1.2vw);">Reservations</h1></center>
+        <br/>
+
         <div>
+            <center>This is where you can see all of the reservations you have made.</center>
             <table class="table">
                 <tr>
                     <th scope="col">Furniture ID</th>
