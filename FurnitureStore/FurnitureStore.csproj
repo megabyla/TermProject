@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FurnitureStoreWeb\AddFurniture.aspx" />
     <Content Include="FurnitureStoreWeb\FurnitureDisplay.ascx" />
     <Content Include="FurnitureStoreWeb\AdminHomepage.aspx" />
     <Content Include="FurnitureStoreWeb\CSS\login_styling.css" />
@@ -83,6 +84,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FurnitureStoreWeb\AddFurniture.aspx.cs">
+      <DependentUpon>AddFurniture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FurnitureStoreWeb\AddFurniture.aspx.designer.cs">
+      <DependentUpon>AddFurniture.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FurnitureStoreWeb\FurnitureDisplay.ascx.cs">
       <DependentUpon>FurnitureDisplay.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -154,6 +162,10 @@
     <ProjectReference Include="..\FurnitureStoreLibrary\FurnitureStoreLibrary.csproj">
       <Project>{e436b7d2-2b25-41cd-8b43-8744aa90d212}</Project>
       <Name>FurnitureStoreLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SOAPWebServices\SOAPWebServices.csproj">
+      <Project>{3C128AC9-E4D5-4C6B-ABC9-30C68DFD5E9C}</Project>
+      <Name>SOAPWebServices</Name>
     </ProjectReference>
     <ProjectReference Include="..\Utilities\Utilities.csproj">
       <Project>{531b65f3-ca11-4840-912d-77fd465ee5ef}</Project>

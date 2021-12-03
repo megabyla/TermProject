@@ -27,6 +27,9 @@ namespace SOAPWebServices
             this.furnitureDescription = furnitureDescription;
         }
 
+        public Furniture()
+        {
+        }
     }
 }
    
