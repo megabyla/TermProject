@@ -57,7 +57,7 @@ SOAPWebServices.FurnitureSOAP proxy = new  SOAPWebServices.FurnitureSOAP();
             cmdShowRequests.CommandType = CommandType.StoredProcedure;
             cmdShowRequests.CommandText = "TP_GetAllRequests";
 
-            SqlParameter adminID = new SqlParameter("@userID", userId);
+            SqlParameter adminID = new SqlParameter("@userId", userId);
             adminID.Direction = ParameterDirection.Input;
             cmdShowRequests.Parameters.Add(adminID);
 
@@ -70,7 +70,7 @@ SOAPWebServices.FurnitureSOAP proxy = new  SOAPWebServices.FurnitureSOAP();
                 gvResvRequests.DataBind();
                 gvResvRequests.Visible = true;
                 lblMessageDisplay.Visible = false;
-                //viewDiv.Visible = false;
+                //ViewDiv.Visible = false;
                 displayDiv.Visible = false;
             }
             else

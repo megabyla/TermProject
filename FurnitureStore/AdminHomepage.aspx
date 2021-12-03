@@ -88,7 +88,8 @@
 
                 <div runat="server" id="displayDiv" visible="true">
                     All Furniture:<asp:Label ID="lblMessageDisplay" runat="server" Text="Label"></asp:Label>
-                    &nbsp;<asp:GridView ID="gvAllFurniture" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="gvAllFurniture_SelectedIndexChanged">
+                    &nbsp;<asp:GridView ID="gvAllFurniture" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="gvAllFurniture_SelectedIndexChanged" CellPadding="4" ForeColor="#333333" GridLines="None">
+                        <AlternatingRowStyle BackColor="White" />
                         <Columns>
                             <asp:BoundField DataField="furnitureID" HeaderText="Furniture ID" />
                             <asp:BoundField DataField="furnitureName" HeaderText="Furniture Name" />
@@ -98,6 +99,16 @@
                             <asp:BoundField DataField="furnitureDescription" HeaderText="Description" />
                             <asp:CommandField SelectText="Modify" ShowSelectButton="True" />
                         </Columns>
+                        <EditRowStyle BackColor="#2461BF" />
+                        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#EFF3FB" />
+                        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                        <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                        <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                        <SortedDescendingHeaderStyle BackColor="#4870BE" />
                     </asp:GridView>
                     <br />
                 </div>
@@ -135,7 +146,7 @@
 
                     <asp:Label ID="lblPieces" runat="server" Text="Pieces: "></asp:Label><br />
                     <asp:TextBox runat="server" ID="txtPieces" type="text" Text="" ReadOnly="True"></asp:TextBox>
-
+                    <br />
                     <asp:Label ID="lblDesc" runat="server" Text="Description: "></asp:Label><br />
                     <asp:TextBox runat="server" ID="txtDesc" type="text" Text="" ReadOnly="True"></asp:TextBox>
                     <br />
@@ -150,7 +161,8 @@
 
 
                 <div runat="server" visible="false" id="requestDiv">
-                    <asp:GridView ID="gvResvRequests" runat="server" AutoGenerateColumns="False" Visible="False" OnSelectedIndexChanged="gvResvRequests_SelectedIndexChanged">
+                    <asp:GridView ID="gvResvRequests" runat="server" AutoGenerateColumns="False" Visible="False" OnSelectedIndexChanged="gvResvRequests_SelectedIndexChanged" CellPadding="4" ForeColor="#333333" GridLines="None">
+                        <AlternatingRowStyle BackColor="White" />
                         <Columns>
                             <asp:BoundField DataField="RequestId" HeaderText="Request ID" />
                             <asp:BoundField DataField="FurnitureId" HeaderText="Furniture ID" />
@@ -158,6 +170,16 @@
                             <asp:BoundField DataField="userID" HeaderText="Requester Id" />
                             <asp:CommandField ShowSelectButton="True" UpdateText="View" />
                         </Columns>
+                        <EditRowStyle BackColor="#2461BF" />
+                        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#EFF3FB" />
+                        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                        <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                        <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                        <SortedDescendingHeaderStyle BackColor="#4870BE" />
                     </asp:GridView>
                     <asp:Label ID="lblrequestMessage" runat="server" Text="Label"></asp:Label>
                 </div>
