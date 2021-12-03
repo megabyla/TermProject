@@ -23,7 +23,7 @@ namespace FurnitureStore.FurnitureStoreWeb
 
         protected void btnAdd_Click1(object sender, EventArgs e)
         {
-            Response.Redirect("AddFurniture.aspx");
+           
         }
 
         protected void btnRemove_Click(object sender, EventArgs e)
@@ -73,6 +73,11 @@ namespace FurnitureStore.FurnitureStoreWeb
         protected void btnReject_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+ Response.Redirect("AddFurniture.aspx");
         }
     }
 }
