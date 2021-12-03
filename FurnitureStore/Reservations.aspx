@@ -37,7 +37,8 @@
     <form id="form1" runat="server">
         <center><h1 class="display-4" style="font-size:calc(1.475rem + 1.2vw);">Reservations</h1></center>
         <div>
-            <fdisplay:FurnitureDisplay ID="FurnitureDisplay1" runat="server" />
+            <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand">
+            </asp:Repeater>
         </div>
     </form>
 </body>

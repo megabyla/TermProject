@@ -18,20 +18,17 @@ namespace FurnitureStoreWebAPI.Controllers
         public List<Reservation> Get()
         {
             DBConnect objDB = new DBConnect();
-            DataSet ds = objDB.GetDataSet("SELECT * FROM Reservations");
+            DataSet ds = objDB.GetDataSet("SELECT * FROM TP_Reservation");
             List<Reservation> reservationList = new List<Reservation>();
 
             int count = ds.Tables[0].Rows.Count;
-
-            for(int i = 0; i< count; i++)
+            foreach (DataRow record in ds.Tables[0].Rows)
             {
                 Reservation reservation = new Reservation();
-                reservation.FurnitureId = Int32.Parse(objDB.GetField("FurnitureId", i).ToString());
-                reservation.ReservationName = objDB.GetField("ReservationName", i).ToString();
-                reservation.ReservationTime = objDB.GetField("ReservationTime", i).ToString();
-                reservation.ReservationDate = DateTime.Parse(objDB.GetField("ReservationDate", i).ToString());
-                reservation.ReservationCount = Int32.Parse(objDB.GetField("ReservationCount", i).ToString());
-                reservation.FurnitureId = Int32.Parse(objDB.GetField("FurnitureId", i).ToString());
+                reservation.ReservationTime = ds.Tables[0].Rows[0]["reservationTime"].ToString();
+                reservation.ReservationDate = DateTime.Parse(ds.Tables[0].Rows[0]["reservationDate"].ToString());
+                reservation.ReservationCount = int.Parse(ds.Tables[0].Rows[0]["reservationCount"].ToString());
+                reservation.FurnitureId = int.Parse(ds.Tables[0].Rows[0]["furnitureId"].ToString());
                 reservationList.Add(reservation);
             }
             return reservationList;

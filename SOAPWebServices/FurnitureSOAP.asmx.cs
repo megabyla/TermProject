@@ -95,6 +95,26 @@ namespace SOAPWebServices
             int result = objDB.DoUpdateUsingCmdObj(cmdDeleteFurnitureImage);
         }
 
+        [WebMethod]
+        public DataSet GetFurnitureByType(string type)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            DataSet dsFurniture;
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GetFurnitureByType";
+
+            SqlParameter inputParameter = new SqlParameter("@theType", type);
+            inputParameter.Direction = ParameterDirection.Input;
+            inputParameter.SqlDbType = SqlDbType.VarChar;
+            inputParameter.Size = 50;
+            objCommand.Parameters.Add(inputParameter);
+
+            dsFurniture = objDB.GetDataSetUsingCmdObj(objCommand);
+            return dsFurniture;
+        }
+
        
     }
 }

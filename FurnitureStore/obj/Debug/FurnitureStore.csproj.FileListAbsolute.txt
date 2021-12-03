@@ -253,3 +253,6 @@ C:\Users\nylar\Source\Repos\TermProjectF\FurnitureStore\obj\Debug\FurnitureStore
 C:\Users\nylar\Source\Repos\TermProjectF\FurnitureStore\bin\SOAPWebServices.dll
 C:\Users\nylar\Source\Repos\TermProjectF\FurnitureStore\bin\SOAPWebServices.pdb
 C:\Users\nylar\Source\Repos\TermProjectF\FurnitureStore\bin\SOAPWebServices.dll.config
+C:\Users\salee\Source\Repos\TermProject\FurnitureStore\bin\SOAPWebServices.dll
+C:\Users\salee\Source\Repos\TermProject\FurnitureStore\bin\SOAPWebServices.pdb
+C:\Users\salee\Source\Repos\TermProject\FurnitureStore\bin\SOAPWebServices.dll.config
