@@ -12,20 +12,16 @@ namespace FurnitureStore.FurnitureStoreWeb
     { 
             string userName;
             ArrayList furnitureList = new ArrayList();
-            //keeps track of all of the pets the Admin has under their id so they can't delete someone else's id
             ArrayList furnitureidList = new ArrayList();
         protected void Page_Load(object sender, EventArgs e)
         {
             //getting user info from session cookie to populate 
-            userName = Session["username"].ToString();
+          //  userName = Session["username"].ToString();
             //lblName.Text = userName;
            // showPets();
         }
 
-        protected void gvAllFurniture(object sender, EventArgs e)
-        {
-
-        }
+   
 
 
         protected void btnModify_Click1(object sender, EventArgs e)

@@ -69,7 +69,7 @@
 
                         <div class="form-outline mb-4">
                             <asp:Label ID="lblImage" runat="server" Text="Furniture Image: " class="col-form-label-lg"></asp:Label>
-                            <asp:FileUpload ID="fileFurnitureImg" runat="server" class="form-control form-control-lg" required></asp:FileUpload>
+                            <asp:FileUpload ID="fileFurnitureImg" runat="server" class="form-control form-control-lg" ></asp:FileUpload>
                         </div>
                         <br />
                         <div class="form-outline mb-4">

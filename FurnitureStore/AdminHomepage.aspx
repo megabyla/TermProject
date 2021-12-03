@@ -15,9 +15,10 @@ table,th,td {
 th,td {
   padding: 5px;
 }
-</style>
-<body>
 
+</style></head>
+
+ <form id="form1" runat="server">
     <div class="m-4">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -72,18 +73,17 @@ function myFunction(xml) {
 }
 </script>
 
-</head>
 <body>
 
 
 
 
-    <form id="form1" runat="server">
+   
          <%--This main div is the div where the gridviews will be displayed. We're going to use the APIs to get all of our results. He does it in on of the web api lecture so watch that for reference.--%>
         <div class="main" style="width:800px; margin:0 auto;">
             <div runat="server" id ="displayDiv" visible="true">
                 All Furniture:<asp:Label ID="lblMessageDisplay" runat="server" Text="Label"></asp:Label>
-                &nbsp;<asp:GridView ID="gvAllFurniture" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="gvAllFurniture">
+                &nbsp;<asp:GridView ID="gvAllFurniture" runat="server" AutoGenerateColumns="False" >
                     <Columns>
                         <asp:BoundField DataField="furnitureID" HeaderText="Furniture ID" />
                         <asp:BoundField DataField="furnitureName" HeaderText="Furniture Name" />
@@ -139,7 +139,7 @@ function myFunction(xml) {
 
 
              <div runat="server" visible ="false" id ="requestDiv" >
-                <asp:GridView ID="gvResvRequests" runat="server" AutoGenerateColumns="False" Visible="False" OnSelectedIndexChanged="gvResvRequests">
+                <asp:GridView ID="gvResvRequests" runat="server" AutoGenerateColumns="False" Visible="False" >
                 <Columns>
                     <asp:BoundField DataField="RequestId" HeaderText="Request ID" />
                     <asp:BoundField DataField="FurnitureId" HeaderText="Furniture ID" />
