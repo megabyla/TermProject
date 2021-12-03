@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
-using Utilities;
+using Utilities; 
 
 namespace SOAPWebServices
 {
@@ -47,10 +47,6 @@ namespace SOAPWebServices
                 SqlParameter furniturePieces = new SqlParameter("@furniturePieces", newFurniture.furniturePieces);
                 furniturePieces.Direction = ParameterDirection.Input;
                 cmdAddFurniture.Parameters.Add(furniturePieces);
-
-                SqlParameter furniturePicture = new SqlParameter("@furniturePicture", newFurniture.furniturePicture);
-                furniturePicture.Direction = ParameterDirection.Input;
-                cmdAddFurniture.Parameters.Add(furniturePicture);
 
                 SqlParameter furnitureDescription = new SqlParameter("@furnitureDescription", newFurniture.furnitureDescription);
                 furnitureDescription.Direction = ParameterDirection.Input;
@@ -97,6 +93,26 @@ namespace SOAPWebServices
             cmdDeleteFurnitureImage.Parameters.AddWithValue("@furnitureID", furnitureID);
 
             int result = objDB.DoUpdateUsingCmdObj(cmdDeleteFurnitureImage);
+        }
+
+        [WebMethod]
+        public DataSet GetFurnitureByType(string type)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            DataSet dsFurniture;
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GetFurnitureByType";
+
+            SqlParameter inputParameter = new SqlParameter("@theType", type);
+            inputParameter.Direction = ParameterDirection.Input;
+            inputParameter.SqlDbType = SqlDbType.VarChar;
+            inputParameter.Size = 50;
+            objCommand.Parameters.Add(inputParameter);
+
+            dsFurniture = objDB.GetDataSetUsingCmdObj(objCommand);
+            return dsFurniture;
         }
 
        

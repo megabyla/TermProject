@@ -24,4 +24,13 @@ C:\Users\salee\Source\Repos\TermProject\FurnitureStoreLibrary\obj\Debug\Furnitur
 C:\Users\nylar\Desktop\Fall21'\3342\Projects\Term_Project\FurnitureStoreLibrary\bin\Debug\Utilities.dll
 C:\Users\nylar\Desktop\Fall21'\3342\Projects\Term_Project\FurnitureStoreLibrary\bin\Debug\Utilities.pdb
 C:\Users\nylar\Desktop\Fall21'\3342\Projects\Term_Project\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.csproj.CopyComplete
-C:\Users\salee\Source\Repos\TermProject\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.csprojAssemblyReference.cache
+C:\Users\nylar\Source\Repos\TermProjectF\FurnitureStoreLibrary\bin\Debug\FurnitureStoreLibrary.dll
+C:\Users\nylar\Source\Repos\TermProjectF\FurnitureStoreLibrary\bin\Debug\FurnitureStoreLibrary.pdb
+C:\Users\nylar\Source\Repos\TermProjectF\FurnitureStoreLibrary\bin\Debug\Utilities.dll
+C:\Users\nylar\Source\Repos\TermProjectF\FurnitureStoreLibrary\bin\Debug\Utilities.pdb
+C:\Users\nylar\Source\Repos\TermProjectF\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.csproj.AssemblyReference.cache
+C:\Users\nylar\Source\Repos\TermProjectF\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.csproj.CoreCompileInputs.cache
+C:\Users\nylar\Source\Repos\TermProjectF\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.csproj.CopyComplete
+C:\Users\nylar\Source\Repos\TermProjectF\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.dll
+C:\Users\nylar\Source\Repos\TermProjectF\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.pdb
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.csproj.AssemblyReference.cache

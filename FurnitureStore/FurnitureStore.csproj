@@ -67,68 +67,77 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FurnitureStoreWeb\FurnitureDisplay.ascx" />
-    <Content Include="FurnitureStoreWeb\AdminHomepage.aspx" />
-    <Content Include="FurnitureStoreWeb\CSS\login_styling.css" />
-    <Content Include="FurnitureStoreWeb\ForgotPass.aspx" />
-    <Content Include="FurnitureStoreWeb\Homepage.aspx" />
-    <Content Include="FurnitureStoreWeb\Images\logo\logo.jpg" />
-    <Content Include="FurnitureStoreWeb\Images\logo\logo.png" />
-    <Content Include="FurnitureStoreWeb\Images\logo\Read me before using your logo.txt" />
-    <Content Include="FurnitureStoreWeb\Login.aspx" />
-    <Content Include="FurnitureStoreWeb\Register.aspx" />
-    <Content Include="FurnitureStoreWeb\Reservations.aspx" />
-    <Content Include="FurnitureStoreWeb\furniture.xml" />
+    <Content Include="AddFurniture.aspx" />
+    <Content Include="FurnitureDisplay.ascx" />
+    <Content Include="AdminHomepage.aspx" />
+    <Content Include="CSS\login_styling.css" />
+    <Content Include="ForgotPass.aspx" />
+    <Content Include="Homepage.aspx" />
+    <Content Include="Images\bed.jpeg" />
+    <Content Include="Images\logo\logo.jpg" />
+    <Content Include="Images\logo\logo.png" />
+    <Content Include="Images\logo\Read me before using your logo.txt" />
+    <Content Include="Login.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="Reservations.aspx" />
+    <Content Include="furniture.xml" />
     <Content Include="SearchFilter.ascx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FurnitureStoreWeb\FurnitureDisplay.ascx.cs">
+    <Compile Include="AddFurniture.aspx.cs">
+      <DependentUpon>AddFurniture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddFurniture.aspx.designer.cs">
+      <DependentUpon>AddFurniture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FurnitureDisplay.ascx.cs">
       <DependentUpon>FurnitureDisplay.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FurnitureStoreWeb\FurnitureDisplay.ascx.designer.cs">
+    <Compile Include="FurnitureDisplay.ascx.designer.cs">
       <DependentUpon>FurnitureDisplay.ascx</DependentUpon>
     </Compile>
-    <Compile Include="FurnitureStoreWeb\AdminHomepage.aspx.cs">
+    <Compile Include="AdminHomepage.aspx.cs">
       <DependentUpon>AdminHomepage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FurnitureStoreWeb\AdminHomepage.aspx.designer.cs">
+    <Compile Include="AdminHomepage.aspx.designer.cs">
       <DependentUpon>AdminHomepage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FurnitureStoreWeb\ForgotPass.aspx.cs">
+    <Compile Include="ForgotPass.aspx.cs">
       <DependentUpon>ForgotPass.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FurnitureStoreWeb\ForgotPass.aspx.designer.cs">
+    <Compile Include="ForgotPass.aspx.designer.cs">
       <DependentUpon>ForgotPass.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FurnitureStoreWeb\Homepage.aspx.cs">
+    <Compile Include="Homepage.aspx.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FurnitureStoreWeb\Homepage.aspx.designer.cs">
+    <Compile Include="Homepage.aspx.designer.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FurnitureStoreWeb\Login.aspx.cs">
+    <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FurnitureStoreWeb\Login.aspx.designer.cs">
+    <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FurnitureStoreWeb\Register.aspx.cs">
+    <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FurnitureStoreWeb\Register.aspx.designer.cs">
+    <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FurnitureStoreWeb\Reservations.aspx.cs">
+    <Compile Include="Reservations.aspx.cs">
       <DependentUpon>Reservations.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FurnitureStoreWeb\Reservations.aspx.designer.cs">
+    <Compile Include="Reservations.aspx.designer.cs">
       <DependentUpon>Reservations.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -148,12 +157,18 @@
       <Project>{e436b7d2-2b25-41cd-8b43-8744aa90d212}</Project>
       <Name>FurnitureStoreLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SOAPWebServices\SOAPWebServices.csproj">
+      <Project>{3C128AC9-E4D5-4C6B-ABC9-30C68DFD5E9C}</Project>
+      <Name>SOAPWebServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Utilities\Utilities.csproj">
       <Project>{531b65f3-ca11-4840-912d-77fd465ee5ef}</Project>
       <Name>Utilities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="FurnitureStoreWeb\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
