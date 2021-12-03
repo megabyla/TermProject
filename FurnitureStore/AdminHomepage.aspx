@@ -16,39 +16,12 @@ th,td {
   padding: 5px;
 }
 
-</style></head>
+</style>
 
- <form id="form1" runat="server">
-    <div class="m-4">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a href="#" class="navbar-brand">
-                <img src="Images/logo/logo.png" height="85" alt="Luxury Furniture"/>
-            </a>
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav">
-      
-            <asp:LinkButton ID="btnAdd" runat="server" >Add Furniture</asp:LinkButton>&nbsp;&nbsp;
-            <asp:LinkButton ID="btnRemove" runat="server">Remove Furniture</asp:LinkButton>&nbsp;&nbsp;
-            <asp:LinkButton ID="btnResvRequest" runat="server" OnClick="btnAdoptionRequest_Click">Furniture Reservation Requests</asp:LinkButton>
-                    <a href="Reservations.aspx" class="nav-item nav-link">Reservations</a>
-                </div>
-                <div class="navbar-nav ms-auto">
-                    <a href="Login.aspx" class="nav-item nav-link">Logout</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-</div>
-<%--    ajax button--%>
-<button type="button" onclick="loadDoc()">View Pending Furnitures</button>
-<br><br>
-<table id="demo"></table>
+</head>
 
 <script>
+
 function loadDoc() {
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function() {
@@ -72,8 +45,41 @@ function myFunction(xml) {
   document.getElementById("demo").innerHTML = table;
 }
 </script>
-
 <body>
+ <form id="form1" runat="server">
+    <div class="m-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">
+                <img src="Images/logo/logo.png" height="85" alt="Luxury Furniture"/>
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+      
+            <asp:LinkButton ID="btnAdd" runat="server" >Add Furniture</asp:LinkButton>&nbsp;&nbsp;
+            <asp:LinkButton ID="btnRemove" runat="server">Remove Furniture</asp:LinkButton>&nbsp;&nbsp;
+            <asp:LinkButton ID="btnResvRequest" runat="server" >Furniture Reservation Requests</asp:LinkButton>
+                    <a href="Reservations.aspx" class="nav-item nav-link">Reservations</a>
+                </div>
+                <div class="navbar-nav ms-auto">
+                    <a href="Login.aspx" class="nav-item nav-link">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<%--    ajax button--%>
+<button type="button" onclick="loadDoc()">View Pending Furnitures</button>
+<br><br>
+<table id="demo"></table>
+
+
+
+
 
 
 

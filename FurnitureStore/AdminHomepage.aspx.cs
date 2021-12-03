@@ -21,45 +21,56 @@ namespace FurnitureStore.FurnitureStoreWeb
            // showPets();
         }
 
-   
-
-
-        protected void btnModify_Click1(object sender, EventArgs e)
+        protected void btnAdd_Click1(object sender, EventArgs e)
         {
-
-        }
-
-        protected void btnCancel_Click1(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnAccept_Click1(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnReject_Click1(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnDeleteFurniture_Click1(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnAdd_Click(object sender, EventArgs e)
-        {
-
+            Response.Redirect("AddFurniture.aspx");
         }
 
         protected void btnRemove_Click(object sender, EventArgs e)
         {
+            deleteDiv.Visible = true;
+            displayDiv.Visible = false;
+            modifiyDiv.Visible = false;
+            requestDiv.Visible = false;
+            acceptDiv.Visible = false;
+        }
+
+        protected void btnResvRequest_Click(object sender, EventArgs e)
+        {
 
         }
 
-        protected void btnAdoptionRequest_Click(object sender, EventArgs e)
+        protected void gvAllFurniture_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnDeleteFurniture_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnModify_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void gvResvRequests_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnAccept_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnReject_Click(object sender, EventArgs e)
         {
 
         }
