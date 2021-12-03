@@ -38,6 +38,32 @@
         <center><h1 class="display-4" style="font-size:calc(1.475rem + 1.2vw);">Reservations</h1></center>
         <div>
             <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand">
+                <ItemTemplate>
+
+                    <tr>
+
+                        <td>
+
+                            <asp:Label ID="lblFurnitureID" runat="server"
+                                    Text='<%# DataBinder.Eval(Container.DataItem, "FurnitureId") %>'></asp:Label>
+                        </td>
+                        <td>
+                            <asp:Label ID="lblReservationDate" runat="server"
+                                    Text='<%# DataBinder.Eval(Container.DataItem, "ReservationDate") %>'></asp:Label>
+                        </td>
+                        <td>
+                            <asp:Label ID="lblReservationTime" runat="server"
+                                    Text='<%# DataBinder.Eval(Container.DataItem, "ReservationTime") %>'></asp:Label>
+
+                        </td>
+                        <td> 
+                            <asp:Label ID="lblReservationCount" runat="server" Text='<%# Bind("ReservationCount") %>'></asp:Label>
+
+                        </td>
+
+                    </tr>               
+
+                </ItemTemplate>
             </asp:Repeater>
         </div>
     </form>

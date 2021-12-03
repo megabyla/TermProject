@@ -116,7 +116,6 @@ C:\Users\salee\Source\Repos\TermProject\SOAPWebServices\bin\Microsoft.CodeDom.Pr
 C:\Users\salee\Source\Repos\TermProject\SOAPWebServices\bin\Utilities.dll
 C:\Users\salee\Source\Repos\TermProject\SOAPWebServices\bin\Utilities.pdb
 C:\Users\salee\Source\Repos\TermProject\SOAPWebServices\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\salee\Source\Repos\TermProject\SOAPWebServices\obj\Debug\SOAPWebServices.csprojAssemblyReference.cache
 C:\Users\salee\Source\Repos\TermProject\SOAPWebServices\obj\Debug\SOAPWebServices.csproj.CopyComplete
 C:\Users\salee\Source\Repos\TermProject\SOAPWebServices\obj\Debug\SOAPWebServices.dll
 C:\Users\salee\Source\Repos\TermProject\SOAPWebServices\obj\Debug\SOAPWebServices.pdb
@@ -181,3 +180,4 @@ C:\Users\16106\Documents\CIS3342\TermProject\SOAPWebServices\bin\Utilities.dll
 C:\Users\16106\Documents\CIS3342\TermProject\SOAPWebServices\bin\Utilities.pdb
 C:\Users\16106\Documents\CIS3342\TermProject\SOAPWebServices\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\16106\Documents\CIS3342\TermProject\SOAPWebServices\obj\Debug\SOAPWebServices.csproj.CopyComplete
+C:\Users\salee\Source\Repos\TermProject\SOAPWebServices\obj\Debug\SOAPWebServices.csproj.AssemblyReference.cache

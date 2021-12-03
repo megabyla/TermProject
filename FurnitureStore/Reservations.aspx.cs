@@ -7,6 +7,8 @@ using System.Web;
 using System.Web.Script.Serialization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using FurnitureStoreLibrary;
+
 
 namespace FurnitureStore.FurnitureStoreWeb
 {
@@ -34,7 +36,7 @@ namespace FurnitureStore.FurnitureStoreWeb
 
             JavaScriptSerializer js = new JavaScriptSerializer();
 
-            List<Reservations> reservations = js.Deserialize<List<Reservations>>(data);
+            List<Reservation> reservations = js.Deserialize<List<Reservation>>(data);
 
 
 

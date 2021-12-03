@@ -4,8 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using FurnitureStoreWebAPI.Models;
 using Utilities;
+using FurnitureStoreLibrary;
 using System.Data;
 
 namespace FurnitureStoreWebAPI.Controllers
@@ -25,10 +25,10 @@ namespace FurnitureStoreWebAPI.Controllers
             foreach (DataRow record in ds.Tables[0].Rows)
             {
                 Reservation reservation = new Reservation();
-                reservation.ReservationTime = ds.Tables[0].Rows[0]["reservationTime"].ToString();
-                reservation.ReservationDate = DateTime.Parse(ds.Tables[0].Rows[0]["reservationDate"].ToString());
-                reservation.ReservationCount = int.Parse(ds.Tables[0].Rows[0]["reservationCount"].ToString());
                 reservation.FurnitureId = int.Parse(ds.Tables[0].Rows[0]["furnitureId"].ToString());
+                reservation.ReservationDate = DateTime.Parse(ds.Tables[0].Rows[0]["reservationDate"].ToString());
+                reservation.ReservationTime = ds.Tables[0].Rows[0]["reservationTime"].ToString();
+                reservation.ReservationCount = int.Parse(ds.Tables[0].Rows[0]["reservationCount"].ToString());
                 reservationList.Add(reservation);
             }
             return reservationList;

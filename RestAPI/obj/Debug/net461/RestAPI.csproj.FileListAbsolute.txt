@@ -1,0 +1,8 @@
+C:\Users\salee\Source\Repos\TermProject\RestAPI\obj\Debug\net461\RestAPI.csproj.AssemblyReference.cache
+C:\Users\salee\Source\Repos\TermProject\RestAPI\obj\Debug\net461\RestAPI.exe.config
+C:\Users\salee\Source\Repos\TermProject\RestAPI\obj\Debug\net461\RestAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\salee\Source\Repos\TermProject\RestAPI\obj\Debug\net461\RestAPI.AssemblyInfoInputs.cache
+C:\Users\salee\Source\Repos\TermProject\RestAPI\obj\Debug\net461\RestAPI.AssemblyInfo.cs
+C:\Users\salee\Source\Repos\TermProject\RestAPI\obj\Debug\net461\RestAPI.csproj.CoreCompileInputs.cache
+C:\Users\salee\Source\Repos\TermProject\RestAPI\obj\Debug\net461\RestAPI.RazorAssemblyInfo.cache
+C:\Users\salee\Source\Repos\TermProject\RestAPI\obj\Debug\net461\RestAPI.RazorAssemblyInfo.cs
