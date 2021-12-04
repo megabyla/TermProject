@@ -129,26 +129,26 @@
                     <br />
                     <asp:FileUpload ID="imgUpload" runat="server" Height="41px" Width="309px" />
                     <br />
-                    <asp:TextBox runat="server" ID="txtName" type="text" Text="" ReadOnly="True"></asp:TextBox><br />
+                    <asp:TextBox runat="server" ID="txtName" type="text" Text="" ></asp:TextBox><br />
 
                     <br />
                     <asp:Label ID="lblfurnitureId" runat="server" Text="Furniture ID:  "></asp:Label>
                     <br />
-                    <asp:TextBox runat="server" ID="txtfurnitureidDisplay" type="text" Text="" ReadOnly="True"></asp:TextBox><br />
+                    <asp:TextBox runat="server" ID="txtfurnitureidDisplay" type="text" Text=""></asp:TextBox><br />
 
 
                     <asp:Label ID="lblType" runat="server" Text="Furniture Type: "></asp:Label>
                     <br />
-                    <asp:TextBox runat="server" ID="txtType" type="text" Text="" ReadOnly="True"></asp:TextBox><br />
+                    <asp:TextBox runat="server" ID="txtType" type="text" Text="" ></asp:TextBox><br />
 
                     <asp:Label ID="lblPrice" runat="server" Text="Price: "></asp:Label><br />
-                    <asp:TextBox runat="server" ID="txtPrice" type="text" Text="" ReadOnly="True"></asp:TextBox><br />
+                    <asp:TextBox runat="server" ID="txtPrice" type="text" Text="" ></asp:TextBox><br />
 
                     <asp:Label ID="lblPieces" runat="server" Text="Pieces: "></asp:Label><br />
-                    <asp:TextBox runat="server" ID="txtPieces" type="text" Text="" ReadOnly="True"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtPieces" type="text" Text=""></asp:TextBox>
                     <br />
                     <asp:Label ID="lblDesc" runat="server" Text="Description: "></asp:Label><br />
-                    <asp:TextBox runat="server" ID="txtDesc" type="text" Text="" ReadOnly="True"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtDesc" type="text" Text="" ></asp:TextBox>
                     <br />
                     <asp:Button ID="btnModify" runat="server" Text="Modify" class="btn btn-primary" OnClick="btnModify_Click" />
                     &nbsp;&nbsp;

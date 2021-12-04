@@ -25,12 +25,12 @@ namespace FurnitureStore.FurnitureStoreWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!IsPostBack && Request.Cookies["login_cookie"] != null)
-            //{
-            //    HttpCookie cookie = Request.Cookies["login_cookie"];
-            //    txtUseremail.Text = cookie["username"].ToString();
-            //    txtPassword.Text = cookie["password"].ToString();
-            //}
+            if (!IsPostBack && Request.Cookies["login_cookie"] != null)
+            {
+                HttpCookie cookie = Request.Cookies["login_cookie"];
+                Session.Add("username", null);
+                Session.Add("password", null);
+            }
 
         }
 
