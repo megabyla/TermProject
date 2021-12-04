@@ -39,18 +39,20 @@
             <h1 class="display-4" style="font-size: calc(1.475rem + 1.2vw);">Reservations</h1>
         </center>
         <br />
-
         <div>
             <center>This is where you can see all of the reservations you have made.</center>
-            <br/>
-            <center>Filter:&nbsp;&nbsp; 
-                <asp:DropDownList ID="ddlFliter" runat="server" OnSelectedIndexChanged="ddlFliter_SelectedIndexChanged">
-                <asp:ListItem Value="blank_type">Select a Type</asp:ListItem>
-                <asp:ListItem Value="bedroom">Bedroom</asp:ListItem>
-                <asp:ListItem Value="living_room">Living Room</asp:ListItem>
-                <asp:ListItem Value="dining_room">Dining Room</asp:ListItem>
-            </asp:DropDownList></center>
-            <br/>
+            <br />
+
+            <asp:DropDownList ID="ddlReservationFilter" runat="server" OnSelectedIndexChanged="ddlReservationFilter_SelectedIndexChanged">
+                <asp:ListItem>Select a Type</asp:ListItem>
+                <asp:ListItem>Bedroom</asp:ListItem>
+                <asp:ListItem>Dining Room</asp:ListItem>
+                <asp:ListItem>Living Room</asp:ListItem>
+            </asp:DropDownList>
+
+        </div>
+        <div>
+
             <table class="table">
                 <tr>
                     <th scope="col">Reservation ID</th>
@@ -98,7 +100,8 @@
                 </asp:Repeater>
             </table>
         </div>
-        <center><asp:Label ID="lblStatus" runat="server" style="text-align:center" Font-Bold="True" Font-Italic="False" Font-Size="20px" ForeColor="#990000"></asp:Label></center>
+        <center>
+            <asp:Label ID="lblStatus" runat="server" Style="text-align: center" Font-Bold="True" Font-Italic="False" Font-Size="20px" ForeColor="#990000"></asp:Label></center>
     </form>
 </body>
 </html>

@@ -165,11 +165,29 @@ namespace FurnitureStore.FurnitureStoreWeb
 
         }
 
-        protected void ddlFliter_SelectedIndexChanged(object sender, EventArgs e)
+        protected void ddlReservationFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             DBConnect objDB = new DBConnect();
-            DataSet ds = dBFunctions.GetReservationsByType(ddlFliter.SelectedItem.Value, objDB);
-
+            DataSet ds = dBFunctions.GetReservationsByType(ddlReservationFilter.SelectedItem.Value, objDB);
+            Repeater1.DataSource = ds;
+            Repeater1.DataBind();
         }
     }
 }
+
+
+/*            <center>Filter:&nbsp;&nbsp; 
+                <asp:DropDownList ID="ddlTypeFilter" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlTypeFilter_SelectedIndexChanged">
+                <asp:ListItem Value="blank_type">Select a Type</asp:ListItem>
+                <asp:ListItem Value="bedroom">Bedroom</asp:ListItem>
+                <asp:ListItem Value="living_room">Living Room</asp:ListItem>
+                <asp:ListItem Value="dining_room">Dining Room</asp:ListItem>
+            </asp:DropDownList></center>
+        protected void ddlTypeFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DBConnect objDB = new DBConnect();
+            DataSet ds = dBFunctions.GetReservationsByType(ddlTypeFilter.SelectedItem.Value, objDB);
+            Repeater1.DataSource = ds;
+            Repeater1.DataBind();
+        }
+*/

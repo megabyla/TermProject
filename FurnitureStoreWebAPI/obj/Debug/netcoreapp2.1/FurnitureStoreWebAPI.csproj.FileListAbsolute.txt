@@ -30,6 +30,8 @@ C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\bin\Debug\netcoreap
 C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\bin\Debug\netcoreapp2.1\Utilities.dll
 C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\bin\Debug\netcoreapp2.1\FurnitureStoreLibrary.pdb
 C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\bin\Debug\netcoreapp2.1\Utilities.pdb
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\obj\Debug\netcoreapp2.1\FurnitureStoreWebAPI.csproj.AssemblyReference.cache
+C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\obj\Debug\netcoreapp2.1\FurnitureStoreWebAPI.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\obj\Debug\netcoreapp2.1\FurnitureStoreWebAPI.AssemblyInfoInputs.cache
 C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\obj\Debug\netcoreapp2.1\FurnitureStoreWebAPI.AssemblyInfo.cs
 C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\obj\Debug\netcoreapp2.1\FurnitureStoreWebAPI.csproj.CoreCompileInputs.cache
@@ -40,4 +42,3 @@ C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\obj\Debug\netcoreap
 C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\obj\Debug\netcoreapp2.1\FurnitureStoreWebAPI.dll
 C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\obj\Debug\netcoreapp2.1\FurnitureStoreWebAPI.pdb
 C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\obj\Debug\netcoreapp2.1\FurnitureStoreWebAPI.genruntimeconfig.cache
-C:\Users\salee\Source\Repos\TermProject\FurnitureStoreWebAPI\obj\Debug\netcoreapp2.1\FurnitureStoreWebAPI.csprojAssemblyReference.cache
