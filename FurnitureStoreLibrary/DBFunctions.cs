@@ -49,6 +49,24 @@ namespace FurnitureStoreLibrary
             return dsReservations;
         }
 
+        public DataSet GetReservationsByType(string type, DBConnect newDB)
+        {
+            SqlCommand objCommand = new SqlCommand();
+            DataSet dsReservations;
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GetReservationsByType";
+
+            SqlParameter inputParameter = new SqlParameter("@theType", type);
+            inputParameter.Direction = ParameterDirection.Input;
+            inputParameter.SqlDbType = SqlDbType.Int;
+            inputParameter.Size = 4;
+            objCommand.Parameters.Add(inputParameter);
+
+            dsReservations = newDB.GetDataSetUsingCmdObj(objCommand);
+            return dsReservations;
+        }
+
         public int AddReservation(string rTime, string date, int count, int userID, int furnitureID, DBConnect newDB)
         {
             SqlCommand objCommand = new SqlCommand();
@@ -92,6 +110,8 @@ namespace FurnitureStoreLibrary
 
             return flag;
         }
+
+
 
 
 
