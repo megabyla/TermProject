@@ -42,6 +42,7 @@
 
         <div>
             <center>This is where you can see all of the reservations you have made.</center>
+            <br/>
             <table class="table">
                 <tr>
                     <th scope="col">Reservation ID</th>
@@ -90,7 +91,7 @@
                 </asp:Repeater>
             </table>
         </div>
-        <asp:Label ID="lblStatus" runat="server" Text="---"></asp:Label>
+        <center><asp:Label ID="lblStatus" runat="server" style="text-align:center" Font-Bold="True" Font-Italic="False" Font-Size="20px" ForeColor="#990000"></asp:Label></center>
     </form>
 </body>
 </html>
