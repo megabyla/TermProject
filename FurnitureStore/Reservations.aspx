@@ -43,6 +43,14 @@
         <div>
             <center>This is where you can see all of the reservations you have made.</center>
             <br/>
+            <center>Filter:&nbsp;&nbsp; 
+                <asp:DropDownList ID="ddlFliter" runat="server" OnSelectedIndexChanged="ddlFliter_SelectedIndexChanged">
+                <asp:ListItem Value="blank_type">Select a Type</asp:ListItem>
+                <asp:ListItem Value="bedroom">Bedroom</asp:ListItem>
+                <asp:ListItem Value="living_room">Living Room</asp:ListItem>
+                <asp:ListItem Value="dining_room">Dining Room</asp:ListItem>
+            </asp:DropDownList></center>
+            <br/>
             <table class="table">
                 <tr>
                     <th scope="col">Reservation ID</th>
@@ -51,11 +59,10 @@
                     <th scope="col">Reservation Time</th>
                     <th scope="col">Furniture Count</th>
                     <th scope="col">Edit</th>
-                    <th scope="col">Cancel</th>
+                    <th scope="col">Delete</th>
                 </tr>
                 <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand">
                     <ItemTemplate>
-
                         <tr>
                             <td>
                                 <asp:Label ID="lblReservationID" runat="server"
