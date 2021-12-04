@@ -40,16 +40,19 @@
         </center>
         <br />
         <div>
-            <center>This is where you can see all of the reservations you have made.</center>
+            <center>
+                This is where you can see all of the reservations you have made.
             <br />
+                <br />
 
-            <asp:DropDownList ID="ddlReservationFilter" runat="server" OnSelectedIndexChanged="ddlReservationFilter_SelectedIndexChanged">
-                <asp:ListItem>Select a Type</asp:ListItem>
-                <asp:ListItem>Bedroom</asp:ListItem>
-                <asp:ListItem>Dining Room</asp:ListItem>
-                <asp:ListItem>Living Room</asp:ListItem>
-            </asp:DropDownList>
-
+                Filter: &nbsp&nbsp<asp:DropDownList ID="ddlReservationFilter" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlReservationFilter_SelectedIndexChanged">
+                    <asp:ListItem>Select a Type</asp:ListItem>
+                    <asp:ListItem>Bedroom</asp:ListItem>
+                    <asp:ListItem>Dining Room</asp:ListItem>
+                    <asp:ListItem>Living Room</asp:ListItem>
+                </asp:DropDownList>
+            </center>
+            <br />
         </div>
         <div>
 

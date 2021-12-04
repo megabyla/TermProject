@@ -59,8 +59,8 @@ namespace FurnitureStoreLibrary
 
             SqlParameter inputParameter = new SqlParameter("@theType", type);
             inputParameter.Direction = ParameterDirection.Input;
-            inputParameter.SqlDbType = SqlDbType.Int;
-            inputParameter.Size = 4;
+            inputParameter.SqlDbType = SqlDbType.VarChar;
+            inputParameter.Size = 50;
             objCommand.Parameters.Add(inputParameter);
 
             dsReservations = newDB.GetDataSetUsingCmdObj(objCommand);
