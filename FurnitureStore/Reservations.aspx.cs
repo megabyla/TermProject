@@ -75,7 +75,7 @@ namespace FurnitureStore.FurnitureStoreWeb
                     JavaScriptSerializer js = new JavaScriptSerializer();
                     String jsonReservation = js.Serialize(reservation);
 
-                    WebRequest request = WebRequest.Create(url + "UpdateReservation/");
+                    WebRequest request = WebRequest.Create(url + "UpdateReservation");
                     request.Method = "PUT";
                     request.ContentLength = jsonReservation.Length;
                     request.ContentType = "application/json";
@@ -121,10 +121,12 @@ namespace FurnitureStore.FurnitureStoreWeb
             {
                 try
                 {
-                    JavaScriptSerializer js = new JavaScriptSerializer();
-                    String jsonReservation = js.Serialize(reservation);
+                    reservation.ReservationID = int.Parse(((Label)e.Item.FindControl("lblReservationID")).Text);
 
-                    WebRequest request = WebRequest.Create(url + "DeleteReservation/");
+                    JavaScriptSerializer js = new JavaScriptSerializer();
+                    String jsonReservation = js.Serialize(reservation.ReservationID);
+
+                    WebRequest request = WebRequest.Create(url + "DeleteReservation");
                     request.Method = "DELETE";
                     request.ContentLength = jsonReservation.Length;
                     request.ContentType = "application/json";

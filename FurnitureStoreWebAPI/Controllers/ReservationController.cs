@@ -40,10 +40,10 @@ namespace FurnitureStoreWebAPI.Controllers
 
         [HttpPost]
         [HttpPost("AddReservation")]
-        public Boolean AddReservation([FromBody]Reservation reservation)
+        public Boolean AddReservation([FromBody] Reservation reservation)
         {
             DBConnect objDB = new DBConnect();
-            int flag = dBFunctions.AddReservation(reservation.ReservationTime, reservation.ReservationDate, reservation.ReservationCount, 
+            int flag = dBFunctions.AddReservation(reservation.ReservationTime, reservation.ReservationDate, reservation.ReservationCount,
                 reservation.UserID, reservation.FurnitureID, objDB);
             if (flag > 0)
             { return true; }
@@ -53,7 +53,7 @@ namespace FurnitureStoreWebAPI.Controllers
 
         [HttpPut]
         [HttpPut("UpdateReservation")]
-        public Boolean UpdateReservation([FromBody]Reservation reservation)
+        public Boolean UpdateReservation([FromBody] Reservation reservation)
         {
             DBConnect objDB = new DBConnect();
             SqlCommand objCommand = new SqlCommand();
@@ -65,7 +65,7 @@ namespace FurnitureStoreWebAPI.Controllers
             inputParameter.Direction = ParameterDirection.Input;
             inputParameter.SqlDbType = SqlDbType.Int;
             inputParameter.Size = 4;
-            objCommand.Parameters.Add(inputParameter); 
+            objCommand.Parameters.Add(inputParameter);
 
             inputParameter = new SqlParameter("@reservationCount", reservation.ReservationCount);
             inputParameter.Direction = ParameterDirection.Input;
@@ -82,20 +82,32 @@ namespace FurnitureStoreWebAPI.Controllers
 
         [HttpDelete]
         [HttpDelete("DeleteReservation")]
-        public Boolean DeleteReservation(int reservationID)
+        public Boolean DeleteReservation([FromBody]Reservation reservation)
         {
             DBConnect objDB = new DBConnect();
-            SqlCommand cmdDeleteReservation = new SqlCommand();
+            //SqlCommand cmdDeleteReservation = new SqlCommand();
 
-            cmdDeleteReservation.Parameters.Clear();
+            //cmdDeleteReservation.Parameters.Clear();
 
-            cmdDeleteReservation.CommandType = CommandType.StoredProcedure;
-            cmdDeleteReservation.CommandText = "TP_DeleteReservation";
+            //cmdDeleteReservation.CommandType = CommandType.StoredProcedure;
+            //cmdDeleteReservation.CommandText = "TP_DeleteReservation";
 
-            cmdDeleteReservation.Parameters.AddWithValue("@reservationID", reservationID);
+            //cmdDeleteReservation.Parameters.AddWithValue("@reservationID", id);
 
-            int result = objDB.DoUpdateUsingCmdObj(cmdDeleteReservation);
-            
+            //int result = objDB.DoUpdateUsingCmdObj(cmdDeleteReservation);
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_DeleteReservation";
+
+            SqlParameter inputParameter = new SqlParameter("@reservationID", reservation.ReservationID);
+            inputParameter.Direction = ParameterDirection.Input;
+            inputParameter.SqlDbType = SqlDbType.Int;
+            inputParameter.Size = 4;
+            objCommand.Parameters.Add(inputParameter);
+
+            int result = objDB.DoUpdateUsingCmdObj(objCommand);
+
             if (result > 0)
             {
                 return true;

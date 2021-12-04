@@ -24,8 +24,8 @@ namespace FurnitureStoreLibrary
         public Reservation(int reservationID, int furnitureID, string date, String time,
              int count, int userID)
         {
-            this.FurnitureID = furnitureID;
             this.ReservationID = reservationID;
+            this.FurnitureID = furnitureID;
             this.ReservationDate = date;
             this.ReservationTime = time;
             this.ReservationCount = count;
