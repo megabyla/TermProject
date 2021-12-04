@@ -32,15 +32,14 @@ namespace FurnitureStore
             DBFunctions dbFunctions = new DBFunctions();
             DataSet dsFurniture = dbFunctions.GetFurnitureById(furnitureId, objDB);
             lblFurnitureName.Text = dsFurniture.Tables[0].Rows[0]["furnitureName"].ToString();
-            lblFurnitureDesc.Text = dsFurniture.Tables[0].Rows[0]["furnitureDescription"].ToString();
             lblFurnitureType.Text = dsFurniture.Tables[0].Rows[0]["furnitureType"].ToString();
             Decimal price = Convert.ToDecimal(dsFurniture.Tables[0].Rows[0]["furniturePrice"].ToString());
             lblFurniturePrice.Text = price.ToString("C2");
-
-
-
         }
 
+        protected void btnSelect_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

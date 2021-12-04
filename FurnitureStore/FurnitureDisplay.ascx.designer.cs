@@ -33,15 +33,6 @@ namespace FurnitureStore
         protected global::System.Web.UI.WebControls.Image imgFurniture;
 
         /// <summary>
-        /// lblFurnitureDesc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFurnitureDesc;
-
-        /// <summary>
         /// lblFurnitureType control.
         /// </summary>
         /// <remarks>
@@ -60,12 +51,12 @@ namespace FurnitureStore
         protected global::System.Web.UI.WebControls.Label lblFurniturePrice;
 
         /// <summary>
-        /// btnReserve control.
+        /// btnSelect control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnReserve;
+        protected global::System.Web.UI.WebControls.Button btnSelect;
     }
 }
