@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Utilities;
 using FurnitureStoreLibrary;
 using System.Data.SqlClient;
+using FurnitureStore.Library;
 
 namespace FurnitureStoreWebAPI.Controllers
 {
@@ -28,23 +29,40 @@ namespace FurnitureStoreWebAPI.Controllers
             for (int i = 0; i < count; i++)
             {
                 Reservation reservation = new Reservation();
-                reservation.ReservationID = int.Parse(ds.Tables[0].Rows[i]["reservationID"].ToString());
-                reservation.FurnitureID = int.Parse(ds.Tables[0].Rows[i]["furnitureID"].ToString());
-                reservation.ReservationDate = ds.Tables[0].Rows[i]["reservationDate"].ToString();
-                reservation.ReservationTime = ds.Tables[0].Rows[i]["reservationTime"].ToString();
-                reservation.ReservationCount = int.Parse(ds.Tables[0].Rows[i]["reservationCount"].ToString());
+                reservation.reservationID = int.Parse(ds.Tables[0].Rows[i]["reservationID"].ToString());
+                reservation.furnitureID = int.Parse(ds.Tables[0].Rows[i]["furnitureID"].ToString());
+                reservation.reservationDate = ds.Tables[0].Rows[i]["reservationDate"].ToString();
+                reservation.reservationTime = ds.Tables[0].Rows[i]["reservationTime"].ToString();
+                reservation.reservationCount = int.Parse(ds.Tables[0].Rows[i]["reservationCount"].ToString());
                 reservationList.Add(reservation);
             }
             return reservationList;
         }
+
+        [HttpGet("GetReservationByID/{id}")]
+        public Furniture GetReservationByID(int id)
+        {
+            DBConnect objDB = new DBConnect();
+            DataSet ds = dBFunctions.GetFurnitureById(id, objDB);
+            Furniture furniture = new Furniture();
+
+            furniture.furnitureID = int.Parse(ds.Tables[0].Rows[0]["furnitureID"].ToString());
+            furniture.furnitureName = ds.Tables[0].Rows[0]["furnitureName"].ToString();
+            furniture.furnitureDescription = ds.Tables[0].Rows[0]["furnitureDescription"].ToString();
+            furniture.furnitureType = ds.Tables[0].Rows[0]["furnitureType"].ToString();
+            furniture.furniturePrice = float.Parse(ds.Tables[0].Rows[0]["furniturePrice"].ToString());
+
+            return furniture;
+        }
+
 
         [HttpPost]
         [HttpPost("AddReservation")]
         public Boolean AddReservation([FromBody] Reservation reservation)
         {
             DBConnect objDB = new DBConnect();
-            int flag = dBFunctions.AddReservation(reservation.ReservationTime, reservation.ReservationDate, reservation.ReservationCount,
-                reservation.UserID, reservation.FurnitureID, objDB);
+            int flag = dBFunctions.AddReservation(reservation.reservationTime, reservation.reservationDate, reservation.reservationCount,
+                reservation.userID, reservation.furnitureID, objDB);
             if (flag > 0)
             { return true; }
             else { return false; }
@@ -61,13 +79,13 @@ namespace FurnitureStoreWebAPI.Controllers
             objCommand.CommandType = CommandType.StoredProcedure;
             objCommand.CommandText = "TP_UpdateReservationCount";
 
-            SqlParameter inputParameter = new SqlParameter("@reservationID", reservation.ReservationID);
+            SqlParameter inputParameter = new SqlParameter("@reservationID", reservation.reservationID);
             inputParameter.Direction = ParameterDirection.Input;
             inputParameter.SqlDbType = SqlDbType.Int;
             inputParameter.Size = 4;
             objCommand.Parameters.Add(inputParameter);
 
-            inputParameter = new SqlParameter("@reservationCount", reservation.ReservationCount);
+            inputParameter = new SqlParameter("@reservationCount", reservation.reservationCount);
             inputParameter.Direction = ParameterDirection.Input;
             inputParameter.SqlDbType = SqlDbType.Int;
             inputParameter.Size = 4;
@@ -100,7 +118,7 @@ namespace FurnitureStoreWebAPI.Controllers
             objCommand.CommandType = CommandType.StoredProcedure;
             objCommand.CommandText = "TP_DeleteReservation";
 
-            SqlParameter inputParameter = new SqlParameter("@reservationID", reservation.ReservationID);
+            SqlParameter inputParameter = new SqlParameter("@reservationID", reservation.reservationID);
             inputParameter.Direction = ParameterDirection.Input;
             inputParameter.SqlDbType = SqlDbType.Int;
             inputParameter.Size = 4;

@@ -52,11 +52,11 @@ namespace FurnitureStore.FurnitureStoreWeb
         {
             Reservation reservation = new Reservation();
 
-            reservation.FurnitureID = int.Parse(((Label)e.Item.FindControl("lblFurnitureID")).Text);
-            reservation.ReservationID = int.Parse(((Label)e.Item.FindControl("lblReservationID")).Text);
-            reservation.ReservationTime = ((Label)e.Item.FindControl("lblReservationTime")).Text;
-            reservation.ReservationDate = ((Label)e.Item.FindControl("lblReservationDate")).Text;
-            reservation.ReservationCount = int.Parse(((Label)e.Item.FindControl("lblReservationCount")).Text);
+            reservation.furnitureID = int.Parse(((Label)e.Item.FindControl("lblFurnitureID")).Text);
+            reservation.reservationID = int.Parse(((Label)e.Item.FindControl("lblReservationID")).Text);
+            reservation.reservationTime = ((Label)e.Item.FindControl("lblReservationTime")).Text;
+            reservation.reservationDate = ((Label)e.Item.FindControl("lblReservationDate")).Text;
+            reservation.reservationCount = int.Parse(((Label)e.Item.FindControl("lblReservationCount")).Text);
 
             //JavaScriptSerializer js = new JavaScriptSerializer();
             //String jsonReservation = js.Serialize(reservation);
@@ -73,7 +73,7 @@ namespace FurnitureStore.FurnitureStoreWeb
             {
                 try
                 {
-                    reservation.ReservationCount = int.Parse(((TextBox)e.Item.FindControl("txtCountEdit")).Text);
+                    reservation.reservationCount = int.Parse(((TextBox)e.Item.FindControl("txtCountEdit")).Text);
                     JavaScriptSerializer js = new JavaScriptSerializer();
                     String jsonReservation = js.Serialize(reservation);
 
@@ -123,7 +123,7 @@ namespace FurnitureStore.FurnitureStoreWeb
             {
                 try
                 {
-                    reservation.ReservationID = int.Parse(((Label)e.Item.FindControl("lblReservationID")).Text);
+                    reservation.reservationID = int.Parse(((Label)e.Item.FindControl("lblReservationID")).Text);
 
                     JavaScriptSerializer js = new JavaScriptSerializer();
                     String jsonReservation = js.Serialize(reservation);

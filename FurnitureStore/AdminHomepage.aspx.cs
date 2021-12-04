@@ -104,13 +104,13 @@ SOAPWebServices.FurnitureSOAP proxy = new  SOAPWebServices.FurnitureSOAP();
                     newFurniture.furnitureID = Int32.Parse(ds.Tables[0].Rows[i]["furnitureID"].ToString());
                     newFurniture.furnitureName = ds.Tables[0].Rows[i]["furnitureName"].ToString();
                     newFurniture.furnitureType = ds.Tables[0].Rows[i]["furnitureType"].ToString();
-                    newFurniture.furniturePrice = Int32.Parse(ds.Tables[0].Rows[i]["furniturePrice"].ToString());
+                    newFurniture.furniturePrice = float.Parse(ds.Tables[0].Rows[i]["furniturePrice"].ToString());
                     newFurniture.furniturePieces = ds.Tables[0].Rows[i]["furniturePieces"].ToString();
                     newFurniture.furnitureDescription = (ds.Tables[0].Rows[i]["furnitureDescription"].ToString());
 
                     string furnitureName = newFurniture.furnitureName;
                     string furnitureType = newFurniture.furnitureType;
-                    int furniturePrice = newFurniture.furniturePrice;
+                    float furniturePrice = newFurniture.furniturePrice;
                     string furniturePieces = newFurniture.furniturePieces;
                     string furnitureDescription = newFurniture.furnitureDescription;
                     int furnitureID = newFurniture.furnitureID;

@@ -8,12 +8,12 @@ namespace FurnitureStoreLibrary
 {
     public class Reservation
     {
-        public int FurnitureID { get; set; }
-        public int ReservationID { get; set;}
-        public String ReservationDate { get; set; }
-        public String ReservationTime { get; set; }
-        public int ReservationCount { get; set; }
-        public int UserID { get; set; }
+        public int furnitureID { get; set; }
+        public int reservationID { get; set;}
+        public String reservationDate { get; set; }
+        public String reservationTime { get; set; }
+        public int reservationCount { get; set; }
+        public int userID { get; set; }
 
 
 
@@ -24,12 +24,12 @@ namespace FurnitureStoreLibrary
         public Reservation(int reservationID, int furnitureID, string date, String time,
              int count, int userID)
         {
-            this.ReservationID = reservationID;
-            this.FurnitureID = furnitureID;
-            this.ReservationDate = date;
-            this.ReservationTime = time;
-            this.ReservationCount = count;
-            this.UserID = userID;
+            this.reservationID = reservationID;
+            this.furnitureID = furnitureID;
+            this.reservationDate = date;
+            this.reservationTime = time;
+            this.reservationCount = count;
+            this.userID = userID;
         }
 
 

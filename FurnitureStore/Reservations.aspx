@@ -9,7 +9,39 @@
     <title>Reservations</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<%--    <script type="text/javascript">
+        var xmlhttp;
+        try {
+            xmlhttp = new XMLHttpRequest();
+
+        }
+        catch (try_older_microsoft) {
+            try {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP")
+            }
+            catch (other) {
+                xmlhttp = false;
+                alert("Browser does not support AJAX!")
+            }
+        }
+        function getFurniture(button) {
+            var id = button.getAttribute("data-tip");
+            xmlhttp.open("GET", "https://localhost:44393/api/reservation/" + id, true);
+            xmlhttp.onreadystatechange = onComplete;
+            xmlhttp.send();
+        }
+
+        function onComplete() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("content_area").innerHTML = xmlhttp.responseText;
+            }
+        
+    </script>--%>
+    
+
 </head>
+
+
 <body>
     <div class="m-4">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -54,10 +86,11 @@
             </center>
             <br />
         </div>
-        <div>
+        <div id="tableDiv">
 
             <table class="table">
-                <tr>
+                <tr>                                                
+<%--                    <th scope="col">Select</th>--%>
                     <th scope="col">Reservation ID</th>
                     <th scope="col">Furniture ID</th>
                     <th scope="col">Reservation Date</th>
@@ -69,6 +102,10 @@
                 <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand">
                     <ItemTemplate>
                         <tr>
+<%--                            <td>
+                                <asp:Button ID="btnSelect" runat="server" AutoPostBack="false" Text="Select" data-tip='<%# DataBinder.Eval(Container.DataItem, "FurnitureID") %>'
+                                    OnClientClick="getFurniture(this);" />
+                            </td>   --%>                         
                             <td>
                                 <asp:Label ID="lblReservationID" runat="server"
                                     Text='<%# DataBinder.Eval(Container.DataItem, "ReservationID") %>'></asp:Label>
@@ -105,6 +142,7 @@
         </div>
         <center>
             <asp:Label ID="lblStatus" runat="server" Style="text-align: center" Font-Bold="True" Font-Italic="False" Font-Size="20px" ForeColor="#990000"></asp:Label></center>
+            <asp:Label ID="content_area" runat="server" Style="text-align: center" Font-Bold="True" Font-Italic="False" Font-Size="20px" ForeColor="#990000"></asp:Label></center>
     </form>
 </body>
 </html>
