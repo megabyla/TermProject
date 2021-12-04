@@ -25,7 +25,7 @@ SOAPWebServices.FurnitureSOAP proxy = new  SOAPWebServices.FurnitureSOAP();
         protected void Page_Load(object sender, EventArgs e)
         {
             //getting user info from session cookie to populate 
-              userName = Session["username"].ToString();
+             userName = Session["username"].ToString();
              showFurniture();
         }
 
@@ -57,7 +57,7 @@ SOAPWebServices.FurnitureSOAP proxy = new  SOAPWebServices.FurnitureSOAP();
             cmdShowRequests.CommandType = CommandType.StoredProcedure;
             cmdShowRequests.CommandText = "TP_GetAllRequests";
 
-            SqlParameter adminID = new SqlParameter("@userId", userId);
+            SqlParameter adminID = new SqlParameter("@userID", userId);
             adminID.Direction = ParameterDirection.Input;
             cmdShowRequests.Parameters.Add(adminID);
 
@@ -259,7 +259,7 @@ SOAPWebServices.FurnitureSOAP proxy = new  SOAPWebServices.FurnitureSOAP();
             //uploads new image
             uploadFurnitureImg(furnitureID);
 
-            //updates pet age
+           
             SOAPWebServices.Furniture proxy = new SOAPWebServices.Furniture();
             GetFurnitureByType(furnitureType);
 
@@ -269,7 +269,8 @@ SOAPWebServices.FurnitureSOAP proxy = new  SOAPWebServices.FurnitureSOAP();
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-
+            displayDiv.Visible = true;
+            modifiyDiv.Visible = false;
         }
 
         protected void gvResvRequests_SelectedIndexChanged(object sender, EventArgs e)

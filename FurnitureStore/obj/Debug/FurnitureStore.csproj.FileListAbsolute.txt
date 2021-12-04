@@ -258,3 +258,6 @@ C:\Users\16106\Documents\CIS3342\TermProject\FurnitureStore\bin\SOAPWebServices.
 C:\Users\16106\Documents\CIS3342\TermProject\FurnitureStore\bin\SOAPWebServices.pdb
 C:\Users\16106\Documents\CIS3342\TermProject\FurnitureStore\bin\SOAPWebServices.dll.config
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\obj\Debug\FurnitureStore.csproj.AssemblyReference.cache
+C:\Users\nylar\Desktop\Fall21'\3342\Projects\Term_Project\FurnitureStore\bin\SOAPWebServices.dll
+C:\Users\nylar\Desktop\Fall21'\3342\Projects\Term_Project\FurnitureStore\bin\SOAPWebServices.pdb
+C:\Users\nylar\Desktop\Fall21'\3342\Projects\Term_Project\FurnitureStore\bin\SOAPWebServices.dll.config
