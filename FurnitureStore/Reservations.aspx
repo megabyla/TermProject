@@ -44,6 +44,7 @@
             <center>This is where you can see all of the reservations you have made.</center>
             <table class="table">
                 <tr>
+                    <th scope="col">Reservation ID</th>
                     <th scope="col">Furniture ID</th>
                     <th scope="col">Reservation Date</th>
                     <th scope="col">Reservation Time</th>
@@ -56,8 +57,12 @@
 
                         <tr>
                             <td>
+                                <asp:Label ID="lblReservationID" runat="server"
+                                    Text='<%# DataBinder.Eval(Container.DataItem, "ReservationID") %>'></asp:Label>
+                            </td>
+                            <td>
                                 <asp:Label ID="lblFurnitureID" runat="server"
-                                    Text='<%# DataBinder.Eval(Container.DataItem, "FurnitureId") %>'></asp:Label>
+                                    Text='<%# DataBinder.Eval(Container.DataItem, "FurnitureID") %>'></asp:Label>
                             </td>
                             <td>
                                 <asp:Label ID="lblReservationDate" runat="server"
@@ -69,12 +74,15 @@
                             </td>
                             <td>
                                 <asp:Label ID="lblReservationCount" runat="server" Text='<%# Bind("ReservationCount") %>'></asp:Label>
+                                <asp:TextBox ID="txtCountEdit" runat="server" Width="120" Text='<%# Eval("ReservationCount") %>' Visible="False" />
                             </td>
                             <td>
-                                <asp:Button ID="btnEdit" Text="Edit" runat="server" />
+                                <asp:LinkButton ID="lnkEdit" runat="server" CommandName="edit" CommandArgument='<%# Eval("ReservationID") %>'>Edit</asp:LinkButton>
+                                <asp:LinkButton ID="lnkUpdate" runat="server" CommandName="update" CommandArgument='<%# Eval("ReservationID") %>' Visible="False">Update</asp:LinkButton>
+                                <asp:LinkButton ID="lnkCancel" runat="server" CommandName="cancel" CommandArgument='<%# Eval("ReservationID") %>' Visible="False">Cancel</asp:LinkButton>
                             </td>
                             <td>
-                                <asp:Button ID="btnCancel" Text="Cancel" runat="server" />
+                                <asp:LinkButton ID="lnkDelete" runat="server" CommandName="delete" OnClientClick="return confirm('Confirm Deletion?')" CommandArgument='<%# Eval("ReservationID") %>'>Delete</asp:LinkButton>
                             </td>
                         </tr>
 
@@ -82,6 +90,7 @@
                 </asp:Repeater>
             </table>
         </div>
+        <asp:Label ID="lblStatus" runat="server" Text="---"></asp:Label>
     </form>
 </body>
 </html>

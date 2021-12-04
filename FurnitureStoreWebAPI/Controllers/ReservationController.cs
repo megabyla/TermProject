@@ -28,6 +28,7 @@ namespace FurnitureStoreWebAPI.Controllers
             for (int i = 0; i < count; i++)
             {
                 Reservation reservation = new Reservation();
+                reservation.ReservationID = int.Parse(ds.Tables[0].Rows[i]["reservationID"].ToString());
                 reservation.FurnitureID = int.Parse(ds.Tables[0].Rows[i]["furnitureID"].ToString());
                 reservation.ReservationDate = ds.Tables[0].Rows[i]["reservationDate"].ToString();
                 reservation.ReservationTime = ds.Tables[0].Rows[i]["reservationTime"].ToString();

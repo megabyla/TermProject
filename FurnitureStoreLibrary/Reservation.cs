@@ -8,7 +8,6 @@ namespace FurnitureStoreLibrary
 {
     public class Reservation
     {
-        //public int ReservationId;
         public int FurnitureID { get; set; }
         public int ReservationID { get; set;}
         public String ReservationDate { get; set; }
