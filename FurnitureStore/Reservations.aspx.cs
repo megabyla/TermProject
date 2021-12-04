@@ -124,7 +124,7 @@ namespace FurnitureStore.FurnitureStoreWeb
                     reservation.ReservationID = int.Parse(((Label)e.Item.FindControl("lblReservationID")).Text);
 
                     JavaScriptSerializer js = new JavaScriptSerializer();
-                    String jsonReservation = js.Serialize(reservation.ReservationID);
+                    String jsonReservation = js.Serialize(reservation);
 
                     WebRequest request = WebRequest.Create(url + "DeleteReservation");
                     request.Method = "DELETE";
