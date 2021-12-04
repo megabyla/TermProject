@@ -25,7 +25,12 @@
       "ProjectGuid": "3c128ac9-e4d5-4c6b-abc9-30c68dfd5e9c",
       "DisplayName": "SOAPWebServices",
       "ColorIndex": 3
+    },
+    "531b65f3-ca11-4840-912d-77fd465ee5ef": {
+      "ProjectGuid": "531b65f3-ca11-4840-912d-77fd465ee5ef",
+      "DisplayName": "Utilities",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 5
 }

@@ -49,5 +49,51 @@ namespace FurnitureStoreLibrary
             return dsReservations;
         }
 
+        public int AddReservation(string rTime, string date, int count, int userID, int furnitureID, DBConnect newDB)
+        {
+            SqlCommand objCommand = new SqlCommand();
+            DataSet dsReservations;
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_AddReservations";
+            dsReservations = newDB.GetDataSetUsingCmdObj(objCommand);
+
+            SqlParameter parameters = new SqlParameter("@reservationTime", rTime);
+            parameters.Direction = ParameterDirection.Input;
+            parameters.SqlDbType = SqlDbType.VarChar;
+            parameters.Size = 10;
+            objCommand.Parameters.Add(parameters);
+
+            parameters = new SqlParameter("@reservationDate", date);
+            parameters.Direction = ParameterDirection.Input;
+            parameters.SqlDbType = SqlDbType.Date;
+            parameters.Size = 8;
+            objCommand.Parameters.Add(parameters);
+
+            parameters = new SqlParameter("@reservationCount", count);
+            parameters.Direction = ParameterDirection.Input;
+            parameters.SqlDbType = SqlDbType.Int;
+            parameters.Size = 4;
+            objCommand.Parameters.Add(parameters); 
+            
+            parameters = new SqlParameter("@userID", userID);
+            parameters.Direction = ParameterDirection.Input;
+            parameters.SqlDbType = SqlDbType.Int;
+            parameters.Size = 4;
+            objCommand.Parameters.Add(parameters);
+
+            parameters = new SqlParameter("@furnitureID", furnitureID);
+            parameters.Direction = ParameterDirection.Input;
+            parameters.SqlDbType = SqlDbType.Int;
+            parameters.Size = 4;
+            objCommand.Parameters.Add(parameters);
+
+            int flag = newDB.DoUpdateUsingCmdObj(objCommand);
+
+            return flag;
+        }
+
+
+
     }
 }
