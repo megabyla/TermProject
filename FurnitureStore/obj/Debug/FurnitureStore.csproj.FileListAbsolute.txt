@@ -258,3 +258,7 @@ C:\Users\salee\Source\Repos\TermProject\FurnitureStore\obj\Debug\FurnitureStore.
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\obj\Debug\FurnitureStore.pdb
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\bin\FurnitureStore.dll.config
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\obj\Debug\FurnitureStore.csprojAssemblyReference.cache
+C:\Users\nylar\Desktop\Fall21'\3342\Projects\Term_Project\FurnitureStore\bin\FurnitureStore.dll.config
+C:\Users\nylar\Desktop\Fall21'\3342\Projects\Term_Project\FurnitureStore\bin\SOAPWebServices.dll
+C:\Users\nylar\Desktop\Fall21'\3342\Projects\Term_Project\FurnitureStore\bin\SOAPWebServices.pdb
+C:\Users\nylar\Desktop\Fall21'\3342\Projects\Term_Project\FurnitureStore\bin\SOAPWebServices.dll.config
