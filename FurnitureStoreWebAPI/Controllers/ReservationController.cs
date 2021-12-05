@@ -55,6 +55,16 @@ namespace FurnitureStoreWebAPI.Controllers
             return furniture;
         }
 
+        [HttpGet("GetReservationCount/{id}")]
+        public int GetReservationCount(int id)
+        {
+            DBConnect objDB = new DBConnect();
+            DataSet ds = dBFunctions.GetReservationsCount(id, objDB);
+            int count = int.Parse(ds.Tables[0].Rows[0]["resCount"].ToString());
+
+            return count;
+        }
+
 
         [HttpPost]
         [HttpPost("AddReservation")]

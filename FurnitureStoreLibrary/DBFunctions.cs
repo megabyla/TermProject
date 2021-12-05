@@ -67,6 +67,24 @@ namespace FurnitureStoreLibrary
             return dsReservations;
         }
 
+        public DataSet GetReservationsCount(int id, DBConnect newDB)
+        {
+            SqlCommand objCommand = new SqlCommand();
+            DataSet dsReservations;
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GetReservationsCount";
+
+            SqlParameter inputParameter = new SqlParameter("@theID", id);
+            inputParameter.Direction = ParameterDirection.Input;
+            inputParameter.SqlDbType = SqlDbType.Int;
+            inputParameter.Size = 4;
+            objCommand.Parameters.Add(inputParameter);
+
+            dsReservations = newDB.GetDataSetUsingCmdObj(objCommand);
+            return dsReservations;
+        }
+
         public int AddReservation(string rTime, string date, int count, int userID, int furnitureID, DBConnect newDB)
         {
             SqlCommand objCommand = new SqlCommand();

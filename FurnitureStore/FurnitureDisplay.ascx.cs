@@ -31,6 +31,7 @@ namespace FurnitureStore
             DBConnect objDB = new DBConnect();
             DBFunctions dbFunctions = new DBFunctions();
             DataSet dsFurniture = dbFunctions.GetFurnitureById(furnitureId, objDB);
+            hiddenID.Text = dsFurniture.Tables[0].Rows[0]["furnitureID"].ToString();
             lblFurnitureName.Text = dsFurniture.Tables[0].Rows[0]["furnitureName"].ToString();
             lblFurnitureType.Text = dsFurniture.Tables[0].Rows[0]["furnitureType"].ToString();
             Decimal price = Convert.ToDecimal(dsFurniture.Tables[0].Rows[0]["furniturePrice"].ToString());
