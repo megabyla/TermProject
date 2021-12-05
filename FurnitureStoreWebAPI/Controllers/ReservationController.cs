@@ -38,7 +38,22 @@ namespace FurnitureStoreWebAPI.Controllers
             }
             return reservationList;
         }
+        [HttpGet("GetReservationCount/{id}")]
+        public int GetReservationCount(int id)
+        {
+            DBConnect objDB = new DBConnect();
+            DataSet ds = dBFunctions.GetReservationsCount(id, objDB);
+            if (ds.Tables[0].Rows[0][0] == DBNull.Value)
+            {
+                return 0;
+            }
+            else
+            {
+                int count = Convert.ToInt32(ds.Tables[0].Rows[0][0].ToString());
+                return count;
+            }
 
+        }
         [HttpGet("GetReservationByID/{id}")]
         public Furniture GetReservationByID(int id)
         {

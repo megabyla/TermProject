@@ -28,7 +28,7 @@
         }
         window.onload = function () {
 
-            var int = document.getElementById('hiddenID').innerHTML;
+            var int = getParameterByName('id');
             request.open("GET", "https://localhost:44393/api/reservation/GetReservationCount/" + int, true);
             //xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
             request.onreadystatechange = onComplete;
@@ -49,6 +49,15 @@
                 // store the fetched data in the global variable until it's needed
                 stats = request.responseText;
             }
+        }
+
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
         }
 
     </script>
@@ -94,9 +103,8 @@
             <br />
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                 <asp:Label ID="lblDescription" runat="server"></asp:Label>
-                <input id="btnGetCount" type="button" value="Get Count" onclick="GetInfo();"> 
+                <input id="btnGetCount" type="button" value="Get Count" onclick="GetInfo();"/> 
                 <div id="countContent">
-
                     </div>
             </div>
         </div>
