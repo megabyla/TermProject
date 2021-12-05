@@ -15,6 +15,7 @@
             <asp:Label ID="lblFurnitureType" runat="server"></asp:Label>
             <br />
             <asp:Label ID="lblFurniturePrice" runat="server"></asp:Label>
+            <br />
             <asp:Button ID="btnSelect" runat="server" Text="Select" Width="70px" OnClick="btnSelect_Click" />
         </div>
     </div>

@@ -30,11 +30,11 @@ namespace FurnitureStore
             DBConnect objDB = new DBConnect();
             DataSet dsFurni = functions.GetFurnitureById(id, objDB);
             lblFurnitureName.Text = dsFurni.Tables[0].Rows[0]["furnitureName"].ToString();
-            lblFurniturePiece.Text = "Number of Pieces: " + dsFurni.Tables[0].Rows[0]["furniturePieces"].ToString();
-            lblFurnitureType.Text = "Type: " + dsFurni.Tables[0].Rows[0]["furnitureType"].ToString();
+            lblFurniturePiece.Text = "<b>Number of Pieces:</b> " + dsFurni.Tables[0].Rows[0]["furniturePieces"].ToString();
+            lblFurnitureType.Text = "<b>Type:</b> " + dsFurni.Tables[0].Rows[0]["furnitureType"].ToString();
             lblDescription.Text = dsFurni.Tables[0].Rows[0]["furnitureDescription"].ToString();
             Decimal price = Convert.ToDecimal(dsFurni.Tables[0].Rows[0]["furniturePrice"].ToString());
-            lblFurniturePrice.Text = "Price: " + price.ToString("C2");
+            lblFurniturePrice.Text = "<b>Price:</b> " + price.ToString("C2");
         }
     }
 }
