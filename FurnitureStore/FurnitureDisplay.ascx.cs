@@ -39,7 +39,7 @@ namespace FurnitureStore
 
         protected void btnSelect_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("FurnitureInfo.aspx?id=" + furnitureId);
         }
     }
 }

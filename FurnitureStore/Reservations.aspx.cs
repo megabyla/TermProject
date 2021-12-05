@@ -158,8 +158,7 @@ namespace FurnitureStore.FurnitureStoreWeb
                     }
                 }
                 catch (Exception ex)
-                {
-                    lblStatus.Text = "Error: " + ex.Message;
+                {                    lblStatus.Text = "Error: " + ex.Message;
                 }
             }
 
