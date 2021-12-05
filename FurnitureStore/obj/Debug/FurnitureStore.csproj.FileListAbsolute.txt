@@ -253,7 +253,6 @@ C:\Users\salee\Source\Repos\TermProject\FurnitureStore\bin\SOAPWebServices.pdb
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\bin\SOAPWebServices.dll.config
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\bin\Utilities.pdb
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\salee\Source\Repos\TermProject\FurnitureStore\obj\Debug\FurnitureStore.csproj.AssemblyReference.cache
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\obj\Debug\FurnitureStore.csproj.CoreCompileInputs.cache
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\obj\Debug\FurnitureStore.csproj.CopyComplete
 C:\Users\salee\Source\Repos\TermProject\FurnitureStore\obj\Debug\FurnitureStore.dll
@@ -324,3 +323,4 @@ C:\Users\nylar\Downloads\TermProject-main\FurnitureStore\obj\Debug\FurnitureStor
 C:\Users\nylar\Downloads\TermProject-main\FurnitureStore\obj\Debug\FurnitureStore.csproj.CopyComplete
 C:\Users\nylar\Downloads\TermProject-main\FurnitureStore\obj\Debug\FurnitureStore.dll
 C:\Users\nylar\Downloads\TermProject-main\FurnitureStore\obj\Debug\FurnitureStore.pdb
+C:\Users\salee\Source\Repos\TermProject\FurnitureStore\obj\Debug\FurnitureStore.csprojAssemblyReference.cache
