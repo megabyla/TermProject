@@ -36,7 +36,7 @@ namespace FurnitureStore.FurnitureStoreWeb
             newFurniture.furniturePieces = txtFurniturePieces.Text;
             newFurniture.furnitureType = txtFurnitureType.Text;
             newFurniture.furnitureDescription = txtFurnitureDesc.Text;
-            newFurniture.furniturePrice = Int32.Parse(txtFurniturePrice.Text);  
+            newFurniture.furniturePrice = float.Parse(txtFurniturePrice.Text);
 
             Furniture proxy = new Furniture();
             int furnitureID = addFurniture(newFurniture);

@@ -141,6 +141,15 @@ namespace FurnitureStore.FurnitureStoreWeb
         protected global::System.Web.UI.WebControls.FileUpload imgUpload;
 
         /// <summary>
+        /// lblfurnitureName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblfurnitureName;
+
+        /// <summary>
         /// txtName control.
         /// </summary>
         /// <remarks>
@@ -303,76 +312,76 @@ namespace FurnitureStore.FurnitureStoreWeb
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl acceptDiv;
 
         /// <summary>
-        /// lblRequestId control.
+        /// lblResvId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRequestId;
+        protected global::System.Web.UI.WebControls.Label lblResvId;
 
         /// <summary>
-        /// txtRequestId control.
+        /// txtResvId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRequestId;
+        protected global::System.Web.UI.WebControls.TextBox txtResvId;
 
         /// <summary>
-        /// lblReqfurnitureId control.
+        /// lblresvfurnitureId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblReqfurnitureId;
+        protected global::System.Web.UI.WebControls.Label lblresvfurnitureId;
 
         /// <summary>
-        /// txtReqfurnitureId control.
+        /// txtresvfurnitureId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtReqfurnitureId;
+        protected global::System.Web.UI.WebControls.TextBox txtresvfurnitureId;
 
         /// <summary>
-        /// lblReqfurnitureName control.
+        /// lbldate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblReqfurnitureName;
+        protected global::System.Web.UI.WebControls.Label lbldate;
 
         /// <summary>
-        /// txtReqfurnitureName control.
+        /// txtdate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtReqfurnitureName;
+        protected global::System.Web.UI.WebControls.TextBox txtdate;
 
         /// <summary>
-        /// lblRequesterId control.
+        /// lbltime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRequesterId;
+        protected global::System.Web.UI.WebControls.Label lbltime;
 
         /// <summary>
-        /// txtRequesterId control.
+        /// txttime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRequesterId;
+        protected global::System.Web.UI.WebControls.TextBox txttime;
 
         /// <summary>
         /// btnAccept control.

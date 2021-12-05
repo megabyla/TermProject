@@ -77,6 +77,16 @@
 
 
         <div class="main" style="width: 800px; margin: 0 auto;">
+             <center>
+            <h1 class="display-4" style="font-size: calc(1.475rem + 1.2vw);">Admin Homepage</h1>
+        </center>
+        <br />
+        <div>
+            <center>
+                This is where you can see all of the furniture of the store.<br />
+                <small>After you have modified any furniture information, please refresh the page to see the changes.</small>
+            <br />
+                <br />
 
             <%--    ajax button--%>
             <center>
@@ -129,12 +139,14 @@
                     <br />
                     <asp:FileUpload ID="imgUpload" runat="server" Height="41px" Width="309px" />
                     <br />
+                    <asp:Label ID="lblfurnitureName" runat="server" Text="Furniture Name: "></asp:Label>
+                    <br />
                     <asp:TextBox runat="server" ID="txtName" type="text" Text="" ></asp:TextBox><br />
 
                     <br />
                     <asp:Label ID="lblfurnitureId" runat="server" Text="Furniture ID:  "></asp:Label>
                     <br />
-                    <asp:TextBox runat="server" ID="txtfurnitureidDisplay" type="text" Text=""></asp:TextBox><br />
+                    <asp:TextBox runat="server" ID="txtfurnitureidDisplay" type="text" Text="" ReadOnly="True"></asp:TextBox><br />
 
 
                     <asp:Label ID="lblType" runat="server" Text="Furniture Type: "></asp:Label>
@@ -149,12 +161,13 @@
                     <br />
                     <asp:Label ID="lblDesc" runat="server" Text="Description: "></asp:Label><br />
                     <asp:TextBox runat="server" ID="txtDesc" type="text" Text="" ></asp:TextBox>
-                    <br />
+                    <br /><br />
                     <asp:Button ID="btnModify" runat="server" Text="Modify" class="btn btn-primary" OnClick="btnModify_Click" />
                     &nbsp;&nbsp;
+                    
                 <asp:Button ID="btnCancel" runat="server" Text="Cancel" CssClass="btn btn-danger" OnClick="btnCancel_Click" />
                     <br />
-                    <asp:Label ID="lblModifyMessage" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="lblModifyMessage" runat="server" ></asp:Label>
                     <br />
                     <br />
                 </div>
@@ -164,11 +177,13 @@
                     <asp:GridView ID="gvResvRequests" runat="server" AutoGenerateColumns="False" Visible="False" OnSelectedIndexChanged="gvResvRequests_SelectedIndexChanged" CellPadding="4" ForeColor="#333333" GridLines="None">
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
-                            <asp:BoundField DataField="RequestId" HeaderText="Request ID" />
-                            <asp:BoundField DataField="FurnitureId" HeaderText="Furniture ID" />
-                            <asp:BoundField DataField="FurnitureName" HeaderText="Name" />
-                            <asp:BoundField DataField="userID" HeaderText="Requester Id" />
-                            <asp:CommandField ShowSelectButton="True" UpdateText="View" />
+                            <asp:BoundField DataField="reservationID" HeaderText="Request ID" />
+                            <asp:BoundField DataField="furnitureID" HeaderText="Furniture ID" />
+                            <asp:BoundField DataField="reservationDate" HeaderText="Date" />
+                            <asp:BoundField DataField="reservationTime" HeaderText="Time" />
+                                                        <asp:CommandField ShowSelectButton="True" UpdateText="View"/>
+
+                            
                         </Columns>
                         <EditRowStyle BackColor="#2461BF" />
                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -181,24 +196,24 @@
                         <SortedDescendingCellStyle BackColor="#E9EBEF" />
                         <SortedDescendingHeaderStyle BackColor="#4870BE" />
                     </asp:GridView>
-                    <asp:Label ID="lblrequestMessage" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="lblrequestMessage" runat="server" ></asp:Label>
                 </div>
 
                 <div runat="server" id="acceptDiv" visible="false">
-                    <asp:Label ID="lblRequestId" runat="server" Text="Request ID:  "></asp:Label>
+                    <asp:Label ID="lblResvId" runat="server" Text="Reservation ID:  "></asp:Label>
                     <br />
-                    <asp:TextBox runat="server" ID="txtRequestId" type="text" Text="" ReadOnly="True"></asp:TextBox><br />
+                    <asp:TextBox runat="server" ID="txtResvId" type="text" Text="" ReadOnly="True"></asp:TextBox><br />
 
 
-                    <asp:Label ID="lblReqfurnitureId" runat="server" Text="Furniture ID:"></asp:Label>
+                    <asp:Label ID="lblresvfurnitureId" runat="server" Text="Furniture ID:"></asp:Label>
                     <br />
-                    <asp:TextBox runat="server" ID="txtReqfurnitureId" type="text" Text="" ReadOnly="True"></asp:TextBox><br />
+                    <asp:TextBox runat="server" ID="txtresvfurnitureId" type="text" Text="" ReadOnly="True"></asp:TextBox><br />
 
-                    <asp:Label ID="lblReqfurnitureName" runat="server" Text="Furniture Name: "></asp:Label><br />
-                    <asp:TextBox runat="server" ID="txtReqfurnitureName" type="text" Text="" ReadOnly="True"></asp:TextBox><br />
+                    <asp:Label ID="lbldate" runat="server" Text="Date: "></asp:Label><br />
+                    <asp:TextBox runat="server" ID="txtdate" type="text" Text="" ReadOnly="True"></asp:TextBox><br />
 
-                    <asp:Label ID="lblRequesterId" runat="server" Text="Requester ID: "></asp:Label><br />
-                    <asp:TextBox runat="server" ID="txtRequesterId" type="text" Text="" ReadOnly="True"></asp:TextBox><br />
+                    <asp:Label ID="lbltime" runat="server" Text="Time: "></asp:Label><br />
+                    <asp:TextBox runat="server" ID="txttime" type="text" Text="" ReadOnly="True"></asp:TextBox><br />
                     &nbsp;&nbsp;
                 <br />
                     <asp:Button ID="btnAccept" runat="server" Text="Accept" class="btn btn-primary" OnClick="btnAccept_Click" />
@@ -206,6 +221,7 @@
                 <asp:Button ID="btnReject" runat="server" Text="Reject" CssClass="btn btn-danger" OnClick="btnReject_Click" />
                 </div>
         </div>
+            </div>
     </form>
 </body>
 </html>

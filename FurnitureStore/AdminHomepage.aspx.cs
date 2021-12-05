@@ -39,13 +39,15 @@ SOAPWebServices.FurnitureSOAP proxy = new  SOAPWebServices.FurnitureSOAP();
         protected void btnRemove_Click(object sender, EventArgs e)
         {
             deleteDiv.Visible = true;
-            displayDiv.Visible = false;
+            displayDiv.Visible = true;
             modifiyDiv.Visible = false;
             requestDiv.Visible = false;
             acceptDiv.Visible = false;
         }
 
         protected void btnResvRequest_Click(object sender, EventArgs e)
+
+
         {
             displayDiv.Visible = false;
             deleteDiv.Visible = false;
@@ -55,9 +57,9 @@ SOAPWebServices.FurnitureSOAP proxy = new  SOAPWebServices.FurnitureSOAP();
             DBConnect objDB = new DBConnect();
             SqlCommand cmdShowRequests = new SqlCommand();
             cmdShowRequests.CommandType = CommandType.StoredProcedure;
-            cmdShowRequests.CommandText = "TP_GetAllRequests";
+            cmdShowRequests.CommandText = "TP_GetAllReservations";
 
-            SqlParameter adminID = new SqlParameter("@userID", userId);
+            SqlParameter adminID = new SqlParameter("@userId", userId);
             adminID.Direction = ParameterDirection.Input;
             cmdShowRequests.Parameters.Add(adminID);
 
@@ -135,7 +137,7 @@ SOAPWebServices.FurnitureSOAP proxy = new  SOAPWebServices.FurnitureSOAP();
             int furnitureID = Int32.Parse(gvAllFurniture.SelectedRow.Cells[0].Text);
             string furnitureName = gvAllFurniture.SelectedRow.Cells[1].Text;
             string furnitureType = gvAllFurniture.SelectedRow.Cells[2].Text;
-            int furniturePrice = Int32.Parse(gvAllFurniture.SelectedRow.Cells[3].Text);
+            int furniturePrice = (int)float.Parse(gvAllFurniture.SelectedRow.Cells[3].Text);
             string furniturePieces = gvAllFurniture.SelectedRow.Cells[4].Text;
             string furnitureDescription = gvAllFurniture.SelectedRow.Cells[5].Text;
 
@@ -254,17 +256,23 @@ SOAPWebServices.FurnitureSOAP proxy = new  SOAPWebServices.FurnitureSOAP();
         protected void btnModify_Click(object sender, EventArgs e)
         {
             int furnitureID = Int32.Parse(txtfurnitureidDisplay.Text);
+            string furnitureName = txtName.Text;
             string furnitureType = txtType.Text;
+            int furniturePrice = (int)float.Parse(txtPrice.Text);
+            int furniturePieces = Int32.Parse(txtPieces.Text);  
+            string furnitureDescription = txtDesc.Text; 
 
             //uploads new image
             uploadFurnitureImg(furnitureID);
 
            
-            SOAPWebServices.Furniture proxy = new SOAPWebServices.Furniture();
-            GetFurnitureByType(furnitureType);
+     
+            ModifyFurniture(furnitureID, furnitureName, furnitureType, furniturePrice, furniturePieces, furnitureDescription);
 
             modifiyDiv.Visible = false;
             displayDiv.Visible = true;
+
+            
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
@@ -275,10 +283,10 @@ SOAPWebServices.FurnitureSOAP proxy = new  SOAPWebServices.FurnitureSOAP();
 
         protected void gvResvRequests_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int RequestId = Int32.Parse(gvResvRequests.SelectedRow.Cells[0].Text);
+            int ResvId = Int32.Parse(gvResvRequests.SelectedRow.Cells[0].Text);
             int furnitureID = Int32.Parse(gvResvRequests.SelectedRow.Cells[1].Text);
-            string furnitureName = gvResvRequests.SelectedRow.Cells[2].Text;
-            int requesterId = Int32.Parse(gvResvRequests.SelectedRow.Cells[3].Text);
+            string ResvDate = gvResvRequests.SelectedRow.Cells[2].Text;
+            string ResvTime = gvResvRequests.SelectedRow.Cells[3].Text;
 
 
             displayDiv.Visible = false;
@@ -286,15 +294,15 @@ SOAPWebServices.FurnitureSOAP proxy = new  SOAPWebServices.FurnitureSOAP();
             requestDiv.Visible = false;
             acceptDiv.Visible = true;
 
-            txtRequestId.Text = RequestId.ToString();
-            txtReqfurnitureId.Text = furnitureID.ToString();
-            txtReqfurnitureName.Text = furnitureName;
-            txtRequesterId.Text = requesterId.ToString();
+            txtResvId.Text = ResvId.ToString();
+            txtresvfurnitureId.Text = furnitureID.ToString();
+            txtdate.Text = ResvDate;
+            txttime.Text = ResvTime;
         }
 
         protected void btnAccept_Click(object sender, EventArgs e)
         {
-            int requestId = Int32.Parse(txtRequestId.Text);
+            int requestId = Int32.Parse(txtResvId.Text);
             DBConnect objDB = new DBConnect();
             SqlCommand cmdApprove = new SqlCommand();
             cmdApprove.Parameters.Clear();
@@ -302,7 +310,7 @@ SOAPWebServices.FurnitureSOAP proxy = new  SOAPWebServices.FurnitureSOAP();
             cmdApprove.CommandType = CommandType.StoredProcedure;
             cmdApprove.CommandText = "TP_AcceptRequest";
 
-            SqlParameter reqID = new SqlParameter("@requestId", requestId);
+            SqlParameter reqID = new SqlParameter("@reservationId", requestId);
             reqID.Direction = ParameterDirection.Input;
             cmdApprove.Parameters.Add(reqID);
 
@@ -310,19 +318,21 @@ SOAPWebServices.FurnitureSOAP proxy = new  SOAPWebServices.FurnitureSOAP();
 
             acceptDiv.Visible = false;
             requestDiv.Visible = true;
+
+            lblrequestMessage.Text = "You approved the users reservation!";
         }
 
         protected void btnReject_Click(object sender, EventArgs e)
         {
-            int requestId = Int32.Parse(txtRequestId.Text);
+            int requestId = Int32.Parse(txtResvId.Text);
             DBConnect objDB = new DBConnect();
             SqlCommand cmdDelete = new SqlCommand();
             cmdDelete.Parameters.Clear();
 
             cmdDelete.CommandType = CommandType.StoredProcedure;
-            cmdDelete.CommandText = "TP_DeleteRequest";
+            cmdDelete.CommandText = "TP_DeleteReservation";
 
-            SqlParameter reqID = new SqlParameter("@requestId", requestId);
+            SqlParameter reqID = new SqlParameter("@reservationID", requestId);
             reqID.Direction = ParameterDirection.Input;
             cmdDelete.Parameters.Add(reqID);
 
@@ -330,6 +340,8 @@ SOAPWebServices.FurnitureSOAP proxy = new  SOAPWebServices.FurnitureSOAP();
 
             acceptDiv.Visible = false;
             requestDiv.Visible = true;
+
+            lblrequestMessage.Text = "You rejected the users reservation! It will no longer be listed here after you refresh.";
         }
 
         public void deleteFurniture(int furnitureID)
@@ -359,16 +371,46 @@ SOAPWebServices.FurnitureSOAP proxy = new  SOAPWebServices.FurnitureSOAP();
 
             int result = objDB.DoUpdateUsingCmdObj(cmdDeleteFurnitureImage);
         }
-        public DataSet GetFurnitureByType(string type)
+        public DataSet ModifyFurniture(int id, string name, string type, int price, int pieces, string desc)
         {
             DBConnect objDB = new DBConnect();
             SqlCommand objCommand = new SqlCommand();
             DataSet dsFurniture;
 
             objCommand.CommandType = CommandType.StoredProcedure;
-            objCommand.CommandText = "TP_GetFurnitureByType";
+            objCommand.CommandText = "TP_ModifyFurniture";
 
-            SqlParameter inputParameter = new SqlParameter("@theType", type);
+            SqlParameter inputParameter = new SqlParameter("@furnitureID", id);
+            inputParameter.Direction = ParameterDirection.Input;
+            inputParameter.SqlDbType = SqlDbType.VarChar;
+            inputParameter.Size = 50;
+            objCommand.Parameters.Add(inputParameter);
+
+            inputParameter = new SqlParameter("@furnitureName", name);
+            inputParameter.Direction = ParameterDirection.Input;
+            inputParameter.SqlDbType = SqlDbType.VarChar;
+            inputParameter.Size = 50;
+            objCommand.Parameters.Add(inputParameter);
+
+            inputParameter = new SqlParameter("@furnitureType", type);
+            inputParameter.Direction = ParameterDirection.Input;
+            inputParameter.SqlDbType = SqlDbType.VarChar;
+            inputParameter.Size = 50;
+            objCommand.Parameters.Add(inputParameter);
+
+            inputParameter = new SqlParameter("@furniturePrice", price);
+            inputParameter.Direction = ParameterDirection.Input;
+            inputParameter.SqlDbType = SqlDbType.VarChar;
+            inputParameter.Size = 50;
+            objCommand.Parameters.Add(inputParameter);
+
+            inputParameter = new SqlParameter("@furniturePieces", pieces);
+            inputParameter.Direction = ParameterDirection.Input;
+            inputParameter.SqlDbType = SqlDbType.VarChar;
+            inputParameter.Size = 50;
+            objCommand.Parameters.Add(inputParameter);
+
+            inputParameter = new SqlParameter("@furnitureDescription", desc);
             inputParameter.Direction = ParameterDirection.Input;
             inputParameter.SqlDbType = SqlDbType.VarChar;
             inputParameter.Size = 50;

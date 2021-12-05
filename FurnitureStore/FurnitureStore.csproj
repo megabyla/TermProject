@@ -72,7 +72,6 @@
     <Content Include="AdminHomepage.aspx" />
     <Content Include="CSS\login_styling.css" />
     <Content Include="ForgotPass.aspx" />
-    <Content Include="FurnitureInfo.aspx" />
     <Content Include="Homepage.aspx" />
     <Content Include="Images\bed.jpeg" />
     <Content Include="Images\logo\logo.jpg" />
@@ -113,13 +112,6 @@
     </Compile>
     <Compile Include="ForgotPass.aspx.designer.cs">
       <DependentUpon>ForgotPass.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="FurnitureInfo.aspx.cs">
-      <DependentUpon>FurnitureInfo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="FurnitureInfo.aspx.designer.cs">
-      <DependentUpon>FurnitureInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Homepage.aspx.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>

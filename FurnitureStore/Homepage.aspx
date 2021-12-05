@@ -5,7 +5,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Home</title>
+    <title></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script lang="javascript" type="text/javascript">
@@ -49,8 +49,8 @@
     <form id="form1" runat="server">
         <center><h1 class="display-4" style="font-size:calc(1.475rem + 1.2vw);">Furniture</h1></center>
         <div>
-            <br/>
-            <br/>
+            <br>
+            <br>
             <center>Filter:&nbsp;&nbsp; 
                 <asp:DropDownList ID="ddlFliter" runat="server">
                 <asp:ListItem Value="blank_type">Select a Type</asp:ListItem>
