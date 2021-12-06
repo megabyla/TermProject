@@ -2,11 +2,11 @@
 
 <div class="container-fluid h-custom">
     <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-md-9 col-lg-6 col-xl-5">
-            <asp:Label ID="lblFurnitureName" runat="server"></asp:Label>
-            <br />
-            &nbsp;<asp:Image ID="imgFurniture" runat="server" Height="57px" Width="83px" />
-
+        <div class="col-md-9 col-lg-6 col-xl-5"  >
+            <center><asp:Label ID="lblFurnitureName" runat="server" Font-Bold="true" ></asp:Label>
+            <br /><br />
+            &nbsp;<asp:Image ID="imgFurniture" runat="server" Height="300px" Width="300px" />
+                </center>
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
 

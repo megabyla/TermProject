@@ -48,10 +48,10 @@
 </div>
 
     <form id="form1" runat="server">
-        <center><h1 class="display-4" style="font-size:calc(1.475rem + 1.2vw);">Furniture</h1></center>
+        <center><h1 class="display-4" style="font-size:calc(1.475rem + 1.2vw);">Luxury Furniture</h1></center>
         <div>
-            <br>
-            <br>
+            <br/>
+            <br/>
             <center> 
                 <uc1:SearchFilter ID="SearchFilter1" runat="server" AutoPostBack="true"/>
             </center>
