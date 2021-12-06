@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddFurniture.aspx" />
+    <Content Include="CSS\demo.css" />
     <Content Include="FurnitureDisplay.ascx" />
     <Content Include="AdminHomepage.aspx" />
     <Content Include="CSS\login_styling.css" />
