@@ -102,7 +102,7 @@
 				<br />
 				<asp:Label ID="lblFurniturePrice" runat="server"></asp:Label>
 				<br/>
-				<asp:Button ID="btnReserve" runat="server" Text="Reserve" />
+				<asp:Button ID="btnReserve" runat="server" Text="Reserve" OnClick="btnReserve_Click" />
 				<br />
 
 				<br/>

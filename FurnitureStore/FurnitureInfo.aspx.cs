@@ -13,6 +13,7 @@ namespace FurnitureStore
     public partial class FurnitureInfo : System.Web.UI.Page
     {
         int furnitureID = 0;
+
         DBFunctions functions = new DBFunctions();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -35,6 +36,18 @@ namespace FurnitureStore
             lblDescription.Text = dsFurni.Tables[0].Rows[0]["furnitureDescription"].ToString();
             Decimal price = Convert.ToDecimal(dsFurni.Tables[0].Rows[0]["furniturePrice"].ToString());
             lblFurniturePrice.Text = "<b>Price:</b> " + price.ToString("C2");
+        }
+
+        protected void btnReserve_Click(object sender, EventArgs e)
+        {
+            if (Session["username"] != null)
+            {
+
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
     }
 }
