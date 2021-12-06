@@ -127,10 +127,7 @@ namespace FurnitureStoreLibrary
 
             return flag;
         }
-
-
-
-
+       
 
     }
 }
