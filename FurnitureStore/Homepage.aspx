@@ -33,9 +33,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
-                    <a href="#" class="nav-item nav-link active">Home</a>
-                    <a href="#" class="nav-item nav-link">Profile</a>
-                    <a href="#" class="nav-item nav-link">Messages</a>
+                    <a href="Homepage.aspx" class="nav-item nav-link active">Home</a>
                     <a href="Reservations.aspx" class="nav-item nav-link">Reservations</a>
                 </div>
                 <div class="navbar-nav ms-auto">
