@@ -60,18 +60,9 @@ namespace FurnitureStore
             {
                 byte[] bytes = (byte[])ds.Tables[0].Rows[0]["ImageData"];
                 string strBase64 = Convert.ToBase64String(bytes);
-                ImageMap1.ImageUrl = "data:Image/png;base64," + strBase64; ;
+                imgFurniture.ImageUrl = "data:Image/png;base64," + strBase64; ;
 
             }
-            //Image img = ConvertToImage(bytes);
-
-
-            //imgFurniture.ImageUrl = img;
-            //string strBase64 = Convert.ToBase64String(bytes);
-            //ImageMap1.ImageUrl = "data:Image/png;base64," + strBase64; ;
-
-
-
 
         }
         protected void btnSelect_Click(object sender, EventArgs e)
@@ -101,23 +92,6 @@ namespace FurnitureStore
                 }
                 }
             }
-        public Image BinaryToImage(byte[] binaryData)
-        {
-            MemoryStream ms = new MemoryStream(binaryData);
-            Image img = Image.FromStream(ms);
-            return img;
-        }
 
-        public static Image ConvertToImage(System.Data.Linq.Binary iBinary)
-        {
-            var arrayBinary = iBinary.ToArray();
-            Image rImage = null;
-
-            using (MemoryStream ms = new MemoryStream(arrayBinary))
-            {
-                rImage = Image.FromStream(ms);
-            }
-            return rImage;
-        }
     }
     }
