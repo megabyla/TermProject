@@ -5,7 +5,8 @@
         <div class="col-md-9 col-lg-6 col-xl-5">
             <asp:Label ID="lblFurnitureName" runat="server"></asp:Label>
             <br />
-            <img src='%Eval("ImageData")%' />
+            &nbsp;<asp:Image ID="imgFurniture" runat="server" Height="57px" Width="83px" />
+
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
 

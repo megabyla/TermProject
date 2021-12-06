@@ -1,19 +1,19 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nylar\\Downloads\\TermProject_v1\\FurnitureStoreWebAPI\\FurnitureStoreWebAPI.csproj": {}
+    "C:\\Users\\salee\\Source\\Repos\\TermProject\\FurnitureStoreWebAPI\\FurnitureStoreWebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nylar\\Downloads\\TermProject_v1\\FurnitureStoreLibrary\\FurnitureStoreLibrary.csproj": {
+    "C:\\Users\\salee\\Source\\Repos\\TermProject\\FurnitureStoreLibrary\\FurnitureStoreLibrary.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\nylar\\Downloads\\TermProject_v1\\FurnitureStoreLibrary\\FurnitureStoreLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\salee\\Source\\Repos\\TermProject\\FurnitureStoreLibrary\\FurnitureStoreLibrary.csproj",
         "projectName": "FurnitureStoreLibrary",
-        "projectPath": "C:\\Users\\nylar\\Downloads\\TermProject_v1\\FurnitureStoreLibrary\\FurnitureStoreLibrary.csproj",
+        "projectPath": "C:\\Users\\salee\\Source\\Repos\\TermProject\\FurnitureStoreLibrary\\FurnitureStoreLibrary.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\nylar\\Downloads\\TermProject_v1\\Utilities\\Utilities.csproj": {
-                "projectPath": "C:\\Users\\nylar\\Downloads\\TermProject_v1\\Utilities\\Utilities.csproj"
+              "C:\\Users\\salee\\Source\\Repos\\TermProject\\Utilities\\Utilities.csproj": {
+                "projectPath": "C:\\Users\\salee\\Source\\Repos\\TermProject\\Utilities\\Utilities.csproj"
               }
             }
           }
@@ -23,22 +23,20 @@
         "net472": {}
       }
     },
-    "C:\\Users\\nylar\\Downloads\\TermProject_v1\\FurnitureStoreWebAPI\\FurnitureStoreWebAPI.csproj": {
+    "C:\\Users\\salee\\Source\\Repos\\TermProject\\FurnitureStoreWebAPI\\FurnitureStoreWebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nylar\\Downloads\\TermProject_v1\\FurnitureStoreWebAPI\\FurnitureStoreWebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\salee\\Source\\Repos\\TermProject\\FurnitureStoreWebAPI\\FurnitureStoreWebAPI.csproj",
         "projectName": "FurnitureStoreWebAPI",
-        "projectPath": "C:\\Users\\nylar\\Downloads\\TermProject_v1\\FurnitureStoreWebAPI\\FurnitureStoreWebAPI.csproj",
-        "packagesPath": "C:\\Users\\nylar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nylar\\Downloads\\TermProject_v1\\FurnitureStoreWebAPI\\obj\\",
+        "projectPath": "C:\\Users\\salee\\Source\\Repos\\TermProject\\FurnitureStoreWebAPI\\FurnitureStoreWebAPI.csproj",
+        "packagesPath": "C:\\Users\\salee\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\salee\\Source\\Repos\\TermProject\\FurnitureStoreWebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\nylar\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\salee\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -52,11 +50,11 @@
           "netcoreapp2.1": {
             "targetAlias": "netcoreapp2.1",
             "projectReferences": {
-              "C:\\Users\\nylar\\Downloads\\TermProject_v1\\FurnitureStoreLibrary\\FurnitureStoreLibrary.csproj": {
-                "projectPath": "C:\\Users\\nylar\\Downloads\\TermProject_v1\\FurnitureStoreLibrary\\FurnitureStoreLibrary.csproj"
+              "C:\\Users\\salee\\Source\\Repos\\TermProject\\FurnitureStoreLibrary\\FurnitureStoreLibrary.csproj": {
+                "projectPath": "C:\\Users\\salee\\Source\\Repos\\TermProject\\FurnitureStoreLibrary\\FurnitureStoreLibrary.csproj"
               },
-              "C:\\Users\\nylar\\Downloads\\TermProject_v1\\Utilities\\Utilities.csproj": {
-                "projectPath": "C:\\Users\\nylar\\Downloads\\TermProject_v1\\Utilities\\Utilities.csproj"
+              "C:\\Users\\salee\\Source\\Repos\\TermProject\\Utilities\\Utilities.csproj": {
+                "projectPath": "C:\\Users\\salee\\Source\\Repos\\TermProject\\Utilities\\Utilities.csproj"
               }
             }
           }
@@ -99,20 +97,15 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\nylar\\Downloads\\TermProject_v1\\Utilities\\Utilities.csproj": {
+    "C:\\Users\\salee\\Source\\Repos\\TermProject\\Utilities\\Utilities.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\nylar\\Downloads\\TermProject_v1\\Utilities\\Utilities.csproj",
+        "projectUniqueName": "C:\\Users\\salee\\Source\\Repos\\TermProject\\Utilities\\Utilities.csproj",
         "projectName": "Utilities",
-        "projectPath": "C:\\Users\\nylar\\Downloads\\TermProject_v1\\Utilities\\Utilities.csproj",
-        "frameworks": {
-          "net472": {
-            "projectReferences": {}
-          }
-        }
+        "projectPath": "C:\\Users\\salee\\Source\\Repos\\TermProject\\Utilities\\Utilities.csproj"
       },
       "frameworks": {
         "net472": {}

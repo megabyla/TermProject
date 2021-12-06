@@ -9,6 +9,10 @@ using Utilities;
 using FurnitureStoreLibrary;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
+using System.Drawing;
+using Image = System.Drawing.Image;
+//using Image = System.Drawing.Image;
 
 namespace FurnitureStore
 {
@@ -40,6 +44,33 @@ namespace FurnitureStore
             Decimal price = Convert.ToDecimal(dsFurniture.Tables[0].Rows[0]["furniturePrice"].ToString());
             lblFurniturePrice.Text = price.ToString("C2");
 
+            SqlCommand cmdGetImage = new SqlCommand();
+            cmdGetImage.CommandType = CommandType.StoredProcedure;
+            cmdGetImage.CommandText = "TP_GetImageById";
+
+            SqlParameter inputId = new SqlParameter("@furnitureID", furnitureId);
+            inputId.Direction = ParameterDirection.Input;
+            cmdGetImage.Parameters.Add(inputId);
+
+
+            DataSet ds = objDB.GetDataSetUsingCmdObj(cmdGetImage);
+            int count = ds.Tables[0].Rows.Count;
+
+            if (count > 0)
+            {
+                byte[] bytes = (byte[])ds.Tables[0].Rows[0]["ImageData"];
+                string strBase64 = Convert.ToBase64String(bytes);
+                ImageMap1.ImageUrl = "data:Image/png;base64," + strBase64; ;
+
+            }
+            //Image img = ConvertToImage(bytes);
+
+
+            //imgFurniture.ImageUrl = img;
+            //string strBase64 = Convert.ToBase64String(bytes);
+            //ImageMap1.ImageUrl = "data:Image/png;base64," + strBase64; ;
+
+
 
 
         }
@@ -61,7 +92,7 @@ namespace FurnitureStore
                         Images evt = new Images();
                         {
                         evt.imageID = int.Parse(dr["Id"].ToString());
-                         evt.imageName=dr["imageName"].ToString();
+                        evt.imageName=dr["imageName"].ToString();
                         evt.size = int.Parse(dr["Size"].ToString());
                         evt.imageData = long.Parse(dr["imageData"].ToString());
                            
@@ -70,5 +101,23 @@ namespace FurnitureStore
                 }
                 }
             }
+        public Image BinaryToImage(byte[] binaryData)
+        {
+            MemoryStream ms = new MemoryStream(binaryData);
+            Image img = Image.FromStream(ms);
+            return img;
         }
+
+        public static Image ConvertToImage(System.Data.Linq.Binary iBinary)
+        {
+            var arrayBinary = iBinary.ToArray();
+            Image rImage = null;
+
+            using (MemoryStream ms = new MemoryStream(arrayBinary))
+            {
+                rImage = Image.FromStream(ms);
+            }
+            return rImage;
+        }
+    }
     }
