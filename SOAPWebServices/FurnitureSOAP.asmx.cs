@@ -115,6 +115,53 @@ namespace SOAPWebServices
             return dsFurniture;
         }
 
-       
+        public DataSet ModifyFurniture(int id, string name, string type, int price, int pieces, string desc)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            DataSet dsFurniture;
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_ModifyFurniture";
+
+            SqlParameter inputParameter = new SqlParameter("@furnitureID", id);
+            inputParameter.Direction = ParameterDirection.Input;
+            inputParameter.SqlDbType = SqlDbType.VarChar;
+            inputParameter.Size = 50;
+            objCommand.Parameters.Add(inputParameter);
+
+            inputParameter = new SqlParameter("@furnitureName", name);
+            inputParameter.Direction = ParameterDirection.Input;
+            inputParameter.SqlDbType = SqlDbType.VarChar;
+            inputParameter.Size = 50;
+            objCommand.Parameters.Add(inputParameter);
+
+            inputParameter = new SqlParameter("@furnitureType", type);
+            inputParameter.Direction = ParameterDirection.Input;
+            inputParameter.SqlDbType = SqlDbType.VarChar;
+            inputParameter.Size = 50;
+            objCommand.Parameters.Add(inputParameter);
+
+            inputParameter = new SqlParameter("@furniturePrice", price);
+            inputParameter.Direction = ParameterDirection.Input;
+            inputParameter.SqlDbType = SqlDbType.VarChar;
+            inputParameter.Size = 50;
+            objCommand.Parameters.Add(inputParameter);
+
+            inputParameter = new SqlParameter("@furniturePieces", pieces);
+            inputParameter.Direction = ParameterDirection.Input;
+            inputParameter.SqlDbType = SqlDbType.VarChar;
+            inputParameter.Size = 50;
+            objCommand.Parameters.Add(inputParameter);
+
+            inputParameter = new SqlParameter("@furnitureDescription", desc);
+            inputParameter.Direction = ParameterDirection.Input;
+            inputParameter.SqlDbType = SqlDbType.VarChar;
+            inputParameter.Size = 50;
+            objCommand.Parameters.Add(inputParameter);
+
+            dsFurniture = objDB.GetDataSetUsingCmdObj(objCommand);
+            return dsFurniture;
+        }
     }
 }

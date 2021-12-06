@@ -13,20 +13,18 @@ using Utilities;
 
 namespace FurnitureStore.FurnitureStoreWeb
 {
-    
-
 
     public partial class AdminHomepage : System.Web.UI.Page
     {
-SOAPWebServices.FurnitureSOAP proxy = new  SOAPWebServices.FurnitureSOAP();
+        SOAPWebServices.FurnitureSOAP proxy = new SOAPWebServices.FurnitureSOAP();
         string userName;
         ArrayList furnitureList = new ArrayList();
         ArrayList furnitureidList = new ArrayList();
         protected void Page_Load(object sender, EventArgs e)
         {
             //getting user info from session cookie to populate 
-             userName = Session["username"].ToString();
-             showFurniture();
+            userName = Session["username"].ToString();
+            showFurniture();
         }
 
 
@@ -181,9 +179,9 @@ SOAPWebServices.FurnitureSOAP proxy = new  SOAPWebServices.FurnitureSOAP();
                 {
                     foundId += "Found furniture with furnitureId " + delFurnitureId;
 
-                    SOAPWebServices.Furniture proxy = new SOAPWebServices.Furniture();
-                    deleteFurniture(delFurnitureId);
-                    deleteFurnitureImage(delFurnitureId);
+                    SOAPWebServices.FurnitureSOAP proxy = new SOAPWebServices.FurnitureSOAP();
+                    proxy.deleteFurniture(delFurnitureId);
+                    proxy.deleteFurnitureImage(delFurnitureId);
                     lblDeleteMessage.Visible = true;
                     lblDeleteMessage.Text = "Furniture Deleted. Please refresh page to see changes.";
                 }
@@ -259,20 +257,19 @@ SOAPWebServices.FurnitureSOAP proxy = new  SOAPWebServices.FurnitureSOAP();
             string furnitureName = txtName.Text;
             string furnitureType = txtType.Text;
             int furniturePrice = (int)float.Parse(txtPrice.Text);
-            int furniturePieces = Int32.Parse(txtPieces.Text);  
-            string furnitureDescription = txtDesc.Text; 
+            int furniturePieces = Int32.Parse(txtPieces.Text);
+            string furnitureDescription = txtDesc.Text;
 
             //uploads new image
             uploadFurnitureImg(furnitureID);
+            SOAPWebServices.FurnitureSOAP proxy = new SOAPWebServices.FurnitureSOAP();
+            proxy.ModifyFurniture(furnitureID, furnitureName, furnitureType, furniturePrice, furniturePieces, furnitureDescription);
 
-           
-     
-            ModifyFurniture(furnitureID, furnitureName, furnitureType, furniturePrice, furniturePieces, furnitureDescription);
             modifiyDiv.Visible = false;
             displayDiv.Visible = true;
-            
 
-            
+
+
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
@@ -344,80 +341,6 @@ SOAPWebServices.FurnitureSOAP proxy = new  SOAPWebServices.FurnitureSOAP();
             lblrequestMessage.Text = "You rejected the users reservation! It will no longer be listed here after you refresh.";
         }
 
-        public void deleteFurniture(int furnitureID)
-        {
-            DBConnect objDB = new DBConnect();
-            SqlCommand cmdDeleteFurniture = new SqlCommand();
-            cmdDeleteFurniture.Parameters.Clear();
 
-            cmdDeleteFurniture.CommandType = CommandType.StoredProcedure;
-            cmdDeleteFurniture.CommandText = "TP_DeleteFurniture";
-
-            cmdDeleteFurniture.Parameters.AddWithValue("@furnitureID", furnitureID);
-
-            int result = objDB.DoUpdateUsingCmdObj(cmdDeleteFurniture);
-        }
-
-        public void deleteFurnitureImage(int furnitureID)
-        {
-            DBConnect objDB = new DBConnect();
-            SqlCommand cmdDeleteFurnitureImage = new SqlCommand();
-            cmdDeleteFurnitureImage.Parameters.Clear();
-
-            cmdDeleteFurnitureImage.CommandType = CommandType.StoredProcedure;
-            cmdDeleteFurnitureImage.CommandText = "TP_DeleteFurnitureImage";
-
-            cmdDeleteFurnitureImage.Parameters.AddWithValue("@furnitureID", furnitureID);
-
-            int result = objDB.DoUpdateUsingCmdObj(cmdDeleteFurnitureImage);
-        }
-        public DataSet ModifyFurniture(int id, string name, string type, int price, int pieces, string desc)
-        {
-            DBConnect objDB = new DBConnect();
-            SqlCommand objCommand = new SqlCommand();
-            DataSet dsFurniture;
-
-            objCommand.CommandType = CommandType.StoredProcedure;
-            objCommand.CommandText = "TP_ModifyFurniture";
-
-            SqlParameter inputParameter = new SqlParameter("@furnitureID", id);
-            inputParameter.Direction = ParameterDirection.Input;
-            inputParameter.SqlDbType = SqlDbType.VarChar;
-            inputParameter.Size = 50;
-            objCommand.Parameters.Add(inputParameter);
-
-            inputParameter = new SqlParameter("@furnitureName", name);
-            inputParameter.Direction = ParameterDirection.Input;
-            inputParameter.SqlDbType = SqlDbType.VarChar;
-            inputParameter.Size = 50;
-            objCommand.Parameters.Add(inputParameter);
-
-            inputParameter = new SqlParameter("@furnitureType", type);
-            inputParameter.Direction = ParameterDirection.Input;
-            inputParameter.SqlDbType = SqlDbType.VarChar;
-            inputParameter.Size = 50;
-            objCommand.Parameters.Add(inputParameter);
-
-            inputParameter = new SqlParameter("@furniturePrice", price);
-            inputParameter.Direction = ParameterDirection.Input;
-            inputParameter.SqlDbType = SqlDbType.VarChar;
-            inputParameter.Size = 50;
-            objCommand.Parameters.Add(inputParameter);
-
-            inputParameter = new SqlParameter("@furniturePieces", pieces);
-            inputParameter.Direction = ParameterDirection.Input;
-            inputParameter.SqlDbType = SqlDbType.VarChar;
-            inputParameter.Size = 50;
-            objCommand.Parameters.Add(inputParameter);
-
-            inputParameter = new SqlParameter("@furnitureDescription", desc);
-            inputParameter.Direction = ParameterDirection.Input;
-            inputParameter.SqlDbType = SqlDbType.VarChar;
-            inputParameter.Size = 50;
-            objCommand.Parameters.Add(inputParameter);
-
-            dsFurniture = objDB.GetDataSetUsingCmdObj(objCommand);
-            return dsFurniture;
-        }
     }
 }
