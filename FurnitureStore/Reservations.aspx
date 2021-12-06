@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Reservations.aspx.cs" Inherits="FurnitureStore.FurnitureStoreWeb.Reservations" %>
 
-<%@ Register Src="FurnitureDisplay.ascx" TagName="FurnitureDisplay" TagPrefix="fdisplay" %>
+
 
 <!DOCTYPE html>
 

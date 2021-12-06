@@ -44,10 +44,7 @@
 
                         <div class="d-flex justify-content-between align-items-center">
                             <!-- Checkbox -->
-                            <div class="form-check mb-0">
-                                <asp:CheckBox ID="ckRem" runat="server" Text=" Remember Me?" />
-
-                            </div>
+                          
                         </div>
 
                         <div class="text-center text-lg-start mt-4 pt-2">

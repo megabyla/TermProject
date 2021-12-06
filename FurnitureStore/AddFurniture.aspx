@@ -28,7 +28,7 @@
                         </div>
                         <div class="navbar-nav ms-auto">
                             <a href="Login.aspx" class="nav-item nav-link">Logout</a>
-                            <a href="AdminHomepage.aspx" class="nav-item nav-link"></a>
+                            <a href="AdminHomepage.aspx" class="nav-item nav-link">Admin Homepage</a>
                         </div>
                     </div>
                 </div>

@@ -185,7 +185,7 @@ SOAPWebServices.FurnitureSOAP proxy = new  SOAPWebServices.FurnitureSOAP();
                     deleteFurniture(delFurnitureId);
                     deleteFurnitureImage(delFurnitureId);
                     lblDeleteMessage.Visible = true;
-                    lblDeleteMessage.Text = "Furniture Deleted.";
+                    lblDeleteMessage.Text = "Furniture Deleted. Please refresh page to see changes.";
                 }
             }
             if (foundId == "")
@@ -268,9 +268,9 @@ SOAPWebServices.FurnitureSOAP proxy = new  SOAPWebServices.FurnitureSOAP();
            
      
             ModifyFurniture(furnitureID, furnitureName, furnitureType, furniturePrice, furniturePieces, furnitureDescription);
-
             modifiyDiv.Visible = false;
             displayDiv.Visible = true;
+            
 
             
         }

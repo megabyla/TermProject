@@ -51,31 +51,13 @@ namespace FurnitureStore.FurnitureStoreWeb
         protected global::System.Web.UI.WebControls.LinkButton btnResvRequest;
 
         /// <summary>
-        /// displayDiv control.
+        /// btnPending control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl displayDiv;
-
-        /// <summary>
-        /// lblMessageDisplay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessageDisplay;
-
-        /// <summary>
-        /// gvAllFurniture control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvAllFurniture;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnPending;
 
         /// <summary>
         /// deleteDiv control.
@@ -112,6 +94,33 @@ namespace FurnitureStore.FurnitureStoreWeb
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDeleteMessage;
+
+        /// <summary>
+        /// displayDiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl displayDiv;
+
+        /// <summary>
+        /// lblMessageDisplay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessageDisplay;
+
+        /// <summary>
+        /// gvAllFurniture control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvAllFurniture;
 
         /// <summary>
         /// modifiyDiv control.
@@ -276,6 +285,15 @@ namespace FurnitureStore.FurnitureStoreWeb
         protected global::System.Web.UI.WebControls.Label lblModifyMessage;
 
         /// <summary>
+        /// lblrequestMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblrequestMessage;
+
+        /// <summary>
         /// requestDiv control.
         /// </summary>
         /// <remarks>
@@ -292,15 +310,6 @@ namespace FurnitureStore.FurnitureStoreWeb
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvResvRequests;
-
-        /// <summary>
-        /// lblrequestMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblrequestMessage;
 
         /// <summary>
         /// acceptDiv control.

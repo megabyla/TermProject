@@ -24,8 +24,7 @@ namespace FurnitureStore.FurnitureStoreWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             
-            //username = Session["username"].ToString();
-            //userID = (int)Session["userID"];
+           //doesnt need to have page load bc only admin will access this page
         }
 
         protected void btnSubmit_addfurniture_Click(object sender, EventArgs e)

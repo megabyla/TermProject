@@ -95,7 +95,7 @@ namespace FurnitureStore.FurnitureStoreWeb
                         string userType = objDB.GetField("accountType", 0).ToString();
 
                         //checks to see if the user wants their login information recorded and stores it in a cookie
-                        if (ckRem.Checked == true)
+                        if (checkCookies.Checked == true)
                         {
                             HttpCookie userCookie = new HttpCookie("login_cookie");
                             userCookie.Values["email"] = txtUseremail.Text;
