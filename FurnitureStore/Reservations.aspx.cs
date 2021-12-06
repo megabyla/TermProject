@@ -10,6 +10,7 @@ using System.Web.UI.WebControls;
 using FurnitureStoreLibrary;
 using Utilities;
 using System.Data;
+using System.Globalization;
 
 namespace FurnitureStore.FurnitureStoreWeb
 {
@@ -55,7 +56,8 @@ namespace FurnitureStore.FurnitureStoreWeb
             reservation.furnitureID = int.Parse(((Label)e.Item.FindControl("lblFurnitureID")).Text);
             reservation.reservationID = int.Parse(((Label)e.Item.FindControl("lblReservationID")).Text);
             reservation.reservationTime = ((Label)e.Item.FindControl("lblReservationTime")).Text;
-            reservation.reservationDate = ((Label)e.Item.FindControl("lblReservationDate")).Text;
+            DateTime dt = DateTime.ParseExact(((Label)e.Item.FindControl("lblReservationDate")).Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            reservation.reservationDate = dt;
             reservation.reservationCount = int.Parse(((Label)e.Item.FindControl("lblReservationCount")).Text);
 
             //JavaScriptSerializer js = new JavaScriptSerializer();
@@ -166,11 +168,21 @@ namespace FurnitureStore.FurnitureStoreWeb
         }
 
         protected void ddlReservationFilter_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {            
             DBConnect objDB = new DBConnect();
-            DataSet ds = dBFunctions.GetReservationsByType(ddlReservationFilter.SelectedItem.Value, objDB);
-            Repeater1.DataSource = ds;
-            Repeater1.DataBind();
+
+            if (ddlReservationFilter.SelectedItem.Value == "null")
+            {
+                DataSet dsAll = dBFunctions.GetReservations(objDB);
+                Repeater1.DataSource = dsAll;
+                Repeater1.DataBind();
+            }
+            else
+            {
+                DataSet ds = dBFunctions.GetReservationsByType(ddlReservationFilter.SelectedItem.Value, objDB);
+                Repeater1.DataSource = ds;
+                Repeater1.DataBind();
+            }
         }
     }
 }

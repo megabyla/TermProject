@@ -84,7 +84,7 @@ namespace FurnitureStoreLibrary
             return dsReservations;
         }
 
-        public int AddReservation(string rTime, string date, int count, int userID, int furnitureID, DBConnect newDB)
+        public int AddReservation(string rTime, DateTime date, int count, int userID, int furnitureID, DBConnect newDB)
         {
             SqlCommand objCommand = new SqlCommand();
             DataSet dsReservations;

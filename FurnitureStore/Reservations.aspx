@@ -78,7 +78,7 @@
                 <br />
 
                 Filter: &nbsp&nbsp<asp:DropDownList ID="ddlReservationFilter" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlReservationFilter_SelectedIndexChanged">
-                    <asp:ListItem>Select a Type</asp:ListItem>
+                    <asp:ListItem Value="null">Select a Type</asp:ListItem>
                     <asp:ListItem>Bedroom</asp:ListItem>
                     <asp:ListItem>Dining Room</asp:ListItem>
                     <asp:ListItem>Living Room</asp:ListItem>
@@ -116,7 +116,7 @@
                             </td>
                             <td>
                                 <asp:Label ID="lblReservationDate" runat="server"
-                                    Text='<%# DataBinder.Eval(Container.DataItem, "ReservationDate") %>'></asp:Label>
+                                    Text='<%# DataBinder.Eval(Container.DataItem, "ReservationDate", "{0: dd/MM/yyyy}") %>'></asp:Label>
                             </td>
                             <td>
                                 <asp:Label ID="lblReservationTime" runat="server"
