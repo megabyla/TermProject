@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using Utilities;
 using FurnitureStoreLibrary;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace FurnitureStore
 {
@@ -31,10 +32,27 @@ namespace FurnitureStore
             DBConnect objDB = new DBConnect();
             DBFunctions dbFunctions = new DBFunctions();
             DataSet dsFurniture = dbFunctions.GetFurnitureById(furnitureId, objDB);
+            int furnitureID = Int32.Parse(dsFurniture.Tables[0].Rows[0]["furnitureID"].ToString());
             lblFurnitureName.Text = dsFurniture.Tables[0].Rows[0]["furnitureName"].ToString();
             lblFurnitureType.Text = dsFurniture.Tables[0].Rows[0]["furnitureType"].ToString();
             Decimal price = Convert.ToDecimal(dsFurniture.Tables[0].Rows[0]["furniturePrice"].ToString());
             lblFurniturePrice.Text = price.ToString("C2");
+
+            SqlCommand cmdGetImage = new SqlCommand();
+            cmdGetImage.CommandType = CommandType.StoredProcedure;
+            cmdGetImage.CommandText = "TP_GetImageById";
+
+            SqlParameter inputId = new SqlParameter("@furnitureID", furnitureID);
+            inputId.Direction = ParameterDirection.Input;
+            cmdGetImage.Parameters.Add(inputId);
+
+            DataSet ds = objDB.GetDataSetUsingCmdObj(cmdGetImage);
+
+            byte[] bytes = (byte[])ds.Tables[0].Rows[0]["ImageData"];
+
+            string strBase64 = Convert.ToBase64String(bytes);
+
+            imgFurniture.ImageUrl = "data:Image/png;base64," + strBase64;
 
 
 
