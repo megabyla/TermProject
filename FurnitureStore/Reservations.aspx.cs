@@ -22,7 +22,14 @@ namespace FurnitureStore.FurnitureStoreWeb
         {
             if (!IsPostBack)
             {
-                BindRepeater();
+                if (Session["username"] != null)
+                {
+                    BindRepeater();
+                }
+                else
+                {
+                    Response.Redirect("Login.aspx");
+                }
             }
         }
         protected void BindRepeater()
