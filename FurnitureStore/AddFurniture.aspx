@@ -41,7 +41,7 @@
                     <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                         <h2>Add New Furniture</h2>
                         <br />
-                        <asp:Label ID="lblError" runat="server"></asp:Label>
+                        <asp:Label ID="lblError" runat="server" Font-Size="20px" ForeColor="#990000"></asp:Label>
 
                         <div class="form-outline mb-4">
                             <asp:Label ID="lblType" runat="server" Text="Furniture Type: " class="col-form-label-lg"></asp:Label>
@@ -73,7 +73,7 @@
                             <asp:FileUpload ID="fileFurnitureImg" runat="server" class="form-control form-control-lg" ></asp:FileUpload>
                         </div>
                         <div class="form-outline mb-4">
-                            <asp:Label ID="lblMessage" runat="server"></asp:Label>
+                            <asp:Label ID="lblMessage" runat="server" Font-Size="20px" ForeColor="#990000"></asp:Label>
                             <br />
 
                             <asp:Button ID="btnSubmit_addfurniture" class="btn btn-dark" runat="server" Text="Add Furniture" Visible="true" OnClick="btnSubmit_addfurniture_Click"></asp:Button>

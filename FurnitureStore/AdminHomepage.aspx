@@ -106,7 +106,7 @@
                
                         <asp:Button ID="btnDeleteFurniture" runat="server" Text="Delete" CssClass="btn btn-danger" OnClick="btnDeleteFurniture_Click" />
                         <br />
-                        <asp:Label ID="lblDeleteMessage" runat="server" Text="Label" Visible="false"></asp:Label>
+                        <asp:Label ID="lblDeleteMessage" runat="server" Text="Label" Visible="false" Font-Size="20px" ForeColor="#990000"></asp:Label>
                         <br />
                     </div>
 </center>
@@ -167,11 +167,11 @@
 
                         <asp:Button ID="btnCancel" runat="server" Text="Cancel" CssClass="btn btn-danger" OnClick="btnCancel_Click" />
                         <br />
-                        <asp:Label ID="lblModifyMessage" runat="server" Font-Bold="true"></asp:Label>
+                        <asp:Label ID="lblModifyMessage" runat="server" Font-Bold="true" Font-Size="20px" ForeColor="#990000"></asp:Label>
                         <br />
                         <br />
                     </div>
- <asp:Label ID="lblrequestMessage" runat="server" Font-Bold="true" ></asp:Label>
+ <asp:Label ID="lblrequestMessage" runat="server" Font-Bold="true" Font-Size="20px" ForeColor="#990000"></asp:Label>
 
                     <div runat="server" visible="false" id="requestDiv">
                         <asp:GridView ID="gvResvRequests" runat="server" AutoGenerateColumns="False" Visible="False" OnSelectedIndexChanged="gvResvRequests_SelectedIndexChanged" Height="200px" Width="1890px" GridLines="None">

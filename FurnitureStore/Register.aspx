@@ -28,7 +28,7 @@
                             </p>
                         </div>
                         <%--error message lables--%>
-                        <asp:Label ID="lblDisplay" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lblDisplay" runat="server" Text="" ></asp:Label>
                         <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
                         <asp:Label ID="lblSuccess" runat="server" Text=""></asp:Label>
 
