@@ -34,3 +34,12 @@ C:\Users\salee\Source\Repos\TermProject\FurnitureStoreLibrary\obj\Debug\Furnitur
 C:\Users\salee\Source\Repos\TermProject\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.dll
 C:\Users\salee\Source\Repos\TermProject\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.pdb
 C:\Users\salee\Source\Repos\TermProject\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.csprojAssemblyReference.cache
+C:\Users\nylar\Downloads\TermProject_v1\FurnitureStoreLibrary\bin\Debug\FurnitureStoreLibrary.dll
+C:\Users\nylar\Downloads\TermProject_v1\FurnitureStoreLibrary\bin\Debug\FurnitureStoreLibrary.pdb
+C:\Users\nylar\Downloads\TermProject_v1\FurnitureStoreLibrary\bin\Debug\Utilities.dll
+C:\Users\nylar\Downloads\TermProject_v1\FurnitureStoreLibrary\bin\Debug\Utilities.pdb
+C:\Users\nylar\Downloads\TermProject_v1\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.csproj.AssemblyReference.cache
+C:\Users\nylar\Downloads\TermProject_v1\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.csproj.CoreCompileInputs.cache
+C:\Users\nylar\Downloads\TermProject_v1\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.csproj.CopyComplete
+C:\Users\nylar\Downloads\TermProject_v1\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.dll
+C:\Users\nylar\Downloads\TermProject_v1\FurnitureStoreLibrary\obj\Debug\FurnitureStoreLibrary.pdb
