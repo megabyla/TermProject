@@ -1,6 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Homepage.aspx.cs" Inherits="FurnitureStore.FurnitureStoreWeb.Homepage" %>
 
 
+<%@ Register src="SearchFilter.ascx" tagname="SearchFilter" tagprefix="uc1" %>
+
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -49,13 +52,9 @@
         <div>
             <br>
             <br>
-            <center>Filter:&nbsp;&nbsp; 
-                <asp:DropDownList ID="ddlFliter" runat="server">
-                <asp:ListItem Value="blank_type">Select a Type</asp:ListItem>
-                <asp:ListItem Value="bedroom">Bedroom</asp:ListItem>
-                <asp:ListItem Value="living_room">Living Room</asp:ListItem>
-                <asp:ListItem Value="dining_room">Dining Room</asp:ListItem>
-            </asp:DropDownList></center>
+            <center> 
+                <uc1:SearchFilter ID="SearchFilter1" runat="server" AutoPostBack="true"/>
+            </center>
             
         </div>
         <br />
