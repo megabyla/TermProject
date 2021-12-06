@@ -37,8 +37,8 @@ namespace FurnitureStore.FurnitureStoreWeb
             newFurniture.furnitureDescription = txtFurnitureDesc.Text;
             newFurniture.furniturePrice = float.Parse(txtFurniturePrice.Text);
 
-            Furniture proxy = new Furniture();
-            int furnitureID = addFurniture(newFurniture);
+            SOAPWebServices.FurnitureSOAP proxy = new SOAPWebServices.FurnitureSOAP();
+            int furnitureID = proxy.addFurniture(newFurniture);
             uploadFurnitureImage(furnitureID);
             btnSubmit_addfurniture.Visible = false;
             btnGoHome.Visible = true;
@@ -97,13 +97,13 @@ namespace FurnitureStore.FurnitureStoreWeb
                         result = objDB.DoUpdateUsingCmdObj(objCommand);
 
                         lblMessage.Visible = true;
-                        lblMessage.Text = "upload successful";
+                        lblMessage.Text = "File upload successful.";
                         btnAddMore.Visible = true;
                     }
                     else
                     {
                         lblMessage.Visible = true;
-                        lblMessage.Text = "Only images (.jpg, .jpeg, .gif and .bmp) can be uploaded";
+                        lblMessage.Text = "Only images (.jpg, .jpeg, .gif and .bmp) can be uploaded!";
                         btnGoHome.Visible = true;
                         btnSubmit_addfurniture.Visible = false;
                     }
@@ -127,49 +127,6 @@ namespace FurnitureStore.FurnitureStoreWeb
             btnAddMore.Visible = false;
         }
 
-        public int addFurniture(Furniture newFurniture)
-        {
-            DBConnect objDB = new DBConnect();
-            //SqlCommand objCommand = new SqlCommand();
-
-            if (newFurniture != null)
-            {
-                SqlCommand cmdAddFurniture = new SqlCommand();
-                cmdAddFurniture.Parameters.Clear();
-                cmdAddFurniture.CommandType = CommandType.StoredProcedure;
-                cmdAddFurniture.CommandText = "TP_AddFurniture";
-
-                SqlParameter furnitureName = new SqlParameter("@furnitureName", newFurniture.furnitureName);
-                furnitureName.Direction = ParameterDirection.Input;
-                cmdAddFurniture.Parameters.Add(furnitureName);
-
-                SqlParameter furnitureType = new SqlParameter("@furnitureType", newFurniture.furnitureType);
-                furnitureType.Direction = ParameterDirection.Input;
-                cmdAddFurniture.Parameters.Add(furnitureType);
-
-                SqlParameter furniturePrice = new SqlParameter("@furniturePrice", newFurniture.furniturePrice);
-                furniturePrice.Direction = ParameterDirection.Input;
-                cmdAddFurniture.Parameters.Add(furniturePrice);
-
-                SqlParameter furniturePieces = new SqlParameter("@furniturePieces", newFurniture.furniturePieces);
-                furniturePieces.Direction = ParameterDirection.Input;
-                cmdAddFurniture.Parameters.Add(furniturePieces);
-
-                SqlParameter furnitureDescription = new SqlParameter("@furnitureDescription", newFurniture.furnitureDescription);
-                furnitureDescription.Direction = ParameterDirection.Input;
-                cmdAddFurniture.Parameters.Add(furnitureDescription);
-
-                DataSet ds = objDB.GetDataSetUsingCmdObj(cmdAddFurniture);
-
-                int furnitureID = Int32.Parse(ds.Tables[0].Rows[0][0].ToString());
-                if (furnitureID < 0)
-                {
-                    return -1;
-                }
-
-                return furnitureID;
-            }
-            return -1;
-        }
+       
     }
 }
