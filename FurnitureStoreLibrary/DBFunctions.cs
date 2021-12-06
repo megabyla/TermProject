@@ -166,5 +166,30 @@ namespace FurnitureStoreLibrary
             return dsFurniture;
         }
 
+        public DataSet GetFurnitureByNameType(string name, string type)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            DataSet dsFurniture;
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GetFurnitureByNameType";
+
+            SqlParameter inputParameter = new SqlParameter("@theName", name);
+            inputParameter.Direction = ParameterDirection.Input;
+            inputParameter.SqlDbType = SqlDbType.VarChar;
+            inputParameter.Size = 50;
+            objCommand.Parameters.Add(inputParameter); 
+
+            inputParameter = new SqlParameter("@theType", type);
+            inputParameter.Direction = ParameterDirection.Input;
+            inputParameter.SqlDbType = SqlDbType.VarChar;
+            inputParameter.Size = 50;
+            objCommand.Parameters.Add(inputParameter);
+
+            dsFurniture = objDB.GetDataSetUsingCmdObj(objCommand);
+            return dsFurniture;
+        }
+
     }
 }

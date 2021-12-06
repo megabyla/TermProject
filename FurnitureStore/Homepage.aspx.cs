@@ -44,7 +44,7 @@ namespace FurnitureStore.FurnitureStoreWeb
                 }
             }
 
-            else if (search != null && search != "")
+            else if (search != null && search != "" && type == "null")
             {
                 //SearchFilter1.setFilter("null");
                 SearchFilter1.FilterDdl = "null";
@@ -58,7 +58,6 @@ namespace FurnitureStore.FurnitureStoreWeb
                         FurnitureDisplay displayCtrl = (FurnitureDisplay)LoadControl("FurnitureDisplay.ascx");
                         displayCtrl.FurnitureId = int.Parse(record["furnitureID"].ToString());
                         displayCtrl.DataBind();
-
                         Form.Controls.Add(displayCtrl);
                         
                     }
@@ -72,6 +71,18 @@ namespace FurnitureStore.FurnitureStoreWeb
                         displayCtrl.DataBind();
                         Form.Controls.Add(displayCtrl);
                     }
+                }
+            }
+
+            else if (search != "" && type != "null")
+            {
+                DataSet nameTypeFurnitureDS = dBFunctions.GetFurnitureByNameType(search, type);
+                foreach (DataRow record in nameTypeFurnitureDS.Tables[0].Rows)
+                {
+                    FurnitureDisplay displayCtrl = (FurnitureDisplay)LoadControl("FurnitureDisplay.ascx");
+                    displayCtrl.FurnitureId = int.Parse(record["furnitureID"].ToString());
+                    displayCtrl.DataBind();
+                    Form.Controls.Add(displayCtrl);
                 }
             }
          
