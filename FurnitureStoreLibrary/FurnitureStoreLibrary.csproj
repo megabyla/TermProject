@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DBFunctions.cs" />
     <Compile Include="Furniture.cs" />
+    <Compile Include="Images.cs" />
     <Compile Include="Reservation.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Validation.cs" />
