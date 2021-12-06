@@ -4,7 +4,7 @@
     <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-md-9 col-lg-6 col-xl-5">
             <asp:Label ID="lblFurnitureName" runat="server"></asp:Label>
-
+            <br />
             <asp:Image ID="imgFurniture" runat="server" />
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
