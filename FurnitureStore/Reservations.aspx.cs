@@ -11,6 +11,7 @@ using FurnitureStoreLibrary;
 using Utilities;
 using System.Data;
 using System.Globalization;
+using System.Data.SqlClient;
 
 namespace FurnitureStore.FurnitureStoreWeb
 {
@@ -36,6 +37,21 @@ namespace FurnitureStore.FurnitureStoreWeb
         }
         protected void BindRepeater()
         {
+            //SqlCommand objCommand = new SqlCommand();
+            //DataSet dsReservations;
+            //DBConnect objdb = new DBConnect();
+            //objCommand.CommandType = CommandType.StoredProcedure;
+            //objCommand.CommandText = "TP_GetReservationsByUserID";
+
+            //SqlParameter inputParameter = new SqlParameter("@userId", userID);
+            //inputParameter.Direction = ParameterDirection.Input;
+            //inputParameter.SqlDbType = SqlDbType.Int;
+            //inputParameter.Size = 4;
+            //objCommand.Parameters.Add(inputParameter);
+
+            //dsReservations = obj.GetDataSetUsingCmdObj(objCommand);
+            //return dsReservations;
+
             WebRequest request = WebRequest.Create(url + "GetReservationByUserID/" + userID);
             WebResponse response = request.GetResponse();
 
@@ -53,7 +69,7 @@ namespace FurnitureStore.FurnitureStoreWeb
             List<Reservation> reservations = js.Deserialize<List<Reservation>>(data);
 
             // Bind the list to the GridView to display all customers.
-            reservations[0].ToString();
+            reservations.ToString();
             Repeater1.DataSource = reservations;
             Repeater1.DataBind();
         }

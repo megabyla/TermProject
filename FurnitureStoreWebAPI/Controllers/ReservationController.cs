@@ -38,6 +38,31 @@ namespace FurnitureStoreWebAPI.Controllers
             }
             return reservationList;
         }
+
+
+        [HttpGet("GetReservationByUserID/{id}")]
+        public List<Reservation> GetReservationByUserID(int id)
+        {
+            DBConnect objDB = new DBConnect();
+            DataSet ds = dBFunctions.GetReservationsByUserID(id, objDB);
+            List<Reservation> reservationList = new List<Reservation>();
+
+            int count = ds.Tables[0].Rows.Count;
+            for (int i = 0; i < count; i++)
+            {
+                Reservation reservation = new Reservation();
+
+                reservation.reservationID = int.Parse(ds.Tables[0].Rows[0]["reservationID"].ToString());
+                reservation.furnitureID = int.Parse(ds.Tables[0].Rows[0]["furnitureID"].ToString());
+                reservation.reservationDate = (DateTime)ds.Tables[0].Rows[0]["reservationDate"];
+                reservation.reservationTime = ds.Tables[0].Rows[0]["reservationTime"].ToString();
+                reservation.reservationCount = int.Parse(ds.Tables[0].Rows[0]["reservationCount"].ToString());
+                reservationList.Add(reservation);
+            }
+
+            return reservationList;
+        }
+
         [HttpGet("GetReservationCount/{id}")]
         public int GetReservationCount(int id)
         {
@@ -71,20 +96,7 @@ namespace FurnitureStoreWebAPI.Controllers
             return furniture;
         }
 
-        [HttpGet("GetReservationByUserID/{id}")]
-        public Reservation GetReservationByUserID(int id)
-        {
-            DBConnect objDB = new DBConnect();
-            DataSet ds = dBFunctions.GetReservationsByUserID(id, objDB);
-            Reservation reservation = new Reservation();
-            reservation.reservationID = int.Parse(ds.Tables[0].Rows[0]["reservationID"].ToString());
-            reservation.furnitureID = int.Parse(ds.Tables[0].Rows[0]["furnitureID"].ToString());
-            reservation.reservationDate = (DateTime)ds.Tables[0].Rows[0]["reservationDate"];
-            reservation.reservationTime = ds.Tables[0].Rows[0]["reservationTime"].ToString();
-            reservation.reservationCount = int.Parse(ds.Tables[0].Rows[0]["reservationCount"].ToString());
 
-            return reservation;
-        }
 
 
         //[HttpPost]

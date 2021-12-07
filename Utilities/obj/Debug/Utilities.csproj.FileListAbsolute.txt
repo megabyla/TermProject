@@ -21,4 +21,3 @@ C:\Users\salee\Source\Repos\TermProject\Utilities\bin\Debug\Utilities.pdb
 C:\Users\salee\Source\Repos\TermProject\Utilities\obj\Debug\Utilities.csproj.CoreCompileInputs.cache
 C:\Users\salee\Source\Repos\TermProject\Utilities\obj\Debug\Utilities.dll
 C:\Users\salee\Source\Repos\TermProject\Utilities\obj\Debug\Utilities.pdb
-C:\Users\salee\Source\Repos\TermProject\Utilities\obj\Debug\Utilities.csprojAssemblyReference.cache
