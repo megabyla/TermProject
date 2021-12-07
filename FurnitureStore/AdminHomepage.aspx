@@ -87,7 +87,7 @@
             <small>After you have modified any furniture information, please refresh the page to see the changes.</small>
             <br />
             <br />
-
+            <hr style="width: 90%; margin: auto; margin-top: 20px; margin-bottom: 20px">
             <%--    ajax button--%>
             <center>
                 <button type="button" id="btnPending" runat="server" onclick="loadDoc()">View Pending Furnitures</button>
@@ -133,7 +133,7 @@
 
             <div runat="server" id="modifiyDiv" visible="false">
 
-                <asp:Image ID="furnitureImage" Height="250px" Width="250px" runat="server" />
+                <asp:Image ID="furnitureImage" Height="250px" Width="250px" runat="server" style="border: 5px solid #555;" />
                 <br />
                 <br />
                 <asp:FileUpload ID="imgUpload" runat="server" Height="41px" Width="309px" />
