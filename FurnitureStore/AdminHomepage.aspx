@@ -51,7 +51,7 @@
         <div class="m-4">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <a href="#" class="navbar-brand">
+                    <a href="AdminHomepage.aspx" class="navbar-brand">
                         <img src="Images/logo/logo.png" height="85" alt="Luxury Furniture" />
                     </a>
                     <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -143,15 +143,10 @@
         <center>
 
 
-             <section class="vh-50">
-            <div class="container-fluid h-custom">
-                <div class="row d-flex justify-content-center align-items-center h-100">
-                    <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-
-
+      
             <div runat="server" id="modifiyDiv" visible="false">
 
-                <asp:Image ID="furnitureImage" Height="250px" Width="250px" runat="server" />
+                <asp:Image ID="furnitureImage" Height="250px" Width="250px" runat="server" style="border: 5px solid #555;"/>
                 <br />
                 <br />
                 <asp:FileUpload ID="imgUpload" runat="server" Height="41px" Width="309px" />
@@ -182,19 +177,16 @@
                 <br />
                 <asp:Button ID="btnModify" runat="server" Text="Modify" class="btn btn-primary" OnClick="btnModify_Click" />
                 &nbsp;&nbsp;
-                    </div>
-                        </div>
-                    </div>
-                </div>
-                </section>
+                   
                
 
                         <asp:Button ID="btnCancel" runat="server" Text="Cancel" CssClass="btn btn-danger" OnClick="btnCancel_Click" />
                 <br />
                 <asp:Label ID="lblModifyMessage" runat="server" Font-Bold="true" Font-Size="20px" ForeColor="#990000"></asp:Label>
                 <br />
-                <br />
-            </div>
+                <br /> </div>
+               
+            
             <asp:Label ID="lblrequestMessage" runat="server" Font-Bold="true" Font-Size="20px" ForeColor="#990000"></asp:Label>
 
             <div runat="server" visible="false" id="requestDiv" style="padding-left: 15px; padding-right: 15px;">
