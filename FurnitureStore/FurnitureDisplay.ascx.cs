@@ -52,7 +52,6 @@ namespace FurnitureStore
             inputId.Direction = ParameterDirection.Input;
             cmdGetImage.Parameters.Add(inputId);
 
-
             DataSet ds = objDB.GetDataSetUsingCmdObj(cmdGetImage);
             int count = ds.Tables[0].Rows.Count;
 
