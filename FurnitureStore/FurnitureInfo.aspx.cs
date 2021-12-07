@@ -59,7 +59,7 @@ namespace FurnitureStore
                 //furniture.furniturePrice = (float)(dsFurni.Tables[0].Rows[0]["furniturePrice"]);
 
 
-                    int flag = 0;
+                   
                     Reservation reservation = new Reservation();
                     reservation.furnitureID = int.Parse(Request.QueryString["id"]);
                     reservation.reservationCount = 1;
@@ -68,10 +68,11 @@ namespace FurnitureStore
                     DateTime time = DateTime.Now;
                     string timeString = time.ToString("hh:mm tt");
                     reservation.reservationTime = timeString;
-                    flag = functions.AddReservation(reservation.reservationTime, 
-                        reservation.reservationDate, reservation.reservationCount, 
-                        reservation.userID, reservation.furnitureID, objDB);
-
+                //flag = functions.AddReservation(reservation.reservationTime, 
+                //    reservation.reservationDate, reservation.reservationCount, 
+                //    reservation.userID, reservation.furnitureID, objDB);
+                try
+                {
                     JavaScriptSerializer js = new JavaScriptSerializer();
                     String jsonReservation = js.Serialize(reservation);
 
@@ -84,14 +85,14 @@ namespace FurnitureStore
                     writer.Write(jsonReservation);
                     writer.Flush();
                     writer.Close();
-                    //WebResponse response = request.GetResponse();
-                    //Stream theDataStream = response.GetResponseStream();
-                    //StreamReader reader = new StreamReader(theDataStream);
-                    //String data = reader.ReadToEnd();
-                    //reader.Close();
-                    //response.Close();
+                    WebResponse response = request.GetResponse();
+                    Stream theDataStream = response.GetResponseStream();
+                    StreamReader reader = new StreamReader(theDataStream);
+                    String data = reader.ReadToEnd();
+                    reader.Close();
+                    response.Close();
 
-                    if (flag > 0)
+                    if (data == "true")
                     {
                         lblStatus.Text = "Update was successful!";
                     }
@@ -100,6 +101,12 @@ namespace FurnitureStore
                     {
                         lblStatus.Text = "Update was unsuccessful!";
                     }
+                }
+                catch (Exception ex)
+                {
+                    lblStatus.Text = "Error: " + ex.Message;
+
+                }
             }
             else
             {
