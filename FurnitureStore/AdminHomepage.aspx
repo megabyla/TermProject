@@ -87,7 +87,7 @@
             <small>After you have modified any furniture information, please refresh the page to see the changes.</small>
             <br />
             <br />
-            <hr style="width: 90%; margin: auto; margin-top: 20px; margin-bottom: 20px">
+
             <%--    ajax button--%>
             <center>
                 <button type="button" id="btnPending" runat="server" onclick="loadDoc()">View Pending Furnitures</button>
@@ -126,14 +126,32 @@
                     <asp:CommandField SelectText="Modify" ShowSelectButton="True" />
                 </Columns>
 
+                 <EditRowStyle BackColor="#2461BF" />
+                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#EFF3FB" />
+                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+
             </asp:GridView>
             <br />
         </div>
         <center>
 
+
+             <section class="vh-50">
+            <div class="container-fluid h-custom">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+
+
             <div runat="server" id="modifiyDiv" visible="false">
 
-                <asp:Image ID="furnitureImage" Height="250px" Width="250px" runat="server" style="border: 5px solid #555;" />
+                <asp:Image ID="furnitureImage" Height="250px" Width="250px" runat="server" />
                 <br />
                 <br />
                 <asp:FileUpload ID="imgUpload" runat="server" Height="41px" Width="309px" />
@@ -164,7 +182,11 @@
                 <br />
                 <asp:Button ID="btnModify" runat="server" Text="Modify" class="btn btn-primary" OnClick="btnModify_Click" />
                 &nbsp;&nbsp;
-                    
+                    </div>
+                        </div>
+                    </div>
+                </div>
+                </section>
                
 
                         <asp:Button ID="btnCancel" runat="server" Text="Cancel" CssClass="btn btn-danger" OnClick="btnCancel_Click" />
@@ -187,6 +209,18 @@
 
 
                     </Columns>
+
+                     <EditRowStyle BackColor="#2461BF" />
+                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#EFF3FB" />
+                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+
 
                 </asp:GridView>
 
