@@ -1,10 +1,17 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
+<<<<<<< HEAD
       "C:\\Users\\salee\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\salee\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
       "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder"
+=======
+      "C:\\Users\\nylar\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\nylar\\.nuget\\packages",
+      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+>>>>>>> 7ee974517e31d267e2571d2316c6d6954905077b
     ]
   }
 }

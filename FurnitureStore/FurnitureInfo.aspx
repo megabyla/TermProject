@@ -89,6 +89,7 @@
 		<center><h1 class="display-4" style="font-size:calc(1.475rem + 1.2vw);">Furniture Information</h1>
 			<br/>
 			<asp:Label runat="server" class="display-4" style="font-size:calc(1.2rem + 0.9vw);" ID="lblFurnitureName"></asp:Label>
+			<br />
 			            <asp:Image ID="imgFurniture" runat="server" Height="300px" Width="300px" style="border: 5px solid #555;"/> 
 
 		</center>
