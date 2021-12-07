@@ -16,10 +16,12 @@ namespace FurnitureStore.FurnitureStoreWeb
 {
     public partial class Reservations : System.Web.UI.Page
     {
+        int userID;
         DBFunctions dBFunctions = new DBFunctions();
         string url = "https://localhost:44393/api/reservation/";
         protected void Page_Load(object sender, EventArgs e)
         {
+            userID = Convert.ToInt32(Session["userID"]); 
             if (!IsPostBack)
             {
                 if (Session["username"] != null)
@@ -34,7 +36,7 @@ namespace FurnitureStore.FurnitureStoreWeb
         }
         protected void BindRepeater()
         {
-            WebRequest request = WebRequest.Create(url + "GetReservations/");
+            WebRequest request = WebRequest.Create(url + "GetReservationByUserID/" + userID);
             WebResponse response = request.GetResponse();
 
             // Read the data from the Web Response, which requires working with streams.

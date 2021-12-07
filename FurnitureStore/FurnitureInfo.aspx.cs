@@ -50,7 +50,6 @@ namespace FurnitureStore
         {
             if (Session["username"] != null)
             {
-                Reservation reservation = new Reservation();
                 //Furniture furniture = new Furniture();
                 //DataSet dsFurni = functions.GetFurnitureById(furnitureID, objDB);
                 //furniture.furnitureName = dsFurni.Tables[0].Rows[0]["furnitureName"].ToString();
@@ -59,17 +58,20 @@ namespace FurnitureStore
                 //furniture.furnitureDescription = dsFurni.Tables[0].Rows[0]["furnitureDescription"].ToString();
                 //furniture.furniturePrice = (float)(dsFurni.Tables[0].Rows[0]["furniturePrice"]);
 
-                reservation.furnitureID = int.Parse(Request.QueryString["id"]);
-                reservation.reservationCount = 1;
-                reservation.reservationDate = DateTime.Today;
-                reservation.userID = userID;
-                DateTime time = DateTime.Now;
-                string timeString = time.ToString("hh:mm tt");
-                reservation.reservationTime = timeString;
 
-            
-            try
-                {
+                    int flag = 0;
+                    Reservation reservation = new Reservation();
+                    reservation.furnitureID = int.Parse(Request.QueryString["id"]);
+                    reservation.reservationCount = 1;
+                    reservation.reservationDate = DateTime.Today;
+                    reservation.userID = userID;
+                    DateTime time = DateTime.Now;
+                    string timeString = time.ToString("hh:mm tt");
+                    reservation.reservationTime = timeString;
+                    flag = functions.AddReservation(reservation.reservationTime, 
+                        reservation.reservationDate, reservation.reservationCount, 
+                        reservation.userID, reservation.furnitureID, objDB);
+
                     JavaScriptSerializer js = new JavaScriptSerializer();
                     String jsonReservation = js.Serialize(reservation);
 
@@ -82,15 +84,14 @@ namespace FurnitureStore
                     writer.Write(jsonReservation);
                     writer.Flush();
                     writer.Close();
+                    //WebResponse response = request.GetResponse();
+                    //Stream theDataStream = response.GetResponseStream();
+                    //StreamReader reader = new StreamReader(theDataStream);
+                    //String data = reader.ReadToEnd();
+                    //reader.Close();
+                    //response.Close();
 
-                    WebResponse response = request.GetResponse();
-                    Stream theDataStream = response.GetResponseStream();
-                    StreamReader reader = new StreamReader(theDataStream);
-                    String data = reader.ReadToEnd();
-                    reader.Close();
-                    response.Close();
-
-                    if (data == "true")
+                    if (flag > 0)
                     {
                         lblStatus.Text = "Update was successful!";
                     }
@@ -99,16 +100,14 @@ namespace FurnitureStore
                     {
                         lblStatus.Text = "Update was unsuccessful!";
                     }
-                }
-                catch (Exception ex)
-                {
-                    lblStatus.Text = "Error: " + ex.Message;
-                }
             }
             else
             {
                 Response.Redirect("Login.aspx");
             }
         }
+
+
+
     }
 }

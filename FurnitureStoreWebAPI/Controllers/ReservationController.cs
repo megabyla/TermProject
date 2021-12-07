@@ -54,6 +54,7 @@ namespace FurnitureStoreWebAPI.Controllers
             }
 
         }
+
         [HttpGet("GetReservationByID/{id}")]
         public Furniture GetReservationByID(int id)
         {
@@ -70,13 +71,40 @@ namespace FurnitureStoreWebAPI.Controllers
             return furniture;
         }
 
+        [HttpGet("GetReservationByUserID/{id}")]
+        public Reservation GetReservationByUserID(int id)
+        {
+            DBConnect objDB = new DBConnect();
+            DataSet ds = dBFunctions.GetReservationsByUserID(id, objDB);
+            Reservation reservation = new Reservation();
+            reservation.reservationID = int.Parse(ds.Tables[0].Rows[0]["reservationID"].ToString());
+            reservation.furnitureID = int.Parse(ds.Tables[0].Rows[0]["furnitureID"].ToString());
+            reservation.reservationDate = (DateTime)ds.Tables[0].Rows[0]["reservationDate"];
+            reservation.reservationTime = ds.Tables[0].Rows[0]["reservationTime"].ToString();
+            reservation.reservationCount = int.Parse(ds.Tables[0].Rows[0]["reservationCount"].ToString());
 
+            return reservation;
+        }
+
+
+        //[HttpPost]
+        //[HttpPost("AddReservation")]
+        //public Boolean AddReservation([FromBody] Reservation reservation)
+        //{
+        //    DBConnect objDB = new DBConnect();
+        //    int flag = dBFunctions.AddReservation(reservation.reservationTime, reservation.reservationDate,
+        //        reservation.reservationCount, reservation.userID, reservation.furnitureID, objDB);
+        //    if (flag > 0)
+        //    { return true; }
+        //    else { return false; }
+
+        //}
         [HttpPost]
         [HttpPost("AddReservation")]
         public Boolean AddReservation([FromBody] Reservation reservation)
         {
             DBConnect objDB = new DBConnect();
-            int flag = dBFunctions.AddReservation(reservation.reservationTime, reservation.reservationDate, 
+            int flag = dBFunctions.AddReservation(reservation.reservationTime, reservation.reservationDate,
                 reservation.reservationCount, reservation.userID, reservation.furnitureID, objDB);
             if (flag > 0)
             { return true; }

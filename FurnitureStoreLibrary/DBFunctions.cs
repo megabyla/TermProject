@@ -84,14 +84,30 @@ namespace FurnitureStoreLibrary
             return dsReservations;
         }
 
-        public int AddReservation(string rTime, DateTime date, int count, int userID, int furnitureID, DBConnect newDB)
+        public DataSet GetReservationsByUserID(int id, DBConnect newDB)
         {
             SqlCommand objCommand = new SqlCommand();
             DataSet dsReservations;
 
             objCommand.CommandType = CommandType.StoredProcedure;
-            objCommand.CommandText = "TP_AddReservation";
+            objCommand.CommandText = "TP_GetReservationsByUserID";
+
+            SqlParameter inputParameter = new SqlParameter("@userId", id);
+            inputParameter.Direction = ParameterDirection.Input;
+            inputParameter.SqlDbType = SqlDbType.Int;
+            inputParameter.Size = 4;
+            objCommand.Parameters.Add(inputParameter);
+
             dsReservations = newDB.GetDataSetUsingCmdObj(objCommand);
+            return dsReservations;
+        }
+
+        public int AddReservation(string rTime, DateTime date, int count, int userID, int furnitureID, DBConnect newDB)
+        {
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_AddReservation";
 
             SqlParameter parameters = new SqlParameter("@reservationTime", rTime);
             parameters.Direction = ParameterDirection.Input;
