@@ -1,6 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Homepage.aspx.cs" Inherits="FurnitureStore.FurnitureStoreWeb.Homepage" %>
 
 
+<%@ Register src="SearchFilter.ascx" tagname="SearchFilter" tagprefix="uc1" %>
+
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -8,16 +11,7 @@
     <title></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script lang="javascript" type="text/javascript">
-        var furnitureInfo;
 
-        function pageLoad() {
-            SOAPWebServices.GetFurnitureByType(document.getElementById('ddlFilter').value, onComplete, onTimeout, onError);
-        }
-        function GetList() {
-
-        }
-        </script>
 </head>
 
 
@@ -33,9 +27,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
-                    <a href="#" class="nav-item nav-link active">Home</a>
-                    <a href="#" class="nav-item nav-link">Profile</a>
-                    <a href="#" class="nav-item nav-link">Messages</a>
+                    <a href="Homepage.aspx" class="nav-item nav-link active">Home</a>
                     <a href="Reservations.aspx" class="nav-item nav-link">Reservations</a>
                 </div>
                 <div class="navbar-nav ms-auto">
@@ -47,19 +39,17 @@
 </div>
 
     <form id="form1" runat="server">
-        <center><h1 class="display-4" style="font-size:calc(1.475rem + 1.2vw);">Furniture</h1></center>
+        <center><h1 class="display-4" style="font-size:calc(1.475rem + 1.2vw);">Luxury Furniture</h1></center>
         <div>
-            <br>
-            <br>
-            <center>Filter:&nbsp;&nbsp; 
-                <asp:DropDownList ID="ddlFliter" runat="server">
-                <asp:ListItem Value="blank_type">Select a Type</asp:ListItem>
-                <asp:ListItem Value="bedroom">Bedroom</asp:ListItem>
-                <asp:ListItem Value="living_room">Living Room</asp:ListItem>
-                <asp:ListItem Value="dining_room">Dining Room</asp:ListItem>
-            </asp:DropDownList></center>
+            <br/>
+            <br/>
+            <center> 
+                <uc1:SearchFilter ID="SearchFilter1" runat="server" AutoPostBack="true"/>
+            </center>
             
         </div>
+        <hr style="width: 90%; margin: auto; margin-top: 20px; margin-bottom: 20px" />
+        <br />
     </form>
 </body>
 </html>

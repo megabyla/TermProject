@@ -10,23 +10,49 @@ using System.Web.UI.WebControls;
 using FurnitureStoreLibrary;
 using Utilities;
 using System.Data;
+using System.Globalization;
+using System.Data.SqlClient;
 
 namespace FurnitureStore.FurnitureStoreWeb
 {
     public partial class Reservations : System.Web.UI.Page
     {
+        int userID;
         DBFunctions dBFunctions = new DBFunctions();
         string url = "https://localhost:44393/api/reservation/";
         protected void Page_Load(object sender, EventArgs e)
         {
+            userID = Convert.ToInt32(Session["userID"]); 
             if (!IsPostBack)
             {
-                BindRepeater();
+                if (Session["username"] != null)
+                {
+                    BindRepeater();
+                }
+                else
+                {
+                    Response.Redirect("Login.aspx");
+                }
             }
         }
         protected void BindRepeater()
         {
-            WebRequest request = WebRequest.Create(url + "GetReservations/");
+            //SqlCommand objCommand = new SqlCommand();
+            //DataSet dsReservations;
+            //DBConnect objdb = new DBConnect();
+            //objCommand.CommandType = CommandType.StoredProcedure;
+            //objCommand.CommandText = "TP_GetReservationsByUserID";
+
+            //SqlParameter inputParameter = new SqlParameter("@userId", userID);
+            //inputParameter.Direction = ParameterDirection.Input;
+            //inputParameter.SqlDbType = SqlDbType.Int;
+            //inputParameter.Size = 4;
+            //objCommand.Parameters.Add(inputParameter);
+
+            //dsReservations = obj.GetDataSetUsingCmdObj(objCommand);
+            //return dsReservations;
+
+            WebRequest request = WebRequest.Create(url + "GetReservationByUserID/" + userID);
             WebResponse response = request.GetResponse();
 
             // Read the data from the Web Response, which requires working with streams.
@@ -43,7 +69,7 @@ namespace FurnitureStore.FurnitureStoreWeb
             List<Reservation> reservations = js.Deserialize<List<Reservation>>(data);
 
             // Bind the list to the GridView to display all customers.
-            reservations[0].ToString();
+            reservations.ToString();
             Repeater1.DataSource = reservations;
             Repeater1.DataBind();
         }
@@ -55,7 +81,8 @@ namespace FurnitureStore.FurnitureStoreWeb
             reservation.furnitureID = int.Parse(((Label)e.Item.FindControl("lblFurnitureID")).Text);
             reservation.reservationID = int.Parse(((Label)e.Item.FindControl("lblReservationID")).Text);
             reservation.reservationTime = ((Label)e.Item.FindControl("lblReservationTime")).Text;
-            reservation.reservationDate = ((Label)e.Item.FindControl("lblReservationDate")).Text;
+            DateTime dt = Convert.ToDateTime(((Label)e.Item.FindControl("lblReservationDate")).Text);
+            reservation.reservationDate = dt;
             reservation.reservationCount = int.Parse(((Label)e.Item.FindControl("lblReservationCount")).Text);
 
             //JavaScriptSerializer js = new JavaScriptSerializer();
@@ -166,11 +193,21 @@ namespace FurnitureStore.FurnitureStoreWeb
         }
 
         protected void ddlReservationFilter_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {            
             DBConnect objDB = new DBConnect();
-            DataSet ds = dBFunctions.GetReservationsByType(ddlReservationFilter.SelectedItem.Value, objDB);
-            Repeater1.DataSource = ds;
-            Repeater1.DataBind();
+
+            if (ddlReservationFilter.SelectedItem.Value == "null")
+            {
+                DataSet dsAll = dBFunctions.GetReservations(objDB);
+                Repeater1.DataSource = dsAll;
+                Repeater1.DataBind();
+            }
+            else
+            {
+                DataSet ds = dBFunctions.GetReservationsByType(ddlReservationFilter.SelectedItem.Value, objDB);
+                Repeater1.DataSource = ds;
+                Repeater1.DataBind();
+            }
         }
     }
 }

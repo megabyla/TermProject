@@ -10,7 +10,7 @@ namespace FurnitureStoreLibrary
     {
         public int furnitureID { get; set; }
         public int reservationID { get; set;}
-        public String reservationDate { get; set; }
+        public DateTime reservationDate { get; set; }
         public String reservationTime { get; set; }
         public int reservationCount { get; set; }
         public int userID { get; set; }
@@ -21,7 +21,7 @@ namespace FurnitureStoreLibrary
         {
         }
 
-        public Reservation(int reservationID, int furnitureID, string date, String time,
+        public Reservation(int reservationID, int furnitureID, DateTime date, String time,
              int count, int userID)
         {
             this.reservationID = reservationID;

@@ -31,13 +31,38 @@ namespace FurnitureStoreWebAPI.Controllers
                 Reservation reservation = new Reservation();
                 reservation.reservationID = int.Parse(ds.Tables[0].Rows[i]["reservationID"].ToString());
                 reservation.furnitureID = int.Parse(ds.Tables[0].Rows[i]["furnitureID"].ToString());
-                reservation.reservationDate = ds.Tables[0].Rows[i]["reservationDate"].ToString();
+                reservation.reservationDate = (DateTime)ds.Tables[0].Rows[i]["reservationDate"];
                 reservation.reservationTime = ds.Tables[0].Rows[i]["reservationTime"].ToString();
                 reservation.reservationCount = int.Parse(ds.Tables[0].Rows[i]["reservationCount"].ToString());
                 reservationList.Add(reservation);
             }
             return reservationList;
         }
+
+
+        [HttpGet("GetReservationByUserID/{id}")]
+        public List<Reservation> GetReservationByUserID(int id)
+        {
+            DBConnect objDB = new DBConnect();
+            DataSet ds = dBFunctions.GetReservationsByUserID(id, objDB);
+            List<Reservation> reservationList = new List<Reservation>();
+
+            int count = ds.Tables[0].Rows.Count;
+            for (int i = 0; i < count; i++)
+            {
+                Reservation reservation = new Reservation();
+
+                reservation.reservationID = int.Parse(ds.Tables[0].Rows[0]["reservationID"].ToString());
+                reservation.furnitureID = int.Parse(ds.Tables[0].Rows[0]["furnitureID"].ToString());
+                reservation.reservationDate = (DateTime)ds.Tables[0].Rows[0]["reservationDate"];
+                reservation.reservationTime = ds.Tables[0].Rows[0]["reservationTime"].ToString();
+                reservation.reservationCount = int.Parse(ds.Tables[0].Rows[0]["reservationCount"].ToString());
+                reservationList.Add(reservation);
+            }
+
+            return reservationList;
+        }
+
         [HttpGet("GetReservationCount/{id}")]
         public int GetReservationCount(int id)
         {
@@ -54,6 +79,7 @@ namespace FurnitureStoreWebAPI.Controllers
             }
 
         }
+
         [HttpGet("GetReservationByID/{id}")]
         public Furniture GetReservationByID(int id)
         {
@@ -71,13 +97,27 @@ namespace FurnitureStoreWebAPI.Controllers
         }
 
 
+
+
+        //[HttpPost]
+        //[HttpPost("AddReservation")]
+        //public Boolean AddReservation([FromBody] Reservation reservation)
+        //{
+        //    DBConnect objDB = new DBConnect();
+        //    int flag = dBFunctions.AddReservation(reservation.reservationTime, reservation.reservationDate,
+        //        reservation.reservationCount, reservation.userID, reservation.furnitureID, objDB);
+        //    if (flag > 0)
+        //    { return true; }
+        //    else { return false; }
+
+        //}
         [HttpPost]
         [HttpPost("AddReservation")]
         public Boolean AddReservation([FromBody] Reservation reservation)
         {
             DBConnect objDB = new DBConnect();
-            int flag = dBFunctions.AddReservation(reservation.reservationTime, reservation.reservationDate, reservation.reservationCount,
-                reservation.userID, reservation.furnitureID, objDB);
+            int flag = dBFunctions.AddReservation(reservation.reservationTime, reservation.reservationDate,
+                reservation.reservationCount, reservation.userID, reservation.furnitureID, objDB);
             if (flag > 0)
             { return true; }
             else { return false; }

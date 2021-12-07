@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Reservations.aspx.cs" Inherits="FurnitureStore.FurnitureStoreWeb.Reservations" %>
 
-<%@ Register Src="FurnitureDisplay.ascx" TagName="FurnitureDisplay" TagPrefix="fdisplay" %>
+
 
 <!DOCTYPE html>
 
@@ -54,9 +54,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav">
-                        <a href="#" class="nav-item nav-link">Home</a>
-                        <a href="#" class="nav-item nav-link">Profile</a>
-                        <a href="#" class="nav-item nav-link">Messages</a>
+                        <a href="Homepage.aspx" class="nav-item nav-link">Home</a>
                         <a href="Reservations.aspx" class="nav-item nav-link active">Reservations</a>
                     </div>
                     <div class="navbar-nav ms-auto">
@@ -78,7 +76,7 @@
                 <br />
 
                 Filter: &nbsp&nbsp<asp:DropDownList ID="ddlReservationFilter" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlReservationFilter_SelectedIndexChanged">
-                    <asp:ListItem>Select a Type</asp:ListItem>
+                    <asp:ListItem Value="null">Select a Type</asp:ListItem>
                     <asp:ListItem>Bedroom</asp:ListItem>
                     <asp:ListItem>Dining Room</asp:ListItem>
                     <asp:ListItem>Living Room</asp:ListItem>
@@ -116,7 +114,7 @@
                             </td>
                             <td>
                                 <asp:Label ID="lblReservationDate" runat="server"
-                                    Text='<%# DataBinder.Eval(Container.DataItem, "ReservationDate") %>'></asp:Label>
+                                    Text='<%# DataBinder.Eval(Container.DataItem, "ReservationDate", "{0: dd/MM/yyyy}") %>'></asp:Label>
                             </td>
                             <td>
                                 <asp:Label ID="lblReservationTime" runat="server"

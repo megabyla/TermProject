@@ -96,6 +96,14 @@
         </div>
 
     </section>
+    <br />
+     <footer id="myFooter">
+     
+        <div class="footer-copyright" style="background-color:Highlight; height: 70px; color:snow;"  >
+            <small style="float:left; margin-top: 30px;">&nbsp;&nbsp; ©2021 Copyright By: Nyla Rashied & Saleem Hussein </small>
+            <small style="float:right; margin-top: 30px; margin-right: 15px;">&nbsp;&nbsp; CIS 3342 Server-side </small>
+        </div>
+    </footer>
 
 </body>
 </html>
