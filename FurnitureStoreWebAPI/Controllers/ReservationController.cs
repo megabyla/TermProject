@@ -76,8 +76,8 @@ namespace FurnitureStoreWebAPI.Controllers
         public Boolean AddReservation([FromBody] Reservation reservation)
         {
             DBConnect objDB = new DBConnect();
-            int flag = dBFunctions.AddReservation(reservation.reservationTime, reservation.reservationDate, reservation.reservationCount,
-                reservation.userID, reservation.furnitureID, objDB);
+            int flag = dBFunctions.AddReservation(reservation.reservationTime, reservation.reservationDate, 
+                reservation.reservationCount, reservation.userID, reservation.furnitureID, objDB);
             if (flag > 0)
             { return true; }
             else { return false; }

@@ -123,9 +123,13 @@ namespace FurnitureStoreLibrary
             parameters.Size = 4;
             objCommand.Parameters.Add(parameters);
 
-            int flag = newDB.DoUpdateUsingCmdObj(objCommand);
-
-            return flag;
+             DataSet ds = newDB.GetDataSetUsingCmdObj(objCommand);
+            int reservationID = Int32.Parse(ds.Tables[0].Rows[0][0].ToString());
+            if (reservationID < 0)
+            {
+                return -1;
+            }
+            return reservationID;
         }
 
         public DataSet GetFurnitureByType(string type)

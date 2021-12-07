@@ -112,6 +112,8 @@
 			</center>
 		</div>
 		<br />
+        <center><asp:Label ID="lblStatus" runat="server"></asp:Label></center>
+		<br />
 
 	</form>
 </body>
