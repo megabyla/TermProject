@@ -81,7 +81,7 @@ namespace FurnitureStore.FurnitureStoreWeb
             reservation.furnitureID = int.Parse(((Label)e.Item.FindControl("lblFurnitureID")).Text);
             reservation.reservationID = int.Parse(((Label)e.Item.FindControl("lblReservationID")).Text);
             reservation.reservationTime = ((Label)e.Item.FindControl("lblReservationTime")).Text;
-            DateTime dt = DateTime.ParseExact(((Label)e.Item.FindControl("lblReservationDate")).Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            DateTime dt = Convert.ToDateTime(((Label)e.Item.FindControl("lblReservationDate")).Text);
             reservation.reservationDate = dt;
             reservation.reservationCount = int.Parse(((Label)e.Item.FindControl("lblReservationCount")).Text);
 
