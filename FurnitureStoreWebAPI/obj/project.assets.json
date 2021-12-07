@@ -11861,25 +11861,38 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\salee\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+=======
+    "C:\\Users\\nylar\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+>>>>>>> 43ef7662010c4d937cd24cfa7b6664e1835035ef
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\salee\\Source\\Repos\\TermProject\\FurnitureStoreWebAPI\\FurnitureStoreWebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\nylar\\Downloads\\TermProject_v1\\FurnitureStoreWebAPI\\FurnitureStoreWebAPI.csproj",
       "projectName": "FurnitureStoreWebAPI",
-      "projectPath": "C:\\Users\\salee\\Source\\Repos\\TermProject\\FurnitureStoreWebAPI\\FurnitureStoreWebAPI.csproj",
-      "packagesPath": "C:\\Users\\salee\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\salee\\Source\\Repos\\TermProject\\FurnitureStoreWebAPI\\obj\\",
+      "projectPath": "C:\\Users\\nylar\\Downloads\\TermProject_v1\\FurnitureStoreWebAPI\\FurnitureStoreWebAPI.csproj",
+      "packagesPath": "C:\\Users\\nylar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nylar\\Downloads\\TermProject_v1\\FurnitureStoreWebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+<<<<<<< HEAD
         "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\salee\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\nylar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 43ef7662010c4d937cd24cfa7b6664e1835035ef
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -11894,11 +11907,11 @@
         "netcoreapp2.1": {
           "targetAlias": "netcoreapp2.1",
           "projectReferences": {
-            "C:\\Users\\salee\\Source\\Repos\\TermProject\\FurnitureStoreLibrary\\FurnitureStoreLibrary.csproj": {
-              "projectPath": "C:\\Users\\salee\\Source\\Repos\\TermProject\\FurnitureStoreLibrary\\FurnitureStoreLibrary.csproj"
+            "C:\\Users\\nylar\\Downloads\\TermProject_v1\\FurnitureStoreLibrary\\FurnitureStoreLibrary.csproj": {
+              "projectPath": "C:\\Users\\nylar\\Downloads\\TermProject_v1\\FurnitureStoreLibrary\\FurnitureStoreLibrary.csproj"
             },
-            "C:\\Users\\salee\\Source\\Repos\\TermProject\\Utilities\\Utilities.csproj": {
-              "projectPath": "C:\\Users\\salee\\Source\\Repos\\TermProject\\Utilities\\Utilities.csproj"
+            "C:\\Users\\nylar\\Downloads\\TermProject_v1\\Utilities\\Utilities.csproj": {
+              "projectPath": "C:\\Users\\nylar\\Downloads\\TermProject_v1\\Utilities\\Utilities.csproj"
             }
           }
         }
@@ -11941,7 +11954,11 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+>>>>>>> 43ef7662010c4d937cd24cfa7b6664e1835035ef
       }
     }
   }
