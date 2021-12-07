@@ -5,7 +5,7 @@
             <center>
                 <h3><asp:Label ID="lblFurnitureName" runat="server" Font-Bold="false" ></asp:Label></h3>
             <br />
-            <asp:Image ID="imgFurniture" runat="server" Height="300px" Width="300px" style="border: 5px solid #555;"/> 
+            &nbsp;&nbsp;<asp:Image ID="imgFurniture" runat="server" Height="300px" Width="300px" style="border: 5px solid #555;"/> 
                 <br />
                <h5> <label>Furniture Type:  </label>
                 <asp:Label ID="lblFurnitureType" runat="server" > </asp:Label></h5>

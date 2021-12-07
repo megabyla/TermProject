@@ -88,7 +88,11 @@
 	<form id="form1" runat="server">
 		<center><h1 class="display-4" style="font-size:calc(1.475rem + 1.2vw);">Furniture Information</h1>
 			<br/>
-			<asp:Label runat="server" class="display-4" style="font-size:calc(1.2rem + 0.9vw);" ID="lblFurnitureName"></asp:Label></center>
+			<asp:Label runat="server" class="display-4" style="font-size:calc(1.2rem + 0.9vw);" ID="lblFurnitureName"></asp:Label>
+			            <asp:Image ID="imgFurniture" runat="server" Height="300px" Width="300px" style="border: 5px solid #555;"/> 
+
+		</center>
+		
 		<br />
 		<div>
 			<center>
@@ -100,13 +104,13 @@
 				<br />
 				<asp:Label ID="lblFurniturePrice" runat="server"></asp:Label>
 				<br/>
-				<asp:Button ID="btnReserve" runat="server" Text="Reserve" OnClick="btnReserve_Click" />
+				<asp:Button ID="btnReserve" runat="server" Text="Reserve" CssClass="btn btn-primary" OnClick="btnReserve_Click" />
 				<br />
 
 				<br/>
 				<br/>
 				Click here to see how many have reserved this: &nbsp;
-				<input id="btnGetCount" type="button" value="Get Count" onclick="GetInfo();" />
+				<input id="btnGetCount" type="button" value="Get Count" class="btn btn-primary" onclick="GetInfo();" />
 				<div id="countContent">
 				</div>
 			</center>

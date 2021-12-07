@@ -11,6 +11,7 @@ using System.Web.Script.Serialization;
 using System.Net;
 using System.IO;
 using FurnitureStore.Library;
+using System.Data.SqlClient;
 
 namespace FurnitureStore
 {
@@ -44,6 +45,26 @@ namespace FurnitureStore
             lblDescription.Text = dsFurni.Tables[0].Rows[0]["furnitureDescription"].ToString();
             Decimal price = Convert.ToDecimal(dsFurni.Tables[0].Rows[0]["furniturePrice"].ToString());
             lblFurniturePrice.Text = "<b>Price:</b> " + price.ToString("C2");
+
+            SqlCommand cmdGetImage = new SqlCommand();
+            cmdGetImage.CommandType = CommandType.StoredProcedure;
+            cmdGetImage.CommandText = "TP_GetImageById";
+
+            SqlParameter inputId = new SqlParameter("@furnitureID", id);
+            inputId.Direction = ParameterDirection.Input;
+            cmdGetImage.Parameters.Add(inputId);
+
+
+            DataSet ds = objDB.GetDataSetUsingCmdObj(cmdGetImage);
+            int count = ds.Tables[0].Rows.Count;
+
+            if (count > 0)
+            {
+                byte[] bytes = (byte[])ds.Tables[0].Rows[0]["ImageData"];
+                string strBase64 = Convert.ToBase64String(bytes);
+                imgFurniture.ImageUrl = "data:Image/png;base64," + strBase64; ;
+
+            }
         }
 
         protected void btnReserve_Click(object sender, EventArgs e)
@@ -68,9 +89,7 @@ namespace FurnitureStore
                     DateTime time = DateTime.Now;
                     string timeString = time.ToString("hh:mm tt");
                     reservation.reservationTime = timeString;
-                //flag = functions.AddReservation(reservation.reservationTime, 
-                //    reservation.reservationDate, reservation.reservationCount, 
-                //    reservation.userID, reservation.furnitureID, objDB);
+   
                 try
                 {
                     JavaScriptSerializer js = new JavaScriptSerializer();
