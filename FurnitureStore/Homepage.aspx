@@ -57,6 +57,7 @@
             </center>
             
         </div>
+        <hr style="width: 90%; margin: auto; margin-top: 20px; margin-bottom: 20px" />
         <br />
     </form>
 </body>
